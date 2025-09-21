@@ -1,86 +1,12 @@
 <!DOCTYPE html>
 <html lang="cs">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>NextGenWeb – jednoduché weby</title>
-  <style>
-    body { margin:0; font-family: system-ui, Arial, sans-serif; line-height:1.6; color:#111; }
-    .container { max-width: 980px; margin: 0 auto; padding: 0 16px; }
-    header { background:#111; color:#fff; padding:16px; text-align:center; }
-    nav a { color:#fff; margin:0 8px; text-decoration:none; }
-    .hero { padding:60px 0; text-align:center; background:#f6f6f6; }
-    h1 { margin:0 0 12px; font-size:32px; }
-    h2 { margin-top:40px; font-size:26px; }
-    .grid { display:grid; gap:16px; }
-    .cols-3 { grid-template-columns: repeat(3, 1fr); }
-    .card { padding:20px; border:1px solid #eee; border-radius:12px; background:#fff; text-align:center; }
-    footer { text-align:center; padding:20px; border-top:1px solid #eee; margin-top:40px; }
-    button { padding:12px 16px; border:none; border-radius:10px; background:#111; color:#fff; cursor:pointer; }
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Můj první web</title>
 </head>
 <body>
-  <header>
-    <h1>NextGenWeb</h1>
-    <nav>
-      <a href="#sluzby">Služby</a>
-      <a href="#cenik">Ceník</a>
-      <a href="#kontakt">Kontakt</a>
-    </nav>
-  </header>
-
-  <section class="hero">
-    <h1>Jednoduché weby pro malé firmy</h1>
-    <p>Levně, rychle a spolehlivě. Tvořím weby, které vypadají dobře a fungují.</p>
-    <button onclick="window.location='#kontakt'">Poptejte mě</button>
-  </section>
-
-  <div class="container">
-    <section id="sluzby">
-      <h2>Co nabízím</h2>
-      <div class="grid cols-3">
-        <div class="card"><h3>Web vizitka</h3><p>1–3 stránky: O nás, služby, kontakt.</p></div>
-        <div class="card"><h3>Landing page</h3><p>Jedna stránka na produkt/službu.</p></div>
-        <div class="card"><h3>Úpravy webu</h3><p>Texty, barvy, obrázky, rychlost.</p></div>
-      </div>
-    </section>
-
-    <section id="cenik">
-      <h2>Ceník</h2>
-      <div class="grid cols-3">
-        <div class="card">
-          <h3>Základ</h3>
-          <p>Web vizitka (1–3 stránky).</p>
-          <strong>od 3 000 Kč</strong>
-        </div>
-        <div class="card">
-          <h3>Standard</h3>
-          <p>Landing page + formulář.</p>
-          <strong>od 5 000 Kč</strong>
-        </div>
-        <div class="card">
-          <h3>Profi</h3>
-          <p>Kompletní firemní web (5+ stránek).</p>
-          <strong>od 8 000 Kč</strong>
-        </div>
-      </div>
-    </section>
-
-    <section id="kontakt">
-      <h2>Kontakt</h2>
-      <p>Napište mi a domluvíme se.</p>
-      <form onsubmit="event.preventDefault(); alert('Díky, brzy se ozvu!');">
-        <input type="text" placeholder="Vaše jméno" required><br>
-        <input type="email" placeholder="Váš e-mail" required><br>
-        <textarea placeholder="Co potřebujete?" rows="4" required></textarea><br>
-        <button type="submit">Odeslat</button>
-      </form>
-    </section>
-  </div>
-
-  <footer>
-    © <span id="year"></span> NextGenWeb
-  </footer>
-  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <h1>Ahoj světe!</h1>
+  <p>Tady začíná moje cesta s weby 🚀</p>
 </body>
 </html>
