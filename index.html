@@ -1,12 +1,151 @@
 <!DOCTYPE html>
 <html lang="cs">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Můj první web</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>[Tvoje jméno] – Začínající webař</title>
+  <style>
+    /* Reset + základ */
+    * { box-sizing: border-box; }
+    body { margin:0; font-family: system-ui, Arial, sans-serif; line-height:1.6; color:#111; }
+    a { text-decoration: none; }
+    .container { max-width: 980px; margin: 0 auto; padding: 0 16px; }
+
+    /* Navigace */
+    header { position: sticky; top:0; background:#fff; border-bottom:1px solid #eee; z-index:10; }
+    nav { display:flex; align-items:center; justify-content:space-between; height:56px; }
+    nav a.brand { font-weight:700; }
+    nav .links a { margin-left:16px; color:#111; opacity:.8; }
+    nav .links a:hover { opacity:1; }
+
+    /* Hero */
+    .hero { padding:64px 0; background: linear-gradient(180deg,#f6f6f6, #ffffff); }
+    .hero h1 { font-size: clamp(28px, 4vw, 44px); margin:0 0 12px; }
+    .hero p  { font-size: clamp(16px, 2.4vw, 20px); margin:0 0 20px; opacity:.9; }
+    .cta { display:inline-block; padding:12px 18px; border-radius:10px; border:1px solid #111; }
+    .cta.primary { background:#111; color:#fff; border-color:#111; }
+    .cta + .cta { margin-left:10px; }
+
+    /* Sekce */
+    section { padding:56px 0; }
+    h2 { font-size:28px; margin:0 0 18px; }
+    .grid { display:grid; gap:16px; }
+    .cols-3 { grid-template-columns: repeat(3, minmax(0,1fr)); }
+    .card { padding:18px; border:1px solid #eee; border-radius:14px; background:#fff; }
+    .muted { color:#555; }
+
+    /* Reference */
+    .project { display:flex; gap:14px; align-items:center; }
+    .project img { width:72px; height:72px; object-fit:cover; border-radius:10px; border:1px solid #eee; }
+
+    /* Kontakt */
+    form { display:grid; gap:10px; max-width:520px; }
+    input, textarea { width:100%; padding:10px; border:1px solid #ddd; border-radius:10px; font:inherit; }
+    button { padding:12px 16px; border-radius:10px; border:1px solid #111; background:#111; color:#fff; cursor:pointer; }
+    button:hover { opacity:.95; }
+
+    /* Footer */
+    footer { padding:24px 0; border-top:1px solid #eee; color:#555; }
+
+    /* Responsivita */
+    @media (max-width: 780px) {
+      .cols-3 { grid-template-columns: 1fr; }
+      .project { align-items:flex-start; }
+    }
+  </style>
 </head>
 <body>
-  <h1>Ahoj světe!</h1>
-  <p>Tady začíná moje cesta s weby 🚀</p>
+  <header>
+    <div class="container">
+      <nav>
+        <a class="brand" href="#">[Tvoje jméno]</a>
+        <div class="links">
+          <a href="#sluzby">Služby</a>
+          <a href="#projekty">Projekty</a>
+          <a href="#kontakt">Kontakt</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container">
+        <h1>Dělám jednoduché a rychlé weby pro malé firmy</h1>
+        <p>Jsem začínající webař. Postavím vám jednoduchý web, vizitku firmy nebo landing page – rychle a levně.</p>
+        <a class="cta primary" href="#kontakt">Chci nezávazně poptat</a>
+        <a class="cta" href="#projekty">Mrknout na ukázky</a>
+      </div>
+    </section>
+
+    <!-- SLUŽBY -->
+    <section id="sluzby">
+      <div class="container">
+        <h2>Co pro vás udělám</h2>
+        <div class="grid cols-3">
+          <div class="card">
+            <h3>Web vizitka</h3>
+            <p class="muted">Jednoduchý web o 1–3 stránkách (O nás, Služby, Kontakt). Rychlé dodání.</p>
+          </div>
+          <div class="card">
+            <h3>Landing page</h3>
+            <p class="muted">Stránka na jednu službu/produkt – ideální na reklamu a sběr poptávek.</p>
+          </div>
+          <div class="card">
+            <h3>Úpravy stávajícího webu</h3>
+            <p class="muted">Texty, barvy, obrázky, drobné opravy a zrychlení webu.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJEKTY (zatím mock dat) -->
+    <section id="projekty">
+      <div class="container">
+        <h2>Ukázky práce</h2>
+        <div class="grid">
+          <div class="card project">
+            <img src="https://picsum.photos/200?random=1" alt="Náhled projektu 1">
+            <div>
+              <strong>Web pro lokální službu</strong>
+              <p class="muted">Jednoduchá vizitka s kontaktním formulářem. ⚠️ Nahradíš za svůj projekt, jakmile ho vytvoříme.</p>
+            </div>
+          </div>
+          <div class="card project">
+            <img src="https://picsum.photos/200?random=2" alt="Náhled projektu 2">
+            <div>
+              <strong>Landing page – autoslužby</strong>
+              <p class="muted">Stránka zaměřená na získání poptávky. ⚠️ Zatím placeholder.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- KONTAKT -->
+    <section id="kontakt">
+      <div class="container">
+        <h2>Napište mi</h2>
+        <p class="muted">Ozvu se do 24 hodin. (Zatím bez odeslání – napojíme později.)</p>
+        <form onsubmit="event.preventDefault(); alert('Díky! Brzy se ozvu.');">
+          <input type="text" name="name" placeholder="Vaše jméno" required />
+          <input type="email" name="email" placeholder="E-mail" required />
+          <textarea name="message" rows="5" placeholder="S čím potřebujete pomoct?" required></textarea>
+          <button type="submit">Odeslat</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      © <span id="year"></span> [Tvoje jméno] – jednoduché weby pro malé firmy
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
