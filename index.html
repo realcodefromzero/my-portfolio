@@ -15,16 +15,25 @@
     header {
       background: #111;
       color: #fff;
-      padding: 20px;
+      padding: 40px 20px;
       text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+    header p {
+      font-size: 1.2rem;
+      margin-top: 10px;
     }
     section {
       padding: 40px 20px;
-      max-width: 800px;
+      max-width: 900px;
       margin: auto;
     }
-    h1, h2 {
+    h2 {
       text-align: center;
+      margin-bottom: 20px;
     }
     .services {
       display: flex;
@@ -38,8 +47,24 @@
       margin: 10px;
       border-radius: 10px;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      flex: 1 1 200px;
+      flex: 1 1 250px;
       text-align: center;
+    }
+    .cta {
+      text-align: center;
+      margin-top: 30px;
+    }
+    .cta a {
+      background: #111;
+      color: #fff;
+      padding: 12px 24px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+    .cta a:hover {
+      background: #444;
     }
     footer {
       background: #111;
@@ -53,21 +78,21 @@
 <body>
   <header>
     <h1>NewGen Web</h1>
-    <p>Simple websites for small businesses</p>
+    <p>Simple, modern websites for small businesses</p>
   </header>
 
   <section>
     <h2>About me</h2>
-    <p>My name is NewGen and I help small businesses get a modern and functional website 
-    that looks good and works well. I offer simple solutions without unnecessary complexity – fast, affordable, and reliable.</p>
+    <p>Hi, my name is [Your Name]. I build clean and functional websites for small businesses and entrepreneurs. 
+    My goal is to make it easy and affordable for anyone to get a professional online presence.</p>
   </section>
 
   <section>
     <h2>Services</h2>
     <div class="services">
       <div class="card">Business Card Website<br>1–3 pages<br><b>from €120</b></div>
-      <div class="card">Landing Page<br>for product/service<br><b>from €200</b></div>
-      <div class="card">Website edits<br>texts, colors, images<br><b>negotiable</b></div>
+      <div class="card">Landing Page<br>for a product or service<br><b>from €200</b></div>
+      <div class="card">Website Updates<br>texts, colors, images<br><b>negotiable</b></div>
     </div>
   </section>
 
@@ -75,6 +100,9 @@
     <h2>Contact</h2>
     <p>Email: <a href="mailto:ghostvlasek@gmail.com">ghostvlasek@gmail.com</a></p>
     <p>Phone: <a href="tel:+420797808290">+420 797 808 290</a></p>
+    <div class="cta">
+      <a href="mailto:ghostvlasek@gmail.com">Contact me</a>
+    </div>
   </section>
 
   <footer>
@@ -82,4 +110,3 @@
   </footer>
 </body>
 </html>
-
