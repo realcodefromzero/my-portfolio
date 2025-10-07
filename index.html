@@ -5,15 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>NewGen Web - Simple websites for small businesses</title>
 
-  <!-- ✅ Google Font -->
+  <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 
-  <!-- ✅ AOS Animations -->
+  <!-- AOS Animations -->
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
   <style>
-    /* === BASE === */
-    * { box-sizing: border-box; }
+    * { box-sizing: border-box; scroll-behavior: smooth; }
+
     body {
       font-family: "Poppins", sans-serif;
       margin: 0;
@@ -23,25 +23,80 @@
       overflow-x: hidden;
     }
 
-    /* === HEADER === */
-    header {
-      text-align: center;
-      padding: 120px 20px;
-      background: linear-gradient(135deg, #00ffaa33, #00cc8855, #00ffaa11);
-      border-bottom: 2px solid #00ffaa55;
-      position: relative;
-      overflow: hidden;
+    /* === NAVBAR === */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(0,0,0,0.6);
+      backdrop-filter: blur(8px);
+      padding: 15px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 10;
+      border-bottom: 1px solid #00ffaa33;
     }
-    header h1 {
-      font-size: 3rem;
+    nav h1 {
       margin: 0;
-      text-shadow: 0 0 20px #00ffaa99;
+      color: #00ffaa;
+      font-weight: 600;
+      cursor: pointer;
+      text-shadow: 0 0 15px #00ffaa99;
+      transition: 0.3s;
+    }
+    nav h1:hover {
+      text-shadow: 0 0 25px #00ffaa;
+      transform: scale(1.05);
+    }
+    .menu a {
+      color: #ddd;
+      text-decoration: none;
+      margin-left: 25px;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+    .menu a:hover {
       color: #00ffaa;
     }
-    header p {
-      font-size: 1.3rem;
+
+    /* === HERO === */
+    .hero {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 20px;
+    }
+    .hero h2 {
+      font-size: 3rem;
+      color: #00ffaa;
+      text-shadow: 0 0 30px #00ffaa88;
+      animation: fadeDown 1s ease-out;
+    }
+    .hero p {
       color: #ccc;
-      margin-top: 15px;
+      margin-top: 20px;
+      font-size: 1.2rem;
+      max-width: 600px;
+      animation: fadeUp 1.2s ease-out;
+    }
+    .hero a {
+      margin-top: 40px;
+      background: linear-gradient(135deg, #00ffaa, #00cc88);
+      color: #111;
+      padding: 14px 30px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: 0.3s;
+      box-shadow: 0 0 20px #00ffaa55;
+    }
+    .hero a:hover {
+      transform: scale(1.07);
+      box-shadow: 0 0 30px #00ffaa99;
     }
 
     /* === SECTION === */
@@ -50,16 +105,16 @@
       max-width: 1000px;
       margin: auto;
     }
-    h2 {
+    h3 {
       text-align: center;
-      font-size: 2.3rem;
+      font-size: 2rem;
       color: #00ffaa;
+      margin-bottom: 40px;
       position: relative;
-      margin-bottom: 50px;
     }
-    h2::after {
+    h3::after {
       content: "";
-      width: 100px;
+      width: 80px;
       height: 3px;
       background: #00ffaa;
       display: block;
@@ -68,14 +123,13 @@
       box-shadow: 0 0 10px #00ffaa;
     }
 
-    /* === ABOUT === */
     .about p {
       text-align: center;
-      font-size: 1.1rem;
       line-height: 1.8;
       color: #ddd;
       max-width: 800px;
       margin: auto;
+      font-size: 1.1rem;
     }
 
     /* === SERVICES === */
@@ -86,78 +140,83 @@
       gap: 30px;
     }
     .card {
-      background: linear-gradient(135deg, #111, #1a1a1a);
-      border: 1px solid #00ffaa22;
+      background: #111;
+      border: 1px solid #00ffaa33;
       border-radius: 20px;
       padding: 30px;
       text-align: center;
       width: 280px;
-      transition: transform 0.5s ease, box-shadow 0.5s ease;
-      box-shadow: 0 0 20px rgba(0, 255, 170, 0.1);
+      transition: 0.5s;
+      box-shadow: 0 0 20px rgba(0,255,170,0.1);
     }
     .card:hover {
       transform: translateY(-10px) scale(1.03);
-      box-shadow: 0 0 30px rgba(0, 255, 170, 0.4);
+      box-shadow: 0 0 30px rgba(0,255,170,0.4);
     }
     .card b {
       color: #00ffaa;
     }
 
-    /* === CTA === */
-    .cta {
+    /* === CONTACT === */
+    .contact p {
       text-align: center;
-      margin-top: 50px;
-    }
-    .cta a {
-      background: linear-gradient(135deg, #00ffaa, #00cc88);
-      color: #111;
-      padding: 14px 30px;
-      border-radius: 30px;
-      text-decoration: none;
-      font-weight: 600;
-      transition: 0.3s;
-      display: inline-block;
-      box-shadow: 0 0 20px #00ffaa55;
-    }
-    .cta a:hover {
-      transform: scale(1.07);
-      box-shadow: 0 0 25px #00ffaaaa;
+      color: #ccc;
+      font-size: 1.1rem;
+      line-height: 1.7;
     }
 
-    /* === FOOTER === */
     footer {
-      background: #0a0a0a;
       text-align: center;
       padding: 30px;
       color: #777;
       border-top: 1px solid #00ffaa33;
+      background: #0a0a0a;
+      margin-top: 80px;
     }
 
-    /* === RESPONSIVE === */
+    /* === ANIMATIONS === */
+    @keyframes fadeDown {
+      from { opacity: 0; transform: translateY(-30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
     @media (max-width: 700px) {
-      header h1 { font-size: 2.3rem; }
-      h2 { font-size: 1.9rem; }
-      .card { width: 90%; }
+      .menu { display: none; }
+      .hero h2 { font-size: 2.2rem; }
     }
   </style>
 </head>
 
 <body>
-  <header>
+  <nav>
     <h1 id="logo">NewGen Web</h1>
-    <p>Simple, modern websites for small businesses</p>
-  </header>
+    <div class="menu">
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
 
-  <section class="about" data-aos="fade-up">
-    <h2>About Me</h2>
+  <div class="hero" id="home">
+    <h2>Modern Websites for Small Businesses</h2>
+    <p>Clean, professional and affordable websites built with simplicity and speed.</p>
+    <a href="#about">Explore ↓</a>
+  </div>
+
+  <section id="about" class="about" data-aos="fade-up">
+    <h3>About Me</h3>
     <p>
-      Hi, my name is <b>NewGen</b>. I build clean and functional websites for small businesses and entrepreneurs. 
-      My goal is to make it easy and affordable for anyone to get a professional online presence.
+      Hi, my name is <b>NewGen</b>. I create simple and elegant websites that help small businesses and entrepreneurs
+      stand out online. My mission is to make web design accessible and affordable for everyone.
     </p>
   </section>
 
-  <section data-aos="fade-up" data-aos-delay="200">
-    <h2>Services</h2>
+  <section id="services" data-aos="fade-up">
+    <h3>Services</h3>
     <div class="services">
       <div class="card" data-aos="zoom-in">Business Card Website<br>1–3 pages<br><b>from €70</b></div>
       <div class="card" data-aos="zoom-in" data-aos-delay="150">Landing Page<br>for a product or service<br><b>from €150</b></div>
@@ -165,32 +224,25 @@
     </div>
   </section>
 
-  <section data-aos="fade-up" data-aos-delay="300">
-    <h2>Contact</h2>
-    <p style="text-align:center;">Email: <a href="mailto:ghostvlasek@gmail.com" style="color:#00ffaa;">ghostvlasek@gmail.com</a></p>
-    <p style="text-align:center;">Phone: <a href="tel:+420797808290" style="color:#00ffaa;">+420 797 808 290</a></p>
-    <div class="cta">
-      <a href="mailto:ghostvlasek@gmail.com">Contact me</a>
-    </div>
+  <section id="contact" class="contact" data-aos="fade-up">
+    <h3>Contact</h3>
+    <p>Email: <a href="mailto:ghostvlasek@gmail.com" style="color:#00ffaa;">ghostvlasek@gmail.com</a></p>
+    <p>Phone: <a href="tel:+420797808290" style="color:#00ffaa;">+420 797 808 290</a></p>
   </section>
 
   <footer>
     <p>© 2025 NewGen Web – Built with passion 💻</p>
   </footer>
 
-  <!-- ✅ AOS + GSAP Scripts -->
+  <!-- AOS Animations -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
   <script>
-    // Init AOS
-    AOS.init({
-      duration: 1000,
-      once: true,
-    });
+    AOS.init({ duration: 1000, once: true });
 
-    // GSAP intro animation
-    gsap.from("#logo", { duration: 1, y: -50, opacity: 0, ease: "power3.out" });
-    gsap.from("header p", { duration: 1, y: 30, opacity: 0, delay: 0.4, ease: "power3.out" });
+    // Click on logo scrolls to top
+    document.getElementById("logo").addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
   </script>
 </body>
 </html>
