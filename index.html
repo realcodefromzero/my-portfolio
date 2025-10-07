@@ -3,201 +3,162 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>NewGenWeb - Building the Future</title>
+  <title>NewGen Web - Simple websites for small businesses</title>
   <style>
-    /* ==== RESET ==== */
+    /* === RESET + BASE === */
     * {
-      margin: 0;
-      padding: 0;
       box-sizing: border-box;
     }
-    html, body {
-      height: 100%;
+    body {
+      font-family: "Poppins", Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #0f0f0f;
+      color: #f9f9f9;
       scroll-behavior: smooth;
-      background-color: #000;
-      color: #fff;
-      font-family: "Poppins", sans-serif;
       overflow-x: hidden;
     }
 
-    /* ==== HERO ==== */
+    /* === HEADER === */
     header {
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
       position: relative;
+      background: linear-gradient(135deg, #111 0%, #1f1f1f 100%);
+      color: #fff;
+      padding: 100px 20px;
+      text-align: center;
       overflow: hidden;
     }
-
     header h1 {
-      font-size: 5rem;
-      letter-spacing: 4px;
-      text-transform: uppercase;
-      position: relative;
-      animation: glowFade 3s ease-in-out infinite alternate;
-    }
-
-    header p {
-      font-size: 1.5rem;
-      margin-top: 20px;
-      opacity: 0.8;
-    }
-
-    @keyframes glowFade {
-      from { text-shadow: 0 0 10px #fff, 0 0 20px #ccc; }
-      to { text-shadow: 0 0 30px #fff, 0 0 60px #aaa; }
-    }
-
-    header::before {
-      content: "";
-      position: absolute;
-      width: 200%;
-      height: 200%;
-      background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 70%);
-      animation: moveLight 10s linear infinite;
-    }
-
-    @keyframes moveLight {
-      0% { transform: translate(-25%, -25%); }
-      100% { transform: translate(25%, 25%); }
-    }
-
-    /* ==== SECTION BASE ==== */
-    section {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 80px 20px;
-      text-align: center;
-    }
-
-    h2 {
-      font-size: 2.5rem;
-      margin-bottom: 20px;
+      margin: 0;
+      font-size: 3rem;
       letter-spacing: 2px;
-      text-transform: uppercase;
+      animation: fadeSlide 1s ease-out forwards;
     }
-
-    p {
-      max-width: 700px;
-      line-height: 1.8;
-      font-size: 1.1rem;
-      opacity: 0.9;
-    }
-
-    /* ==== GLOW ON SCROLL ==== */
-    .fade-in {
+    header p {
+      font-size: 1.3rem;
+      margin-top: 15px;
       opacity: 0;
-      transform: translateY(50px);
-      transition: all 1s ease;
+      animation: fadeIn 1s ease-out forwards 0.6s;
     }
 
-    .fade-in.visible {
+    /* === SECTION === */
+    section {
+      padding: 80px 20px;
+      max-width: 900px;
+      margin: auto;
+      opacity: 0;
+      transform: translateY(60px);
+      transition: all 0.8s ease-out;
+    }
+    section.visible {
       opacity: 1;
       transform: translateY(0);
     }
 
-    /* ==== SERVICES ==== */
+    h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 2.2rem;
+      color: #fff;
+      position: relative;
+    }
+    h2::after {
+      content: "";
+      display: block;
+      width: 80px;
+      height: 3px;
+      background: #00ffaa;
+      margin: 10px auto 0;
+      border-radius: 2px;
+    }
+
+    /* === SERVICES === */
     .services {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      margin-top: 30px;
       gap: 20px;
     }
-
     .card {
-      background: #111;
-      border: 1px solid #333;
-      border-radius: 12px;
-      padding: 30px 20px;
-      width: 260px;
+      background: #1a1a1a;
+      padding: 25px;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      flex: 1 1 260px;
       text-align: center;
-      box-shadow: 0 0 15px rgba(255,255,255,0.05);
-      transition: all 0.4s ease;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
     }
-
     .card:hover {
-      box-shadow: 0 0 25px rgba(255,255,255,0.3);
-      transform: translateY(-5px);
+      transform: translateY(-10px) scale(1.03);
+      box-shadow: 0 6px 20px rgba(0,255,170,0.4);
+    }
+    .card b {
+      color: #00ffaa;
     }
 
-    /* ==== TEMPLATE SECTION ==== */
-    #templates {
+    /* === CTA === */
+    .cta {
       text-align: center;
-      padding: 100px 20px;
-      background: #000;
-      color: #fff;
-      border-top: 1px solid #222;
-    }
-
-    #templates h2 {
-      font-size: 2rem;
-      margin-bottom: 10px;
-      letter-spacing: 2px;
-    }
-
-    .templates-links {
-      display: flex;
-      gap: 25px;
-      justify-content: center;
       margin-top: 40px;
-      flex-wrap: wrap;
     }
-
-    .templates-links a {
-      background: #fff;
-      color: #000;
-      padding: 14px 32px;
-      border-radius: 8px;
-      font-weight: bold;
+    .cta a {
+      background: linear-gradient(135deg, #00ffaa, #00cc88);
+      color: #111;
+      padding: 14px 28px;
+      border-radius: 30px;
       text-decoration: none;
+      font-weight: bold;
       transition: all 0.3s ease;
+      display: inline-block;
+    }
+    .cta a:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px #00ffaa88;
     }
 
-    .templates-links a:hover {
-      background: #000;
-      color: #fff;
-      border: 2px solid #fff;
-      box-shadow: 0 0 20px rgba(255,255,255,0.4);
-    }
-
-    /* ==== FOOTER ==== */
+    /* === FOOTER === */
     footer {
-      background: #000;
-      color: #fff;
+      background: #111;
+      color: #999;
       text-align: center;
-      padding: 40px 20px;
-      border-top: 1px solid #222;
+      padding: 25px;
+      margin-top: 60px;
+      font-size: 0.95rem;
     }
 
-    footer p {
-      font-size: 0.9rem;
-      opacity: 0.7;
+    /* === ANIMACE KEYFRAMES === */
+    @keyframes fadeSlide {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    /* === RESPONSIVE === */
+    @media (max-width: 600px) {
+      header h1 { font-size: 2.2rem; }
+      header p { font-size: 1rem; }
+      h2 { font-size: 1.8rem; }
     }
   </style>
 </head>
 <body>
-
-  <!-- ==== HERO ==== -->
   <header>
-    <h1>NewGenWeb</h1>
-    <p>Building the Future</p>
+    <h1>NewGen Web</h1>
+    <p>Simple, modern websites for small businesses</p>
   </header>
 
-  <!-- ==== ABOUT ==== -->
-  <section id="about" class="fade-in">
-    <h2>About Me</h2>
-    <p>Hi, I’m NewGen — a passionate web designer focused on creating clean, modern and affordable websites for small businesses, creators and entrepreneurs. My goal is to build simple but futuristic web experiences that look great on any device.</p>
+  <section>
+    <h2>About me</h2>
+    <p style="text-align:center;line-height:1.7;">
+      Hi, my name is NewGen. I build clean and functional websites for small businesses and entrepreneurs. 
+      My goal is to make it easy and affordable for anyone to get a professional online presence.
+    </p>
   </section>
 
-  <!-- ==== SERVICES ==== -->
-  <section id="services" class="fade-in">
+  <section>
     <h2>Services</h2>
     <div class="services">
       <div class="card">Business Card Website<br>1–3 pages<br><b>from €70</b></div>
@@ -206,43 +167,31 @@
     </div>
   </section>
 
-  <!-- ==== RESUME TEMPLATES ==== -->
-  <section id="templates" class="fade-in">
-    <h2>My Resume Templates</h2>
-    <p>Check out my clean and professional resume templates 👇</p>
-    <div class="templates-links">
-      <a href="resume-template1.html" target="_blank">Template 1</a>
-      <a href="resume-template2.html" target="_blank">Template 2</a>
-      <a href="resume-template3.html" target="_blank">Template 3</a>
-      <a href="resume-template4.html" target="_blank">Template 4</a>
+  <section>
+    <h2>Contact</h2>
+    <p style="text-align:center;">Email: <a href="mailto:ghostvlasek@gmail.com" style="color:#00ffaa;">ghostvlasek@gmail.com</a></p>
+    <p style="text-align:center;">Phone: <a href="tel:+420797808290" style="color:#00ffaa;">+420 797 808 290</a></p>
+    <div class="cta">
+      <a href="mailto:ghostvlasek@gmail.com">Contact me</a>
     </div>
   </section>
 
-  <!-- ==== CONTACT ==== -->
-  <section id="contact" class="fade-in">
-    <h2>Contact</h2>
-    <p>Email: <a href="mailto:ghostvlasek@gmail.com" style="color:#fff;">ghostvlasek@gmail.com</a></p>
-    <p>Phone: <a href="tel:+420797808290" style="color:#fff;">+420 797 808 290</a></p>
-  </section>
-
-  <!-- ==== FOOTER ==== -->
   <footer>
-    <p>© 2025 NewGenWeb — Built with passion 💻</p>
+    <p>© 2025 NewGen Web – Built with passion 💻</p>
   </footer>
 
   <script>
-    // Reveal on scroll
-    const fadeEls = document.querySelectorAll('.fade-in');
+    // === Scroll Animace ===
+    const sections = document.querySelectorAll("section");
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
+          entry.target.classList.add("visible");
         }
       });
-    });
-    fadeEls.forEach(el => observer.observe(el));
+    }, { threshold: 0.3 });
+
+    sections.forEach(sec => observer.observe(sec));
   </script>
 </body>
 </html>
-
-
