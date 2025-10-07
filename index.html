@@ -5,73 +5,142 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>NewGen Web - Simple websites for small businesses</title>
   <style>
+    /* === RESET + BASE === */
+    * {
+      box-sizing: border-box;
+    }
     body {
-      font-family: Arial, sans-serif;
+      font-family: "Poppins", Arial, sans-serif;
       margin: 0;
       padding: 0;
-      background: #f9f9f9;
-      color: #333;
+      background: #0f0f0f;
+      color: #f9f9f9;
+      scroll-behavior: smooth;
+      overflow-x: hidden;
     }
+
+    /* === HEADER === */
     header {
-      background: #111;
+      position: relative;
+      background: linear-gradient(135deg, #111 0%, #1f1f1f 100%);
       color: #fff;
-      padding: 40px 20px;
+      padding: 100px 20px;
       text-align: center;
+      overflow: hidden;
     }
     header h1 {
       margin: 0;
-      font-size: 2.5rem;
+      font-size: 3rem;
+      letter-spacing: 2px;
+      animation: fadeSlide 1s ease-out forwards;
     }
     header p {
-      font-size: 1.2rem;
-      margin-top: 10px;
+      font-size: 1.3rem;
+      margin-top: 15px;
+      opacity: 0;
+      animation: fadeIn 1s ease-out forwards 0.6s;
     }
+
+    /* === SECTION === */
     section {
-      padding: 40px 20px;
+      padding: 80px 20px;
       max-width: 900px;
       margin: auto;
+      opacity: 0;
+      transform: translateY(60px);
+      transition: all 0.8s ease-out;
     }
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
     h2 {
       text-align: center;
-      margin-bottom: 20px;
+      margin-bottom: 30px;
+      font-size: 2.2rem;
+      color: #fff;
+      position: relative;
     }
+    h2::after {
+      content: "";
+      display: block;
+      width: 80px;
+      height: 3px;
+      background: #00ffaa;
+      margin: 10px auto 0;
+      border-radius: 2px;
+    }
+
+    /* === SERVICES === */
     .services {
       display: flex;
       flex-wrap: wrap;
-      justify-content: space-around;
-      margin-top: 20px;
+      justify-content: center;
+      gap: 20px;
     }
     .card {
-      background: white;
-      padding: 20px;
-      margin: 10px;
-      border-radius: 10px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      flex: 1 1 250px;
+      background: #1a1a1a;
+      padding: 25px;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      flex: 1 1 260px;
       text-align: center;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
     }
+    .card:hover {
+      transform: translateY(-10px) scale(1.03);
+      box-shadow: 0 6px 20px rgba(0,255,170,0.4);
+    }
+    .card b {
+      color: #00ffaa;
+    }
+
+    /* === CTA === */
     .cta {
       text-align: center;
-      margin-top: 30px;
+      margin-top: 40px;
     }
     .cta a {
-      background: #111;
-      color: #fff;
-      padding: 12px 24px;
-      border-radius: 5px;
+      background: linear-gradient(135deg, #00ffaa, #00cc88);
+      color: #111;
+      padding: 14px 28px;
+      border-radius: 30px;
       text-decoration: none;
       font-weight: bold;
-      transition: 0.3s;
+      transition: all 0.3s ease;
+      display: inline-block;
     }
     .cta a:hover {
-      background: #444;
+      transform: scale(1.05);
+      box-shadow: 0 0 20px #00ffaa88;
     }
+
+    /* === FOOTER === */
     footer {
       background: #111;
-      color: #fff;
+      color: #999;
       text-align: center;
-      padding: 20px;
-      margin-top: 40px;
+      padding: 25px;
+      margin-top: 60px;
+      font-size: 0.95rem;
+    }
+
+    /* === ANIMACE KEYFRAMES === */
+    @keyframes fadeSlide {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    /* === RESPONSIVE === */
+    @media (max-width: 600px) {
+      header h1 { font-size: 2.2rem; }
+      header p { font-size: 1rem; }
+      h2 { font-size: 1.8rem; }
     }
   </style>
 </head>
@@ -83,8 +152,10 @@
 
   <section>
     <h2>About me</h2>
-    <p>Hi, my name is NewGen. I build clean and functional websites for small businesses and entrepreneurs. 
-    My goal is to make it easy and affordable for anyone to get a professional online presence.</p>
+    <p style="text-align:center;line-height:1.7;">
+      Hi, my name is NewGen. I build clean and functional websites for small businesses and entrepreneurs. 
+      My goal is to make it easy and affordable for anyone to get a professional online presence.
+    </p>
   </section>
 
   <section>
@@ -98,8 +169,8 @@
 
   <section>
     <h2>Contact</h2>
-    <p>Email: <a href="mailto:ghostvlasek@gmail.com">ghostvlasek@gmail.com</a></p>
-    <p>Phone: <a href="tel:+420797808290">+420 797 808 290</a></p>
+    <p style="text-align:center;">Email: <a href="mailto:ghostvlasek@gmail.com" style="color:#00ffaa;">ghostvlasek@gmail.com</a></p>
+    <p style="text-align:center;">Phone: <a href="tel:+420797808290" style="color:#00ffaa;">+420 797 808 290</a></p>
     <div class="cta">
       <a href="mailto:ghostvlasek@gmail.com">Contact me</a>
     </div>
@@ -108,7 +179,19 @@
   <footer>
     <p>© 2025 NewGen Web – Built with passion 💻</p>
   </footer>
+
+  <script>
+    // === Scroll Animace ===
+    const sections = document.querySelectorAll("section");
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+        }
+      });
+    }, { threshold: 0.3 });
+
+    sections.forEach(sec => observer.observe(sec));
+  </script>
 </body>
 </html>
-
-
