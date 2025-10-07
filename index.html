@@ -15,7 +15,6 @@
       overflow-x:hidden;
     }
 
-    /* ==== Background glow animation ==== */
     body::before {
       content:"";
       position:fixed;
@@ -45,7 +44,6 @@
       overflow:hidden;
     }
 
-    /* ==== HERO ==== */
     .logo {
       font-size:5rem;
       font-weight:700;
@@ -74,7 +72,6 @@
       to{opacity:1;transform:translateY(0);}
     }
 
-    /* ==== Headings & text ==== */
     h2 {
       font-size:2.5rem;
       margin-bottom:20px;
@@ -94,8 +91,7 @@
       transform:translateY(0);
     }
 
-    /* ==== Cards ==== */
-    .services {
+    .services, .templates {
       display:flex;
       flex-wrap:wrap;
       justify-content:center;
@@ -119,7 +115,51 @@
       transform:translateY(-5px);
     }
 
-    /* ==== Links ==== */
+    /* ==== TEMPLATE CARDS ==== */
+    .template-card {
+      background:#0a0a0a;
+      border:1px solid #00aaff33;
+      border-radius:12px;
+      overflow:hidden;
+      width:300px;
+      opacity:0;
+      transform:translateY(40px);
+      transition:0.8s ease;
+    }
+    .template-card img {
+      width:100%;
+      height:200px;
+      object-fit:cover;
+    }
+    .template-info {
+      padding:20px;
+    }
+    .template-info h3 {
+      margin-bottom:10px;
+      color:#00aaff;
+      text-shadow:0 0 10px #00aaff;
+    }
+    .template-info p {
+      font-size:0.95rem;
+      opacity:0.8;
+      margin-bottom:15px;
+    }
+    .template-info a {
+      display:inline-block;
+      padding:10px 20px;
+      border:1px solid #00aaff;
+      color:#00aaff;
+      border-radius:8px;
+      transition:0.3s;
+      text-decoration:none;
+      font-weight:500;
+    }
+    .template-info a:hover {
+      background:#00aaff;
+      color:#000;
+      box-shadow:0 0 15px #00aaff;
+    }
+
     a {
       color:#00aaff;
       text-decoration:none;
@@ -162,6 +202,39 @@
       <div class="card">Business Card Website<br>1–3 pages<br><b>from €70</b></div>
       <div class="card">Landing Page<br>for a product or service<br><b>from €150</b></div>
       <div class="card">Website Updates<br>texts, colors, images<br><b>negotiable</b></div>
+    </div>
+  </section>
+
+  <!-- 🧩 TEMPLATES -->
+  <section id="templates">
+    <h2>Templates</h2>
+    <div class="templates">
+      <div class="template-card">
+        <img src="https://via.placeholder.com/300x200/00aaff/000000?text=CV+Template+1" alt="Template 1">
+        <div class="template-info">
+          <h3>CV Template 1</h3>
+          <p>Minimal, clean and professional layout perfect for developers and designers.</p>
+          <a href="cv1.html" target="_blank">View Template</a>
+        </div>
+      </div>
+
+      <div class="template-card">
+        <img src="https://via.placeholder.com/300x200/0077cc/000000?text=CV+Template+2" alt="Template 2">
+        <div class="template-info">
+          <h3>CV Template 2</h3>
+          <p>Bold design with visual sections and elegant typography for freelancers.</p>
+          <a href="cv2.html" target="_blank">View Template</a>
+        </div>
+      </div>
+
+      <div class="template-card">
+        <img src="https://via.placeholder.com/300x200/005577/ffffff?text=Portfolio+Template" alt="Template 3">
+        <div class="template-info">
+          <h3>Portfolio Template</h3>
+          <p>Modern one-page portfolio template showcasing skills and projects.</p>
+          <a href="portfolio.html" target="_blank">View Template</a>
+        </div>
+      </div>
     </div>
   </section>
 
