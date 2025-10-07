@@ -1,75 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>NewGen Web - Simple websites for small businesses</title>
+
+  <!-- ✅ Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- ✅ AOS Animations -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
   <style>
-    /* === RESET + BASE === */
-    * {
-      box-sizing: border-box;
-    }
+    /* === BASE === */
+    * { box-sizing: border-box; }
     body {
-      font-family: "Poppins", Arial, sans-serif;
+      font-family: "Poppins", sans-serif;
       margin: 0;
       padding: 0;
-      background: #0f0f0f;
-      color: #f9f9f9;
-      scroll-behavior: smooth;
+      background: radial-gradient(circle at top, #0a0a0a, #000);
+      color: #f1f1f1;
       overflow-x: hidden;
     }
 
     /* === HEADER === */
     header {
-      position: relative;
-      background: linear-gradient(135deg, #111 0%, #1f1f1f 100%);
-      color: #fff;
-      padding: 100px 20px;
       text-align: center;
+      padding: 120px 20px;
+      background: linear-gradient(135deg, #00ffaa33, #00cc8855, #00ffaa11);
+      border-bottom: 2px solid #00ffaa55;
+      position: relative;
       overflow: hidden;
     }
     header h1 {
-      margin: 0;
       font-size: 3rem;
-      letter-spacing: 2px;
-      animation: fadeSlide 1s ease-out forwards;
+      margin: 0;
+      text-shadow: 0 0 20px #00ffaa99;
+      color: #00ffaa;
     }
     header p {
       font-size: 1.3rem;
+      color: #ccc;
       margin-top: 15px;
-      opacity: 0;
-      animation: fadeIn 1s ease-out forwards 0.6s;
     }
 
     /* === SECTION === */
     section {
-      padding: 80px 20px;
-      max-width: 900px;
+      padding: 100px 20px;
+      max-width: 1000px;
       margin: auto;
-      opacity: 0;
-      transform: translateY(60px);
-      transition: all 0.8s ease-out;
     }
-    section.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
     h2 {
       text-align: center;
-      margin-bottom: 30px;
-      font-size: 2.2rem;
-      color: #fff;
+      font-size: 2.3rem;
+      color: #00ffaa;
       position: relative;
+      margin-bottom: 50px;
     }
     h2::after {
       content: "";
-      display: block;
-      width: 80px;
+      width: 100px;
       height: 3px;
       background: #00ffaa;
-      margin: 10px auto 0;
-      border-radius: 2px;
+      display: block;
+      margin: 10px auto;
+      border-radius: 5px;
+      box-shadow: 0 0 10px #00ffaa;
+    }
+
+    /* === ABOUT === */
+    .about p {
+      text-align: center;
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: #ddd;
+      max-width: 800px;
+      margin: auto;
     }
 
     /* === SERVICES === */
@@ -77,20 +83,21 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 20px;
+      gap: 30px;
     }
     .card {
-      background: #1a1a1a;
-      padding: 25px;
-      border-radius: 15px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-      flex: 1 1 260px;
+      background: linear-gradient(135deg, #111, #1a1a1a);
+      border: 1px solid #00ffaa22;
+      border-radius: 20px;
+      padding: 30px;
       text-align: center;
-      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      width: 280px;
+      transition: transform 0.5s ease, box-shadow 0.5s ease;
+      box-shadow: 0 0 20px rgba(0, 255, 170, 0.1);
     }
     .card:hover {
       transform: translateY(-10px) scale(1.03);
-      box-shadow: 0 6px 20px rgba(0,255,170,0.4);
+      box-shadow: 0 0 30px rgba(0, 255, 170, 0.4);
     }
     .card b {
       color: #00ffaa;
@@ -99,75 +106,66 @@
     /* === CTA === */
     .cta {
       text-align: center;
-      margin-top: 40px;
+      margin-top: 50px;
     }
     .cta a {
       background: linear-gradient(135deg, #00ffaa, #00cc88);
       color: #111;
-      padding: 14px 28px;
+      padding: 14px 30px;
       border-radius: 30px;
       text-decoration: none;
-      font-weight: bold;
-      transition: all 0.3s ease;
+      font-weight: 600;
+      transition: 0.3s;
       display: inline-block;
+      box-shadow: 0 0 20px #00ffaa55;
     }
     .cta a:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 20px #00ffaa88;
+      transform: scale(1.07);
+      box-shadow: 0 0 25px #00ffaaaa;
     }
 
     /* === FOOTER === */
     footer {
-      background: #111;
-      color: #999;
+      background: #0a0a0a;
       text-align: center;
-      padding: 25px;
-      margin-top: 60px;
-      font-size: 0.95rem;
-    }
-
-    /* === ANIMACE KEYFRAMES === */
-    @keyframes fadeSlide {
-      from { opacity: 0; transform: translateY(30px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
+      padding: 30px;
+      color: #777;
+      border-top: 1px solid #00ffaa33;
     }
 
     /* === RESPONSIVE === */
-    @media (max-width: 600px) {
-      header h1 { font-size: 2.2rem; }
-      header p { font-size: 1rem; }
-      h2 { font-size: 1.8rem; }
+    @media (max-width: 700px) {
+      header h1 { font-size: 2.3rem; }
+      h2 { font-size: 1.9rem; }
+      .card { width: 90%; }
     }
   </style>
 </head>
+
 <body>
   <header>
-    <h1>NewGen Web</h1>
+    <h1 id="logo">NewGen Web</h1>
     <p>Simple, modern websites for small businesses</p>
   </header>
 
-  <section>
-    <h2>About me</h2>
-    <p style="text-align:center;line-height:1.7;">
-      Hi, my name is NewGen. I build clean and functional websites for small businesses and entrepreneurs. 
+  <section class="about" data-aos="fade-up">
+    <h2>About Me</h2>
+    <p>
+      Hi, my name is <b>NewGen</b>. I build clean and functional websites for small businesses and entrepreneurs. 
       My goal is to make it easy and affordable for anyone to get a professional online presence.
     </p>
   </section>
 
-  <section>
+  <section data-aos="fade-up" data-aos-delay="200">
     <h2>Services</h2>
     <div class="services">
-      <div class="card">Business Card Website<br>1–3 pages<br><b>from €70</b></div>
-      <div class="card">Landing Page<br>for a product or service<br><b>from €150</b></div>
-      <div class="card">Website Updates<br>texts, colors, images<br><b>negotiable</b></div>
+      <div class="card" data-aos="zoom-in">Business Card Website<br>1–3 pages<br><b>from €70</b></div>
+      <div class="card" data-aos="zoom-in" data-aos-delay="150">Landing Page<br>for a product or service<br><b>from €150</b></div>
+      <div class="card" data-aos="zoom-in" data-aos-delay="300">Website Updates<br>texts, colors, images<br><b>negotiable</b></div>
     </div>
   </section>
 
-  <section>
+  <section data-aos="fade-up" data-aos-delay="300">
     <h2>Contact</h2>
     <p style="text-align:center;">Email: <a href="mailto:ghostvlasek@gmail.com" style="color:#00ffaa;">ghostvlasek@gmail.com</a></p>
     <p style="text-align:center;">Phone: <a href="tel:+420797808290" style="color:#00ffaa;">+420 797 808 290</a></p>
@@ -180,18 +178,19 @@
     <p>© 2025 NewGen Web – Built with passion 💻</p>
   </footer>
 
+  <!-- ✅ AOS + GSAP Scripts -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
   <script>
-    // === Scroll Animace ===
-    const sections = document.querySelectorAll("section");
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("visible");
-        }
-      });
-    }, { threshold: 0.3 });
+    // Init AOS
+    AOS.init({
+      duration: 1000,
+      once: true,
+    });
 
-    sections.forEach(sec => observer.observe(sec));
+    // GSAP intro animation
+    gsap.from("#logo", { duration: 1, y: -50, opacity: 0, ease: "power3.out" });
+    gsap.from("header p", { duration: 1, y: 30, opacity: 0, delay: 0.4, ease: "power3.out" });
   </script>
 </body>
 </html>
