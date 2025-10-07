@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Šablona Životopisu 1 (Moderní)</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; background-color: #f4f4f4; }
+        .resume-template { max-width: 900px; margin: 40px auto; background: white; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); display: flex; }
+        .sidebar { width: 30%; background-color: #3f51b5; color: white; padding: 30px 20px; }
+        .main-content { width: 70%; padding: 30px; }
+
+        /* Sidebar Styling */
+        .sidebar h2 { color: #ffeb3b; border-bottom: 2px solid #ffeb3b; padding-bottom: 5px; margin-top: 20px; font-size: 1.2em; }
+        .contact-info { margin-bottom: 30px; }
+        .contact-info p { margin: 5px 0; font-size: 0.9em; }
+        .contact-info a { color: white; text-decoration: none; }
+        .skills-list li { list-style-type: none; margin-bottom: 5px; padding-left: 0; }
+
+        /* Main Content Styling */
+        header { padding-bottom: 20px; border-bottom: 1px solid #ddd; margin-bottom: 20px; }
+        header h1 { font-size: 2.8em; margin: 0; color: #3f51b5; }
+        header p.title { font-size: 1.2em; color: #555; margin: 5px 0 0; }
+        .section h2 { color: #3f51b5; border-bottom: 2px solid #3f51b5; padding-bottom: 5px; margin-bottom: 15px; font-size: 1.6em; }
+        .experience-item, .education-item { margin-bottom: 20px; }
+        .item-title { font-weight: bold; color: #333; font-size: 1.1em; }
+        .item-duration { font-style: italic; color: #777; font-size: 0.9em; margin-bottom: 5px; }
+        .job-details li { margin-bottom: 5px; }
+    </style>
+</head>
+<body>
+
+<div class="resume-template">
+    <div class="sidebar">
+        <div class="contact-info">
+            <h2>Kontakt</h2>
+            <p><strong>Telefon:</strong> +1 234 567 890 [cite: 1, 25]</p>
+            <p><strong>Email:</strong> <a href="mailto:johndoe@email.com">johndoe@email.com</a> [cite: 1, 25]</p>
+            <p><strong>Portfolio:</strong> <a href="http://www.johndoeportfolio.com" target="_blank">www.johndoeportfolio.com</a> [cite: 1, 25]</p>
+        </div>
+
+        <div class="skills">
+            <h2>Dovednosti</h2>
+            <ul class="skills-list">
+                <li>Canva [cite: 17, 41]</li>
+                <li>Photoshop [cite: 18, 42]</li>
+                <li>Social Media Strategy [cite: 19, 43]</li>
+                <li>Teamwork [cite: 20, 44]</li>
+            </ul>
+        </div>
+        
+        <div class="education">
+            <h2>Vzdělání</h2>
+            <div class="education-item">
+                <p class="item-title">Bakalářský titul v Marketingu</p>
+                <p class="item-duration">University of Business (2016-2019) [cite: 22, 23, 24, 46, 47, 48]</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <header>
+            <h1>John Doe </h1>
+            <p class="title">Marketing Specialist [cite: 6, 30]</p>
+        </header>
+
+        <section id="about-me" class="section">
+            <h2>O mně</h2>
+            <p>Motivovaný marketingový specialista s 3+ lety zkušeností v tvorbě obsahu a sociálních médiích[cite: 3, 27]. Nadšený pro pomoc firmám růst s moderními strategiemi a kreativními řešeními[cite: 4, 28].</p>
+        </section>
+
+        <section id="experience" class="section">
+            <h2>Pracovní Zkušenosti</h2>
+            <div class="experience-item">
+                <div class="item-title">Marketing Assistant - Company XYZ</div>
+                <div class="item-duration">2020-2022 [cite: 8, 32]</div>
+                <ul class="job-details">
+                    <li>Spravoval kampaně na sociálních médiích (Instagram, Facebook)[cite: 9, 33].</li>
+                    <li>Zlepšil míru zapojení (engagement rate) o 30%[cite: 10, 34].</li>
+                    <li>Vytvářel značkový obsah a vizuály[cite: 11, 35].</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="item-title">Intern - Digital Marketing - ABC Agency</div>
+                <div class="item-duration">2019-2020 [cite: 13, 14, 37, 38]</div>
+                <ul class="job-details">
+                    <li>Asistoval s plánováním kampaní[cite: 15, 39].</li>
+                    <li>Analyzoval zprávy o výkonu[cite: 15, 39].</li>
+                    <li>Podporoval komunikaci s klienty[cite: 15, 39].</li>
+                </ul>
+            </div>
+        </section>
+    </div>
+</div>
+
+</body>
+</html>
