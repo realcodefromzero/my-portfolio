@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Šablona Životopisu 2 (Klasická)</title>
+    <style>
+        body { font-family: Georgia, 'Times New Roman', Times, serif; line-height: 1.6; margin: 0; padding: 20px; background-color: #fcfcfc; }
+        .resume-template { max-width: 750px; margin: 30px auto; background: white; padding: 50px; border: 1px solid #ddd; }
+
+        /* Header Styling */
+        header { text-align: center; margin-bottom: 30px; }
+        header h1 { font-size: 2.5em; margin: 0 0 5px 0; color: #1e3a8a; }
+        header p.title { font-size: 1.1em; color: #4b5563; margin: 0; }
+        .contact-info { font-size: 0.9em; margin-top: 10px; }
+        .contact-info span { margin: 0 8px; }
+        .contact-info a { color: #1e3a8a; text-decoration: none; }
+
+        /* Section Styling */
+        .section { margin-bottom: 25px; }
+        h2 { font-size: 1.5em; color: #1e3a8a; border-bottom: 1px solid #1e3a8a; padding-bottom: 5px; margin-bottom: 15px; }
+        
+        /* Experience and Education Styling */
+        .item-header { display: flex; justify-content: space-between; margin-bottom: 3px; }
+        .item-title { font-weight: bold; color: #333; }
+        .item-duration { font-style: italic; color: #6b7280; }
+        .job-details { margin-top: 5px; padding-left: 20px; }
+        
+        /* Skills Styling */
+        .skills-list { list-style: none; padding: 0; text-align: center; }
+        .skills-list li { display: inline-block; margin: 5px 10px; color: #1e3a8a; }
+        .skills-list li:before { content: "•"; margin-right: 5px; }
+    </style>
+</head>
+<body>
+
+<div class="resume-template">
+
+    <header>
+        <h1>John Doe </h1>
+        <p class="title">Marketing Specialist [cite: 6, 30]</p>
+        <div class="contact-info">
+            <span>+1 234 567 890 [cite: 1, 25]</span> |
+            <a href="mailto:johndoe@email.com">johndoe@email.com</a> [cite: 1, 25] |
+            <a href="http://www.johndoeportfolio.com" target="_blank">www.johndoeportfolio.com</a> [cite: 1, 25]
+        </div>
+    </header>
+
+    <section id="about-me" class="section">
+        <h2>O mně</h2>
+        <p>Motivovaný marketingový specialista s 3+ lety zkušeností v tvorbě obsahu a sociálních médiích[cite: 3, 27]. Nadšený pro pomoc firmám růst s moderními strategiemi a kreativními řešeními[cite: 4, 28].</p>
+    </section>
+
+    <section id="experience" class="section">
+        <h2>Pracovní Zkušenosti</h2>
+        <div class="experience-item">
+            <div class="item-header">
+                <span class="item-title">Marketing Assistant - Company XYZ</span>
+                <span class="item-duration">2020-2022 [cite: 8, 32]</span>
+            </div>
+            <ul class="job-details">
+                <li>Spravoval kampaně na sociálních médiích (Instagram, Facebook)[cite: 9, 33].</li>
+                <li>Zlepšil míru zapojení (engagement rate) o 30%[cite: 10, 34].</li>
+                <li>Vytvářel značkový obsah a vizuály[cite: 11, 35].</li>
+            </ul>
+        </div>
+
+        <div class="experience-item">
+            <div class="item-header">
+                <span class="item-title">Intern - Digital Marketing - ABC Agency</span>
+                <span class="item-duration">2019-2020 [cite: 13, 14, 37, 38]</span>
+            </div>
+            <ul class="job-details">
+                <li>Asistoval s plánováním kampaní[cite: 15, 39].</li>
+                <li>Analyzoval zprávy o výkonu[cite: 15, 39].</li>
+                <li>Podporoval komunikaci s klienty[cite: 15, 39].</li>
+            </ul>
+        </div>
+    </section>
+    
+    <section id="skills" class="section">
+        <h2>Dovednosti</h2>
+        <ul class="skills-list">
+            <li>Canva [cite: 17, 41]</li>
+            <li>Photoshop [cite: 18, 42]</li>
+            <li>Social Media Strategy [cite: 19, 43]</li>
+            <li>Teamwork [cite: 20, 44]</li>
+        </ul>
+    </section>
+    
+    <section id="education" class="section">
+        <h2>Vzdělání</h2>
+        <div class="item-header">
+            <span class="item-title">Bakalářský titul v Marketingu - University of Business</span>
+            <span class="item-duration">2016-2019 [cite: 22, 23, 24, 46, 47, 48]</span>
+        </div>
+    </section>
+
+</div>
+
+</body>
+</html>
