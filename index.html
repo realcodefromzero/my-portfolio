@@ -6,7 +6,6 @@
     <title>NewGenWeb - Building the Future</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
-        /* ==== BARVY A STYL ZŮSTÁVAJÍ PŘESNĚ JAK JSI MĚL ==== */
         :root {
             --primary-bg: #000000;
             --primary-text: #FFFFFF;
@@ -56,18 +55,8 @@
         }
 
         @keyframes neonGlow {
-            from {
-                text-shadow:
-                    0 0 5px var(--primary-text),
-                    0 0 15px var(--accent-blue),
-                    0 0 30px var(--accent-blue);
-            }
-            to {
-                text-shadow:
-                    0 0 10px var(--primary-text),
-                    0 0 30px var(--accent-blue),
-                    0 0 60px var(--accent-blue);
-            }
+            from { text-shadow: 0 0 5px var(--primary-text), 0 0 15px var(--accent-blue), 0 0 30px var(--accent-blue); }
+            to { text-shadow: 0 0 10px var(--primary-text), 0 0 30px var(--accent-blue), 0 0 60px var(--accent-blue); }
         }
 
         header::before {
@@ -142,6 +131,7 @@
 
         #templates { text-align: center; padding: 100px 20px; background: var(--primary-bg); border-top: 1px solid var(--border-color); }
         .templates-links { display: flex; gap: 30px; justify-content: center; margin-top: 50px; flex-wrap: wrap; }
+
         .templates-links a {
             background: var(--accent-blue);
             color: var(--primary-bg);
@@ -150,8 +140,6 @@
             font-weight: bold;
             text-decoration: none;
             transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
             border: 2px solid transparent;
         }
         .templates-links a.buy-button {
@@ -172,37 +160,66 @@
             box-shadow: 0 0 25px rgba(0,240,255,0.7);
         }
 
-        .template-previews {
+        /* Nový grid pro kolekce */
+        .collection-grid {
             display: flex;
-            justify-content: center;
-            gap: 25px;
             flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
             margin-top: 60px;
         }
-        .template-previews img {
-            width: 250px;
-            border-radius: 12px;
+
+        .collection-card {
+            background: var(--card-bg);
             border: 2px solid var(--border-color);
-            box-shadow: 0 0 15px rgba(0,240,255,0.1);
-            transition: all 0.4s ease;
-        }
-        .template-previews img:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 30px rgba(0,240,255,0.6);
+            border-radius: 12px;
+            width: 320px;
+            padding: 30px 20px;
+            text-align: center;
+            transition: 0.4s;
         }
 
-        #contact a { color: var(--accent-blue) !important; text-decoration: none; text-shadow: 0 0 5px rgba(0,240,255,0.5); }
+        .collection-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 0 25px rgba(0,240,255,0.4);
+            border-color: var(--accent-blue);
+        }
+
+        .collection-card h3 {
+            color: var(--accent-blue);
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+        }
+
+        .collection-card p {
+            font-size: 0.95rem;
+            opacity: 0.85;
+            margin-bottom: 20px;
+        }
+
+        .collection-card a {
+            display: block;
+            background: var(--accent-blue);
+            color: var(--primary-bg);
+            margin: 6px auto;
+            padding: 10px 20px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-weight: bold;
+            width: 80%;
+            transition: 0.3s;
+        }
+
+        .collection-card a:hover {
+            background: transparent;
+            color: var(--accent-blue);
+            border: 2px solid var(--accent-blue);
+            box-shadow: 0 0 15px rgba(0,240,255,0.5);
+        }
+
+        #contact a { color: var(--accent-blue); text-decoration: none; text-shadow: 0 0 5px rgba(0,240,255,0.5); }
         footer { background: var(--primary-bg); color: var(--primary-text); text-align: center; padding: 40px 20px; border-top: 1px solid var(--border-color);}
         footer p { font-size: 0.9rem; opacity: 0.7;}
-
-        @media (max-width: 768px) {
-            header h1 { font-size: 4rem; }
-            header p { font-size: 1.2rem; }
-            h2 { font-size: 2.2rem; }
-            .card { width: 100%; max-width: 350px; }
-            .templates-links { flex-direction: column; }
-            .template-previews img { width: 90%; max-width: 350px; }
-        }
     </style>
 </head>
 <body>
@@ -212,49 +229,48 @@
         <p>Building the Future</p>
     </header>
 
-    <!-- ==== ABOUT ==== -->
     <section id="about" class="fade-in">
         <h2>About Me</h2>
         <p>Hi, I’m <b>NewGen</b> — a passionate web designer focused on creating clean, modern, and affordable websites for small businesses, creators and entrepreneurs. I love combining technology and creativity to help people stand out online.</p>
         <br>
-        <p>Besides web design, I also run my digital brand <b>CODEPRINT</b>, where I create professional resume templates and digital tools for students, freelancers and job seekers. My mission is simple — to make quality design accessible to everyone.</p>
+        <p>Besides web design, I also run my digital brand <b>CODEPRINT</b>, where I create professional resume templates and digital tools for students, freelancers and job seekers.</p>
     </section>
 
-    <!-- ==== SERVICES ==== -->
-    <section id="services" class="fade-in">
-        <h2>Services</h2>
-        <div class="services">
-            <div class="card">Business Card Website<br>1–3 pages<br><b>from €70</b></div>
-            <div class="card">Landing Page<br>for a product or service<br><b>from €150</b></div>
-            <div class="card">Website Updates<br>texts, colors, images<br><b>negotiable</b></div>
-        </div>
-    </section>
-
-    <!-- ==== TEMPLATES ==== -->
     <section id="templates" class="fade-in">
         <h2>Resume Templates by CODEPRINT</h2>
-        <p>Explore my modern, easy-to-edit resume templates from <b>CODEPRINT</b> — designed to help you make a powerful first impression and land your dream job. Each template works perfectly in Canva, even with a free account. 👇</p>
+        <p>Explore my modern, easy-to-edit resume templates designed to help you make a strong first impression 👇</p>
 
-        <div class="templates-links">
-            <a href="resume-template1.html" target="_blank">Template 1</a>
-            <a href="resume-template2.html" target="_blank">Template 2</a>
-            <a href="resume-template3.html" target="_blank">Template 3</a>
-            <a href="resume-template4.html" target="_blank">Template 4</a>
-            <a href="https://realcode.gumroad.com/l/resume-pack" target="_blank" class="buy-button">Get Templates Now</a>
+        <div class="collection-grid">
+            <div class="collection-card">
+                <h3>Tech Minimal Pack</h3>
+                <p>Neon futuristic layouts for developers & designers</p>
+                <a href="tech-minimal/tech-blue.html" target="_blank">Blue Neon</a>
+                <a href="tech-minimal/tech-violet.html" target="_blank">Violet Edition</a>
+                <a href="tech-minimal/tech-cyber.html" target="_blank">Cyber Green</a>
+            </div>
+
+            <div class="collection-card">
+                <h3>Business Professional Pack</h3>
+                <p>Clean, formal & corporate-friendly templates</p>
+                <a href="business/business-clean.html" target="_blank">Clean White</a>
+                <a href="business/business-gray.html" target="_blank">Elegant Gray</a>
+                <a href="business/business-modern.html" target="_blank">Modern Accent</a>
+            </div>
+
+            <div class="collection-card">
+                <h3>Creative Hybrid Pack</h3>
+                <p>Colorful, stylish resumes for creators & artists</p>
+                <a href="creative/creative-bright.html" target="_blank">Bright Flow</a>
+                <a href="creative/creative-soft.html" target="_blank">Soft Pastel</a>
+                <a href="creative/creative-gradient.html" target="_blank">Gradient Glow</a>
+            </div>
         </div>
 
-        <!-- ==== MINI PREVIEW OBRÁZKY ==== -->
-        <div class="template-previews">
-            <img src="preview1.jpg" alt="Resume Template 1 Preview">
-            <img src="preview2.jpg" alt="Resume Template 2 Preview">
-            <img src="preview3.jpg" alt="Resume Template 3 Preview">
+        <div style="margin-top:60px;">
+            <a href="https://realcode.gumroad.com/l/resume-pack" target="_blank" class="buy-button">Get Full Bundle</a>
         </div>
-
-        <br><br>
-        <p style="opacity: 0.8; font-size: 0.95rem;">💼 Designed and sold under <b>NewGenWeb × CODEPRINT</b> — building the future, one design at a time.</p>
     </section>
 
-    <!-- ==== CONTACT ==== -->
     <section id="contact" class="fade-in">
         <h2>Contact</h2>
         <p>Email: <a href="mailto:ghostvlasek@gmail.com">ghostvlasek@gmail.com</a></p>
