@@ -1,256 +1,127 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tech Minimal Resume - Marketing Specialist</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <style>
-        /* CSS Proměnné a Styly ZŮSTÁVAJÍ STEJNÉ pro zachování designu */
-        :root {
-            --bg-dark: #0a0a0a;
-            --text-dark: #f5f5f5;
-            --accent: #00f0ff;
-            --subaccent: #8a2be2;
-            --bg-light: #f5f5f5;
-            --text-light: #1a1a1a;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tech Minimal Resume - Violet Theme</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-dark: #0b0012;
+      --text-dark: #f5f5f5;
+      --accent: #b54bff;      /* hlavní fialová */
+      --subaccent: #00f0ff;   /* doplňková azurová */
+      --bg-light: #f5f5f5;
+      --text-light: #1a1a1a;
+    }
 
-        body {
-            font-family: 'Poppins', sans-serif;
-            background: var(--bg-dark);
-            color: var(--text-dark);
-            margin: 0;
-            transition: background 0.3s, color 0.3s;
-        }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: var(--bg-dark);
+      color: var(--text-dark);
+      margin: 0;
+      transition: background 0.3s, color 0.3s;
+    }
 
-        header {
-            text-align: center;
-            padding: 60px 20px 40px;
-        }
+    header { text-align:center; padding:60px 20px 40px; }
+    header h1 {
+      font-size:3rem;
+      letter-spacing:2px;
+      text-transform:uppercase;
+      margin-bottom:10px;
+      color:var(--accent);
+      text-shadow:0 0 8px rgba(181,75,255,0.5);
+    }
+    header h2 { font-weight:400; font-size:1.2rem; color:var(--subaccent); }
 
-        header h1 {
-            font-size: 3rem;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            margin-bottom: 10px;
-            color: var(--accent);
-            text-shadow: 0 0 8px rgba(0, 240, 255, 0.4);
-        }
+    .contact { text-align:center; margin:25px 0; font-size:0.95rem; }
+    .contact a { color:var(--subaccent); margin:0 10px; text-decoration:none; transition:0.3s; }
+    .contact a:hover { text-shadow:0 0 6px var(--subaccent); }
 
-        header h2 {
-            font-weight: 400;
-            font-size: 1.2rem;
-            color: var(--subaccent);
-            letter-spacing: 1px;
-        }
+    section {
+      max-width:800px;
+      margin:60px auto;
+      padding:0 20px;
+      border-left:2px solid rgba(181,75,255,0.25);
+    }
+    section h3 { color:var(--accent); border-bottom:1px solid rgba(255,255,255,0.1); padding-bottom:8px; margin-bottom:25px; }
 
-        .contact {
-            text-align: center;
-            margin: 25px 0;
-            font-size: 0.95rem;
-        }
+    ul { list-style:none; padding:0; }
+    ul li { position:relative; padding-left:1em; margin-bottom:6px; }
+    ul li::before { content:"•"; color:var(--subaccent); position:absolute; left:0; }
 
-        .contact a {
-            color: var(--accent);
-            text-decoration: none;
-            margin: 0 10px;
-            transition: 0.3s;
-        }
+    .skills { display:flex; flex-wrap:wrap; gap:10px; }
+    .skill {
+      background:rgba(0,240,255,0.1);
+      border:1px solid rgba(0,240,255,0.3);
+      color:var(--subaccent);
+      padding:8px 14px;
+      border-radius:20px;
+      font-size:0.9rem;
+    }
 
-        .contact a:hover {
-            text-shadow: 0 0 6px var(--accent);
-        }
+    footer { text-align:center; padding:40px 20px; opacity:0.8; border-top:1px solid rgba(255,255,255,0.1); }
 
-        section {
-            max-width: 800px;
-            margin: 60px auto;
-            padding: 0 20px;
-            border-left: 2px solid rgba(0,240,255,0.2);
-        }
-
-        section h3 {
-            color: var(--accent);
-            font-size: 1.4rem;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-            padding-bottom: 8px;
-            margin-bottom: 25px;
-        }
-
-        .exp-item, .edu-item {
-            margin-bottom: 25px;
-        }
-
-        .exp-item h4, .edu-item h4 {
-            margin: 0;
-            font-weight: 600;
-        }
-
-        .exp-item span, .edu-item span {
-            font-size: 0.9rem;
-            color: var(--subaccent);
-        }
-
-        ul {
-            list-style: none;
-            padding: 0;
-            margin: 10px 0 0;
-        }
-
-        ul li {
-            padding-left: 1em;
-            position: relative;
-            margin-bottom: 6px;
-            opacity: 0.9;
-        }
-
-        ul li::before {
-            content: "•";
-            color: var(--accent);
-            position: absolute;
-            left: 0;
-        }
-
-        .skills {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-
-        .skill {
-            background: rgba(0,240,255,0.1);
-            border: 1px solid rgba(0,240,255,0.3);
-            color: var(--accent);
-            padding: 8px 14px;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            text-shadow: 0 0 3px rgba(0,240,255,0.3);
-        }
-
-        footer {
-            text-align: center;
-            padding: 40px 20px;
-            opacity: 0.8;
-            font-size: 0.9rem;
-            border-top: 1px solid rgba(255,255,255,0.1);
-        }
-
-        /* ==== LIGHT MODE ==== */
-        body.light {
-            background: var(--bg-light);
-            color: var(--text-light);
-        }
-
-        body.light header h1 {
-            color: var(--subaccent);
-            text-shadow: 0 0 8px rgba(138, 43, 226, 0.3);
-        }
-
-        body.light section h3 {
-            color: var(--subaccent);
-            border-color: rgba(0,0,0,0.1);
-        }
-
-        body.light .contact a {
-            color: var(--subaccent);
-        }
-
-        body.light .skill {
-            background: rgba(138, 43, 226, 0.1);
-            border: 1px solid rgba(138, 43, 226, 0.3);
-            color: var(--subaccent);
-            text-shadow: none;
-        }
-
-        /* Toggle button */
-        .theme-toggle {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            background: transparent;
-            border: 1px solid var(--accent);
-            border-radius: 30px;
-            padding: 8px 18px;
-            color: var(--accent);
-            font-weight: bold;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-
-        .theme-toggle:hover {
-            background: var(--accent);
-            color: #000;
-        }
-    </style>
+    /* Tlačítko přepínače */
+    .theme-toggle {
+      position:fixed; top:20px; right:20px;
+      background:transparent;
+      border:1px solid var(--subaccent);
+      border-radius:30px;
+      padding:8px 18px;
+      color:var(--subaccent);
+      font-weight:bold;
+      cursor:pointer;
+      transition:0.3s;
+    }
+    .theme-toggle:hover {
+      background:var(--subaccent); color:#000;
+    }
+  </style>
 </head>
 <body>
 
-    <button class="theme-toggle" onclick="toggleTheme()">🌙 / ☀️</button>
+  <button class="theme-toggle" onclick="toggleTheme()">🌙 / ☀️</button>
 
-    <header>
-        <h1>John Doe</h1>
-        <h2>Marketing Specialist</h2>
-    </header>
+  <header>
+    <h1>Ava Collins</h1>
+    <h2>UI/UX Designer</h2>
+  </header>
 
-    <div class="contact">
-        <a href="mailto:johndoe@email.com">johndoe@email.com</a> |
-        <a href="www.johndoeportfolio.com">www.johndoeportfolio.com</a> |
-        <a href="tel:+1234567890">+1 234 567 890</a>
+  <div class="contact">
+    <a href="mailto:ava.collins@email.com">ava.collins@email.com</a> |
+    <a href="#">www.avacollins.design</a> |
+    <a href="tel:+123456789">+1 234 567 890</a>
+  </div>
+
+  <section>
+    <h3>About Me</h3>
+    <p>Creative designer blending aesthetic appeal with usability. I create interfaces that not only look beautiful but enhance user flow and accessibility.</p>
+  </section>
+
+  <section>
+    <h3>Experience</h3>
+    <div class="exp-item">
+      <h4>Lead UI Designer — Luminex Studio</h4>
+      <span>2021 – Present</span>
+      <ul>
+        <li>Redesigned SaaS dashboard for 10k+ active users.</li>
+        <li>Created unified design system with Figma + Tailwind.</li>
+      </ul>
     </div>
+  </section>
 
-    <section>
-        <h3>About Me</h3>
-        [cite_start]<p>Motivated marketing specialist with 3+ years of experience in content creation and social media[cite: 3]. [cite_start]Passionate about helping businesses grow with modern strategies and creative solutions[cite: 4].</p>
-    </section>
+  <section>
+    <h3>Skills</h3>
+    <div class="skills">
+      <span class="skill">Figma</span><span class="skill">Adobe XD</span><span class="skill">HTML/CSS</span><span class="skill">Prototyping</span><span class="skill">UX Research</span>
+    </div>
+  </section>
 
-    <section>
-        <h3>Experience</h3>
-        <div class="exp-item">
-            <h4>Marketing Assistant — Company XYZ</h4>
-            <span>2020 – 2022</span>
-            <ul>
-                [cite_start]<li>Managed social media campaigns (Instagram, Facebook)[cite: 9].</li>
-                [cite_start]<li>Improved engagement rate by 30%[cite: 10].</li>
-                [cite_start]<li>Created branded content and visuals[cite: 11].</li>
-            </ul>
-        </div>
-        <div class="exp-item">
-            <h4>Intern - Digital Marketing — ABC Agency</h4>
-            <span>2019 – 2020</span>
-            <ul>
-                [cite_start]<li>Assisted with campaign planning[cite: 15].</li>
-                [cite_start]<li>Analyzed performance reports[cite: 15].</li>
-                [cite_start]<li>Supported client communication[cite: 15].</li>
-            </ul>
-        </div>
-    </section>
+  <footer>© 2025 CODEPRINT — Tech Minimal (Violet Edition)</footer>
 
-    <section>
-        <h3>Education</h3>
-        <div class="edu-item">
-            <h4>Bachelor's Degree in Marketing</h4>
-            <span>University of Business — 2016–2019</span>
-        </div>
-    </section>
-
-    <section>
-        <h3>Skills</h3>
-        <div class="skills">
-            [cite_start]<span class="skill">Canva [cite: 17]</span>
-            [cite_start]<span class="skill">Photoshop [cite: 18]</span>
-            [cite_start]<span class="skill">Social Media Strategy [cite: 19]</span>
-            [cite_start]<span class="skill">Teamwork [cite: 20]</span>
-        </div>
-    </section>
-
-    <footer>
-        © 2025 CODEPRINT — Tech Minimal Resume Series
-    </footer>
-
-    <script>
-        function toggleTheme() {
-            document.body.classList.toggle('light');
-        }
-    </script>
+  <script>
+    function toggleTheme(){document.body.classList.toggle('light');}
+  </script>
 </body>
 </html>
