@@ -198,9 +198,24 @@
             overflow: hidden;
             border: 2px solid transparent;
         }
+        
+        /* Dodatečný styl pro Buy Button */
+        .templates-links a.buy-button {
+            background: var(--secondary-accent); /* Používá fialovou pro Buy, aby se odlišil */
+            color: var(--primary-text);
+            border: 2px solid var(--secondary-accent);
+        }
+        
+        .templates-links a.buy-button:hover {
+            background: transparent;
+            color: var(--secondary-accent);
+            border: 2px solid var(--secondary-accent);
+            box-shadow: 0 0 25px rgba(138, 43, 226, 0.7); /* Fialová záře pro Buy */
+        }
+        
 
-        /* Vylepšený Hover Efekt: Neónová Kontura */
-        .templates-links a:hover {
+        /* Vylepšený Hover Efekt pro preview buttony: Neónová Kontura */
+        .templates-links a:not(.buy-button):hover {
             background: transparent;
             color: var(--accent-blue);
             border: 2px solid var(--accent-blue);
@@ -270,13 +285,17 @@
     </section>
 
     <section id="templates" class="fade-in">
-        <h2>My Resume Templates</h2>
-        <p>Check out my clean and professional resume templates 👇</p>
+        <h2>Templates by CODEPRINT</h2>
+        
+        <p>Check out my clean, professional and code-friendly resume templates created under my digital product brand: **CODEPRINT** 👇</p>
+        
         <div class="templates-links">
             <a href="resume-template1.html" target="_blank">Template 1</a>
             <a href="resume-template2.html" target="_blank">Template 2</a>
             <a href="resume-template3.html" target="_blank">Template 3</a>
             <a href="resume-template4.html" target="_blank">Template 4</a>
+            
+            <a href="[ZDE_VLOŽTE_ODKAZ_NA_GUMROAD_NEBO_WHOP]" target="_blank" class="buy-button">Buy Templates Now</a> 
         </div>
     </section>
 
