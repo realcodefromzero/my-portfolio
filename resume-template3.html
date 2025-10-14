@@ -1,83 +1,256 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resume Template 1 (Modern)</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tech Minimal Resume - Marketing Specialist</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; background-color: #f4f4f4; }
-        .resume-template { max-width: 900px; margin: 40px auto; background: white; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); display: flex; }
-        .sidebar { width: 30%; background-color: #3f51b5; color: white; padding: 30px 20px; }
-        .main-content { width: 70%; padding: 30px; }
-        /* Sidebar Styling */
-        .sidebar h2 { color: #ffeb3b; border-bottom: 2px solid #ffeb3b; padding-bottom: 5px; margin-top: 20px; font-size: 1.2em; }
-        .contact-info { margin-bottom: 30px; }
-        .contact-info p { margin: 5px 0; font-size: 0.9em; }
-        .contact-info a { color: white; text-decoration: none; }
-        .skills-list li { list-style-type: none; margin-bottom: 5px; padding-left: 0; }
-        /* Main Content Styling */
-        header { padding-bottom: 20px; border-bottom: 1px solid #ddd; margin-bottom: 20px; }
-        header h1 { font-size: 2.8em; margin: 0; color: #3f51b5; }
-        header p.title { font-size: 1.2em; color: #555; margin: 5px 0 0; }
-        .section h2 { color: #3f51b5; border-bottom: 2px solid #3f51b5; padding-bottom: 5px; margin-bottom: 15px; font-size: 1.6em; }
-        .experience-item, .education-item { margin-bottom: 20px; }
-        .item-title { font-weight: bold; color: #333; font-size: 1.1em; }
-        .item-duration { font-style: italic; color: #777; font-size: 0.9em; margin-bottom: 5px; }
-        .job-details li { margin-bottom: 5px; }
+        /* CSS Proměnné a Styly ZŮSTÁVAJÍ STEJNÉ pro zachování designu */
+        :root {
+            --bg-dark: #0a0a0a;
+            --text-dark: #f5f5f5;
+            --accent: #00f0ff;
+            --subaccent: #8a2be2;
+            --bg-light: #f5f5f5;
+            --text-light: #1a1a1a;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-dark);
+            margin: 0;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        header {
+            text-align: center;
+            padding: 60px 20px 40px;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            color: var(--accent);
+            text-shadow: 0 0 8px rgba(0, 240, 255, 0.4);
+        }
+
+        header h2 {
+            font-weight: 400;
+            font-size: 1.2rem;
+            color: var(--subaccent);
+            letter-spacing: 1px;
+        }
+
+        .contact {
+            text-align: center;
+            margin: 25px 0;
+            font-size: 0.95rem;
+        }
+
+        .contact a {
+            color: var(--accent);
+            text-decoration: none;
+            margin: 0 10px;
+            transition: 0.3s;
+        }
+
+        .contact a:hover {
+            text-shadow: 0 0 6px var(--accent);
+        }
+
+        section {
+            max-width: 800px;
+            margin: 60px auto;
+            padding: 0 20px;
+            border-left: 2px solid rgba(0,240,255,0.2);
+        }
+
+        section h3 {
+            color: var(--accent);
+            font-size: 1.4rem;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding-bottom: 8px;
+            margin-bottom: 25px;
+        }
+
+        .exp-item, .edu-item {
+            margin-bottom: 25px;
+        }
+
+        .exp-item h4, .edu-item h4 {
+            margin: 0;
+            font-weight: 600;
+        }
+
+        .exp-item span, .edu-item span {
+            font-size: 0.9rem;
+            color: var(--subaccent);
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 10px 0 0;
+        }
+
+        ul li {
+            padding-left: 1em;
+            position: relative;
+            margin-bottom: 6px;
+            opacity: 0.9;
+        }
+
+        ul li::before {
+            content: "•";
+            color: var(--accent);
+            position: absolute;
+            left: 0;
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skill {
+            background: rgba(0,240,255,0.1);
+            border: 1px solid rgba(0,240,255,0.3);
+            color: var(--accent);
+            padding: 8px 14px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            text-shadow: 0 0 3px rgba(0,240,255,0.3);
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            opacity: 0.8;
+            font-size: 0.9rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        /* ==== LIGHT MODE ==== */
+        body.light {
+            background: var(--bg-light);
+            color: var(--text-light);
+        }
+
+        body.light header h1 {
+            color: var(--subaccent);
+            text-shadow: 0 0 8px rgba(138, 43, 226, 0.3);
+        }
+
+        body.light section h3 {
+            color: var(--subaccent);
+            border-color: rgba(0,0,0,0.1);
+        }
+
+        body.light .contact a {
+            color: var(--subaccent);
+        }
+
+        body.light .skill {
+            background: rgba(138, 43, 226, 0.1);
+            border: 1px solid rgba(138, 43, 226, 0.3);
+            color: var(--subaccent);
+            text-shadow: none;
+        }
+
+        /* Toggle button */
+        .theme-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: transparent;
+            border: 1px solid var(--accent);
+            border-radius: 30px;
+            padding: 8px 18px;
+            color: var(--accent);
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .theme-toggle:hover {
+            background: var(--accent);
+            color: #000;
+        }
     </style>
 </head>
 <body>
 
-<div class="resume-template">
-    <div class="sidebar">
-        <div class="contact-info">
-            <h2>Contact</h2>
-            <p><strong>Phone:</strong> +1 234 567 890</p>
-            <p><strong>Email:</strong> <a href="mailto:johndoe@email.com">johndoe@email.com</a></p>
-            <p><strong>Portfolio:</strong> <a href="http://www.johndoeportfolio.com" target="_blank">www.johndoeportfolio.com</a></p>
-        </div>
+    <button class="theme-toggle" onclick="toggleTheme()">🌙 / ☀️</button>
 
-        <div class="skills">
-            <h2>Skills</h2>
-            <ul class="skills-list">
-                <li>Canva</li>
-                <li>Photoshop</li>
-                <li>Social Media Strategy</li>
-                <li>Teamwork</li>
-            </ul>
-        </div>
-        
-        <div class="education">
-            <h2>Education</h2>
-            <div class="education-item">
-                <p class="item-title">Bachelor's Degree in Marketing</p>
-                <p class="item-duration">University of Business (2016-2019)</p>
-            </div>
-        </div>
+    <header>
+        <h1>John Doe</h1>
+        <h2>Marketing Specialist</h2>
+    </header>
+
+    <div class="contact">
+        <a href="mailto:johndoe@email.com">johndoe@email.com</a> |
+        <a href="www.johndoeportfolio.com">www.johndoeportfolio.com</a> |
+        <a href="tel:+1234567890">+1 234 567 890</a>
     </div>
 
-    <div class="main-content">
-        <header>
-            <h1>John Doe</h1>
-            <p class="title">Marketing Specialist</p>
-        </header>
+    <section>
+        <h3>About Me</h3>
+        [cite_start]<p>Motivated marketing specialist with 3+ years of experience in content creation and social media[cite: 3]. [cite_start]Passionate about helping businesses grow with modern strategies and creative solutions[cite: 4].</p>
+    </section>
 
-        <section id="about-me" class="section">
-            <h2>About me</h2>
-            <p>Motivated marketing specialist with 3+ years of experience in content creation and social media. Passionate about helping businesses grow with modern strategies and creative solutions.</p>
-        </section>
+    <section>
+        <h3>Experience</h3>
+        <div class="exp-item">
+            <h4>Marketing Assistant — Company XYZ</h4>
+            <span>2020 – 2022</span>
+            <ul>
+                [cite_start]<li>Managed social media campaigns (Instagram, Facebook)[cite: 9].</li>
+                [cite_start]<li>Improved engagement rate by 30%[cite: 10].</li>
+                [cite_start]<li>Created branded content and visuals[cite: 11].</li>
+            </ul>
+        </div>
+        <div class="exp-item">
+            <h4>Intern - Digital Marketing — ABC Agency</h4>
+            <span>2019 – 2020</span>
+            <ul>
+                [cite_start]<li>Assisted with campaign planning[cite: 15].</li>
+                [cite_start]<li>Analyzed performance reports[cite: 15].</li>
+                [cite_start]<li>Supported client communication[cite: 15].</li>
+            </ul>
+        </div>
+    </section>
 
-        <section id="experience" class="section">
-            <h2>Experience</h2>
-            <div class="experience-item">
-                <div class="item-title">Marketing Assistant - Company XYZ</div>
-                <div class="item-duration">2020-2022</div>
-                <ul class="job-details">
-                    <li>Managed social media campaigns (Instagram, Facebook).</li>
-                    <li>Improved engagement rate by 30%.</li>
-                    <li>Created branded content and visuals.</li>
-                </ul>
-            </div>
+    <section>
+        <h3>Education</h3>
+        <div class="edu-item">
+            <h4>Bachelor's Degree in Marketing</h4>
+            <span>University of Business — 2016–2019</span>
+        </div>
+    </section>
 
-            <div class="experience-item">
-                <div
+    <section>
+        <h3>Skills</h3>
+        <div class="skills">
+            [cite_start]<span class="skill">Canva [cite: 17]</span>
+            [cite_start]<span class="skill">Photoshop [cite: 18]</span>
+            [cite_start]<span class="skill">Social Media Strategy [cite: 19]</span>
+            [cite_start]<span class="skill">Teamwork [cite: 20]</span>
+        </div>
+    </section>
+
+    <footer>
+        © 2025 CODEPRINT — Tech Minimal Resume Series
+    </footer>
+
+    <script>
+        function toggleTheme() {
+            document.body.classList.toggle('light');
+        }
+    </script>
+</body>
+</html>
