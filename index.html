@@ -6,22 +6,17 @@
     <title>NewGenWeb - Building the Future</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
-        /* ==== CSS Variables for Easy Customization ==== */
+        /* ==== BARVY A STYL ZŮSTÁVAJÍ PŘESNĚ JAK JSI MĚL ==== */
         :root {
             --primary-bg: #000000;
             --primary-text: #FFFFFF;
-            --accent-blue: #00F0FF; /* Electric Blue */
-            --secondary-accent: #8A2BE2; /* Blue Violet for contrast */
+            --accent-blue: #00F0FF;
+            --secondary-accent: #8A2BE2;
             --card-bg: #0A0A0A;
             --border-color: #1A1A1A;
         }
 
-        /* ==== RESET ==== */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * {margin: 0; padding: 0; box-sizing: border-box;}
         html, body {
             height: 100%;
             scroll-behavior: smooth;
@@ -29,11 +24,9 @@
             color: var(--primary-text);
             font-family: "Poppins", sans-serif;
             overflow-x: hidden;
-            /* Přidáno: Mírná neónová záře na textu, aby ladila s tématem */
             text-shadow: 0 0 1px rgba(255, 255, 255, 0.1);
         }
 
-        /* ==== HERO ==== */
         header {
             height: 100vh;
             display: flex;
@@ -46,11 +39,10 @@
         }
 
         header h1 {
-            font-size: 6rem; /* Mírně zvětšeno */
-            letter-spacing: 5px; /* Mírně zvětšeno */
+            font-size: 6rem;
+            letter-spacing: 5px;
             text-transform: uppercase;
             position: relative;
-            /* Vylepšená neónová animace s akcentní barvou */
             animation: neonGlow 2.5s ease-in-out infinite alternate;
             color: var(--primary-text);
         }
@@ -60,32 +52,31 @@
             margin-top: 25px;
             opacity: 0.9;
             color: var(--accent-blue);
-            text-shadow: 0 0 5px rgba(0, 240, 255, 0.5); /* Přidána záře k podtitulku */
+            text-shadow: 0 0 5px rgba(0, 240, 255, 0.5);
         }
 
         @keyframes neonGlow {
-            from { 
-                text-shadow: 
-                    0 0 5px var(--primary-text), 
-                    0 0 15px var(--accent-blue), 
+            from {
+                text-shadow:
+                    0 0 5px var(--primary-text),
+                    0 0 15px var(--accent-blue),
                     0 0 30px var(--accent-blue);
             }
-            to { 
-                text-shadow: 
-                    0 0 10px var(--primary-text), 
-                    0 0 30px var(--accent-blue), 
+            to {
+                text-shadow:
+                    0 0 10px var(--primary-text),
+                    0 0 30px var(--accent-blue),
                     0 0 60px var(--accent-blue);
             }
         }
 
-        /* Vylepšená animace pozadí (simulace pohybu částic/dat) */
         header::before {
             content: "";
             position: absolute;
             width: 200%;
             height: 200%;
-            background: radial-gradient(circle, rgba(0, 240, 255, 0.1) 0%, transparent 70%); /* Použití akcentní barvy */
-            animation: moveLight 15s linear infinite; /* Zpomaleno pro subtilnější efekt */
+            background: radial-gradient(circle, rgba(0, 240, 255, 0.1) 0%, transparent 70%);
+            animation: moveLight 15s linear infinite;
             z-index: -1;
         }
 
@@ -95,9 +86,8 @@
             100% { transform: translate(-40%, -40%) rotate(360deg); }
         }
 
-        /* ==== SECTION BASE ==== */
         section {
-            min-height: 80vh; /* Sníženo pro lepší tok obsahu */
+            min-height: 80vh;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -107,12 +97,12 @@
         }
 
         h2 {
-            font-size: 3rem; /* Zvětšeno */
+            font-size: 3rem;
             margin-bottom: 30px;
             letter-spacing: 3px;
             text-transform: uppercase;
-            color: var(--accent-blue); /* Hlavní nadpisy v akcentní barvě */
-            border-bottom: 2px solid var(--secondary-accent); /* Mírný oddělovač */
+            color: var(--accent-blue);
+            border-bottom: 2px solid var(--secondary-accent);
             padding-bottom: 10px;
         }
 
@@ -122,75 +112,41 @@
             font-size: 1.1rem;
             opacity: 0.9;
         }
-        
-        /* ==== GLOW ON SCROLL (Zachováno) ==== */
-        .fade-in {
-            opacity: 0;
-            transform: translateY(50px);
-            transition: all 1s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Vylepšený easing */
-        }
 
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
+        .fade-in { opacity: 0; transform: translateY(50px); transition: all 1s cubic-bezier(0.25,0.46,0.45,0.94);}
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
 
-        /* ==== SERVICES (Karty) ==== */
         .services {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
             margin-top: 40px;
-            gap: 30px; /* Zvětšen mezerník */
+            gap: 30px;
         }
 
         .card {
             background: var(--card-bg);
-            border: 2px solid var(--border-color); /* Vylepšený border */
+            border: 2px solid var(--border-color);
             border-radius: 12px;
             padding: 30px 20px;
-            width: 300px; /* Zvětšeno */
+            width: 300px;
             text-align: center;
-            box-shadow: 0 0 10px rgba(0, 240, 255, 0.1); /* Subtilní počáteční záře */
+            box-shadow: 0 0 10px rgba(0, 240, 255, 0.1);
             transition: all 0.4s ease;
             position: relative;
             overflow: hidden;
         }
 
-        .card b {
-            color: var(--accent-blue);
-            text-shadow: 0 0 5px rgba(0, 240, 255, 0.5);
-            font-size: 1.2em;
-        }
+        .card b { color: var(--accent-blue); text-shadow: 0 0 5px rgba(0,240,255,0.5); font-size: 1.2em; }
+        .card:hover { box-shadow: 0 0 35px rgba(0,240,255,0.8); transform: translateY(-8px) scale(1.02); border-color: var(--accent-blue); }
 
-        /* Vylepšený Hover Efekt: Neonová záře a mírné zvětšení */
-        .card:hover {
-            box-shadow: 0 0 35px rgba(0, 240, 255, 0.8);
-            transform: translateY(-8px) scale(1.02);
-            border-color: var(--accent-blue);
-        }
-
-        /* ==== TEMPLATE SECTION ==== */
-        #templates {
-            text-align: center;
-            padding: 100px 20px;
-            background: var(--primary-bg);
-            border-top: 1px solid var(--border-color);
-        }
-
-        .templates-links {
-            display: flex;
-            gap: 30px;
-            justify-content: center;
-            margin-top: 50px;
-            flex-wrap: wrap;
-        }
-
+        #templates { text-align: center; padding: 100px 20px; background: var(--primary-bg); border-top: 1px solid var(--border-color); }
+        .templates-links { display: flex; gap: 30px; justify-content: center; margin-top: 50px; flex-wrap: wrap; }
         .templates-links a {
-            background: var(--accent-blue); /* Tlačítka v akcentní barvě */
+            background: var(--accent-blue);
             color: var(--primary-bg);
             padding: 16px 36px;
-            border-radius: 50px; /* Zaoblenější tlačítka */
+            border-radius: 50px;
             font-weight: bold;
             text-decoration: none;
             transition: all 0.3s ease;
@@ -198,68 +154,54 @@
             overflow: hidden;
             border: 2px solid transparent;
         }
-        
-        /* Dodatečný styl pro Buy Button */
         .templates-links a.buy-button {
-            background: var(--secondary-accent); /* Používá fialovou pro Buy, aby se odlišil */
+            background: var(--secondary-accent);
             color: var(--primary-text);
             border: 2px solid var(--secondary-accent);
         }
-        
         .templates-links a.buy-button:hover {
             background: transparent;
             color: var(--secondary-accent);
             border: 2px solid var(--secondary-accent);
-            box-shadow: 0 0 25px rgba(138, 43, 226, 0.7); /* Fialová záře pro Buy */
+            box-shadow: 0 0 25px rgba(138,43,226,0.7);
         }
-        
-
-        /* Vylepšený Hover Efekt pro preview buttony: Neónová Kontura */
         .templates-links a:not(.buy-button):hover {
             background: transparent;
             color: var(--accent-blue);
             border: 2px solid var(--accent-blue);
-            box-shadow: 0 0 25px rgba(0, 240, 255, 0.7);
-        }
-        
-        /* ==== KONTAKT A PATIČKA ==== */
-        #contact a {
-            color: var(--accent-blue) !important;
-            text-decoration: none;
-            text-shadow: 0 0 5px rgba(0, 240, 255, 0.5);
+            box-shadow: 0 0 25px rgba(0,240,255,0.7);
         }
 
-        footer {
-            background: var(--primary-bg);
-            color: var(--primary-text);
-            text-align: center;
-            padding: 40px 20px;
-            border-top: 1px solid var(--border-color);
+        .template-previews {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
+            margin-top: 60px;
+        }
+        .template-previews img {
+            width: 250px;
+            border-radius: 12px;
+            border: 2px solid var(--border-color);
+            box-shadow: 0 0 15px rgba(0,240,255,0.1);
+            transition: all 0.4s ease;
+        }
+        .template-previews img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 30px rgba(0,240,255,0.6);
         }
 
-        footer p {
-            font-size: 0.9rem;
-            opacity: 0.7;
-        }
+        #contact a { color: var(--accent-blue) !important; text-decoration: none; text-shadow: 0 0 5px rgba(0,240,255,0.5); }
+        footer { background: var(--primary-bg); color: var(--primary-text); text-align: center; padding: 40px 20px; border-top: 1px solid var(--border-color);}
+        footer p { font-size: 0.9rem; opacity: 0.7;}
 
-        /* ==== RESPONZIVITA (doplněno) ==== */
         @media (max-width: 768px) {
-            header h1 {
-                font-size: 4rem;
-            }
-            header p {
-                font-size: 1.2rem;
-            }
-            h2 {
-                font-size: 2.2rem;
-            }
-            .card {
-                width: 100%;
-                max-width: 350px;
-            }
-            .templates-links {
-                flex-direction: column;
-            }
+            header h1 { font-size: 4rem; }
+            header p { font-size: 1.2rem; }
+            h2 { font-size: 2.2rem; }
+            .card { width: 100%; max-width: 350px; }
+            .templates-links { flex-direction: column; }
+            .template-previews img { width: 90%; max-width: 350px; }
         }
     </style>
 </head>
@@ -270,11 +212,15 @@
         <p>Building the Future</p>
     </header>
 
+    <!-- ==== ABOUT ==== -->
     <section id="about" class="fade-in">
         <h2>About Me</h2>
-        <p>Hi, I’m NewGen — a passionate web designer focused on creating clean, modern and affordable websites for small businesses, creators and entrepreneurs. My goal is to build simple but futuristic web experiences that look great on any device.</p>
+        <p>Hi, I’m <b>NewGen</b> — a passionate web designer focused on creating clean, modern, and affordable websites for small businesses, creators and entrepreneurs. I love combining technology and creativity to help people stand out online.</p>
+        <br>
+        <p>Besides web design, I also run my digital brand <b>CODEPRINT</b>, where I create professional resume templates and digital tools for students, freelancers and job seekers. My mission is simple — to make quality design accessible to everyone.</p>
     </section>
 
+    <!-- ==== SERVICES ==== -->
     <section id="services" class="fade-in">
         <h2>Services</h2>
         <div class="services">
@@ -284,25 +230,35 @@
         </div>
     </section>
 
+    <!-- ==== TEMPLATES ==== -->
     <section id="templates" class="fade-in">
-        <h2>Templates by CODEPRINT</h2>
-        
-        <p>Check out my clean, professional and code-friendly resume templates created under my digital product brand: **CODEPRINT** 👇</p>
-        
+        <h2>Resume Templates by CODEPRINT</h2>
+        <p>Explore my modern, easy-to-edit resume templates from <b>CODEPRINT</b> — designed to help you make a powerful first impression and land your dream job. Each template works perfectly in Canva, even with a free account. 👇</p>
+
         <div class="templates-links">
             <a href="resume-template1.html" target="_blank">Template 1</a>
             <a href="resume-template2.html" target="_blank">Template 2</a>
             <a href="resume-template3.html" target="_blank">Template 3</a>
             <a href="resume-template4.html" target="_blank">Template 4</a>
-            
-            <a href="[ZDE_VLOŽTE_ODKAZ_NA_GUMROAD_NEBO_WHOP]" target="_blank" class="buy-button">Buy Templates Now</a> 
+            <a href="https://realcode.gumroad.com/l/resume-pack" target="_blank" class="buy-button">Get Templates Now</a>
         </div>
+
+        <!-- ==== MINI PREVIEW OBRÁZKY ==== -->
+        <div class="template-previews">
+            <img src="preview1.jpg" alt="Resume Template 1 Preview">
+            <img src="preview2.jpg" alt="Resume Template 2 Preview">
+            <img src="preview3.jpg" alt="Resume Template 3 Preview">
+        </div>
+
+        <br><br>
+        <p style="opacity: 0.8; font-size: 0.95rem;">💼 Designed and sold under <b>NewGenWeb × CODEPRINT</b> — building the future, one design at a time.</p>
     </section>
 
+    <!-- ==== CONTACT ==== -->
     <section id="contact" class="fade-in">
         <h2>Contact</h2>
-        <p>Email: <a href="mailto:ghostvlasek@gmail.com" style="color:#fff;">ghostvlasek@gmail.com</a></p>
-        <p>Phone: <a href="tel:+420797808290" style="color:#fff;">+420 797 808 290</a></p>
+        <p>Email: <a href="mailto:ghostvlasek@gmail.com">ghostvlasek@gmail.com</a></p>
+        <p>Phone: <a href="tel:+420797808290">+420 797 808 290</a></p>
     </section>
 
     <footer>
@@ -310,19 +266,15 @@
     </footer>
 
     <script>
-        // Reveal on scroll
         const fadeEls = document.querySelectorAll('.fade-in');
         const observer = new IntersectionObserver(entries => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('visible');
-                    // Odpojení po prvním zobrazení pro optimalizaci výkonu
-                    observer.unobserve(entry.target); 
+                    observer.unobserve(entry.target);
                 }
             });
-        }, {
-            rootMargin: '0px 0px -100px 0px' // Spustí efekt trochu dříve
-        });
+        }, { rootMargin: '0px 0px -100px 0px' });
         fadeEls.forEach(el => observer.observe(el));
     </script>
 </body>
