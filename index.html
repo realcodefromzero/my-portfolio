@@ -1,300 +1,297 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NewGenWeb - Building the Future</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --primary-bg: #000000;
-            --primary-text: #FFFFFF;
-            --accent-blue: #00F0FF;
-            --secondary-accent: #8A2BE2;
-            --card-bg: #0A0A0A;
-            --border-color: #1A1A1A;
-        }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NewGenWeb - Building the Future</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-bg: #000000;
+            --primary-text: #FFFFFF;
+            --accent-blue: #00F0FF;
+            --secondary-accent: #8A2BE2;
+            --card-bg: #0A0A0A;
+            --border-color: #1A1A1A;
+        }
 
-        * {margin: 0; padding: 0; box-sizing: border-box;}
-        html, body {
-            height: 100%;
-            scroll-behavior: smooth;
-            background-color: var(--primary-bg);
-            color: var(--primary-text);
-            font-family: "Poppins", sans-serif;
-            overflow-x: hidden;
-            text-shadow: 0 0 1px rgba(255, 255, 255, 0.1);
-        }
+        * {margin: 0; padding: 0; box-sizing: border-box;}
+        html, body {
+            height: 100%;
+            scroll-behavior: smooth;
+            background-color: var(--primary-bg);
+            color: var(--primary-text);
+            font-family: "Poppins", sans-serif;
+            overflow-x: hidden;
+            text-shadow: 0 0 1px rgba(255, 255, 255, 0.1);
+        }
 
-        header {
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
+        header {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
 
-        header h1 {
-            font-size: 6rem;
-            letter-spacing: 5px;
-            text-transform: uppercase;
-            position: relative;
-            animation: neonGlow 2.5s ease-in-out infinite alternate;
-            color: var(--primary-text);
-        }
+        header h1 {
+            font-size: 6rem;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            position: relative;
+            animation: neonGlow 2.5s ease-in-out infinite alternate;
+            color: var(--primary-text);
+        }
 
-        header p {
-            font-size: 1.6rem;
-            margin-top: 25px;
-            opacity: 0.9;
-            color: var(--accent-blue);
-            text-shadow: 0 0 5px rgba(0, 240, 255, 0.5);
-        }
+        header p {
+            font-size: 1.6rem;
+            margin-top: 25px;
+            opacity: 0.9;
+            color: var(--accent-blue);
+            text-shadow: 0 0 5px rgba(0, 240, 255, 0.5);
+        }
 
-        @keyframes neonGlow {
-            from { text-shadow: 0 0 5px var(--primary-text), 0 0 15px var(--accent-blue), 0 0 30px var(--accent-blue); }
-            to { text-shadow: 0 0 10px var(--primary-text), 0 0 30px var(--accent-blue), 0 0 60px var(--accent-blue); }
-        }
+        @keyframes neonGlow {
+            from { text-shadow: 0 0 5px var(--primary-text), 0 0 15px var(--accent-blue), 0 0 30px var(--accent-blue); }
+            to { text-shadow: 0 0 10px var(--primary-text), 0 0 30px var(--accent-blue), 0 0 60px var(--accent-blue); }
+        }
 
-        header::before {
-            content: "";
-            position: absolute;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(0, 240, 255, 0.1) 0%, transparent 70%);
-            animation: moveLight 15s linear infinite;
-            z-index: -1;
-        }
+        header::before {
+            content: "";
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(0, 240, 255, 0.1) 0%, transparent 70%);
+            animation: moveLight 15s linear infinite;
+            z-index: -1;
+        }
 
-        @keyframes moveLight {
-            0% { transform: translate(-40%, -40%) rotate(0deg); }
-            50% { transform: translate(40%, 40%) rotate(180deg); }
-            100% { transform: translate(-40%, -40%) rotate(360deg); }
-        }
+        @keyframes moveLight {
+            0% { transform: translate(-40%, -40%) rotate(0deg); }
+            50% { transform: translate(40%, 40%) rotate(180deg); }
+            100% { transform: translate(-40%, -40%) rotate(360deg); }
+        }
 
-        section {
-            min-height: 80vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 100px 20px;
-            text-align: center;
-        }
+        section {
+            min-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 100px 20px;
+            text-align: center;
+        }
 
-        h2 {
-            font-size: 3rem;
-            margin-bottom: 30px;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            color: var(--accent-blue);
-            border-bottom: 2px solid var(--secondary-accent);
-            padding-bottom: 10px;
-        }
+        h2 {
+            font-size: 3rem;
+            margin-bottom: 30px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--accent-blue);
+            border-bottom: 2px solid var(--secondary-accent);
+            padding-bottom: 10px;
+        }
 
-        p {
-            max-width: 800px;
-            line-height: 1.8;
-            font-size: 1.1rem;
-            opacity: 0.9;
-        }
+        p {
+            max-width: 800px;
+            line-height: 1.8;
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
 
-        .fade-in { opacity: 0; transform: translateY(50px); transition: all 1s cubic-bezier(0.25,0.46,0.45,0.94);}
-        .fade-in.visible { opacity: 1; transform: translateY(0); }
+        .fade-in { opacity: 0; transform: translateY(50px); transition: all 1s cubic-bezier(0.25,0.46,0.45,0.94);}
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
 
-        .services {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            margin-top: 40px;
-            gap: 30px;
-        }
+        .services {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 40px;
+            gap: 30px;
+        }
 
-        .card {
-            background: var(--card-bg);
-            border: 2px solid var(--border-color);
-            border-radius: 12px;
-            padding: 30px 20px;
-            width: 300px;
-            text-align: center;
-            box-shadow: 0 0 10px rgba(0, 240, 255, 0.1);
-            transition: all 0.4s ease;
-            position: relative;
-            overflow: hidden;
-        }
+        .card {
+            background: var(--card-bg);
+            border: 2px solid var(--border-color);
+            border-radius: 12px;
+            padding: 30px 20px;
+            width: 300px;
+            text-align: center;
+            box-shadow: 0 0 10px rgba(0, 240, 255, 0.1);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
 
-        .card b { color: var(--accent-blue); text-shadow: 0 0 5px rgba(0,240,255,0.5); font-size: 1.2em; }
-        .card:hover { box-shadow: 0 0 35px rgba(0,240,255,0.8); transform: translateY(-8px) scale(1.02); border-color: var(--accent-blue); }
+        .card b { color: var(--accent-blue); text-shadow: 0 0 5px rgba(0,240,255,0.5); font-size: 1.2em; }
+        .card:hover { box-shadow: 0 0 35px rgba(0,240,255,0.8); transform: translateY(-8px) scale(1.02); border-color: var(--accent-blue); }
 
-        #templates { text-align: center; padding: 100px 20px; background: var(--primary-bg); border-top: 1px solid var(--border-color); }
-        .templates-links { display: flex; gap: 30px; justify-content: center; margin-top: 50px; flex-wrap: wrap; }
+        #templates { text-align: center; padding: 100px 20px; background: var(--primary-bg); border-top: 1px solid var(--border-color); }
+        .templates-links { display: flex; gap: 30px; justify-content: center; margin-top: 50px; flex-wrap: wrap; }
 
-        .templates-links a {
-            background: var(--accent-blue);
-            color: var(--primary-bg);
-            padding: 16px 36px;
-            border-radius: 50px;
-            font-weight: bold;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            border: 2px solid transparent;
-        }
-        .templates-links a.buy-button {
-            background: var(--secondary-accent);
-            color: var(--primary-text);
-            border: 2px solid var(--secondary-accent);
-        }
-        .templates-links a.buy-button:hover {
-            background: transparent;
-            color: var(--secondary-accent);
-            border: 2px solid var(--secondary-accent);
-            box-shadow: 0 0 25px rgba(138,43,226,0.7);
-        }
-        .templates-links a:not(.buy-button):hover {
-            background: transparent;
-            color: var(--accent-blue);
-            border: 2px solid var(--accent-blue);
-            box-shadow: 0 0 25px rgba(0,240,255,0.7);
-        }
+        .templates-links a {
+            background: var(--accent-blue);
+            color: var(--primary-bg);
+            padding: 16px 36px;
+            border-radius: 50px;
+            font-weight: bold;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+        .templates-links a.buy-button {
+            background: var(--secondary-accent);
+            color: var(--primary-text);
+            border: 2px solid var(--secondary-accent);
+        }
+        .templates-links a.buy-button:hover {
+            background: transparent;
+            color: var(--secondary-accent);
+            border: 2px solid var(--secondary-accent);
+            box-shadow: 0 0 25px rgba(138,43,226,0.7);
+        }
+        .templates-links a:not(.buy-button):hover {
+            background: transparent;
+            color: var(--accent-blue);
+            border: 2px solid var(--accent-blue);
+            box-shadow: 0 0 25px rgba(0,240,255,0.7);
+        }
 
-        /* Nový grid pro kolekce */
-        .collection-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 30px;
-            justify-content: center;
-            margin-top: 60px;
-        }
+        /* Nový grid pro kolekce */
+        .collection-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
+            margin-top: 60px;
+        }
 
-        .collection-card {
-            background: var(--card-bg);
-            border: 2px solid var(--border-color);
-            border-radius: 12px;
-            width: 320px;
-            padding: 30px 20px;
-            text-align: center;
-            transition: 0.4s;
-        }
+        .collection-card {
+            background: var(--card-bg);
+            border: 2px solid var(--border-color);
+            border-radius: 12px;
+            width: 320px;
+            padding: 30px 20px;
+            text-align: center;
+            transition: 0.4s;
+        }
 
-        .collection-card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 0 25px rgba(0,240,255,0.4);
-            border-color: var(--accent-blue);
-        }
+        .collection-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 0 25px rgba(0,240,255,0.4);
+            border-color: var(--accent-blue);
+        }
 
-        .collection-card h3 {
-            color: var(--accent-blue);
-            font-size: 1.4rem;
-            margin-bottom: 10px;
-        }
+        .collection-card h3 {
+            color: var(--accent-blue);
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+        }
 
-        .collection-card p {
-            font-size: 0.95rem;
-            opacity: 0.85;
-            margin-bottom: 20px;
-        }
+        .collection-card p {
+            font-size: 0.95rem;
+            opacity: 0.85;
+            margin-bottom: 20px;
+        }
 
-        .collection-card a {
-            display: block;
-            background: var(--accent-blue);
-            color: var(--primary-bg);
-            margin: 6px auto;
-            padding: 10px 20px;
-            border-radius: 20px;
-            text-decoration: none;
-            font-weight: bold;
-            width: 80%;
-            transition: 0.3s;
-        }
+        .collection-card a {
+            display: block;
+            background: var(--accent-blue);
+            color: var(--primary-bg);
+            margin: 6px auto;
+            padding: 10px 20px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-weight: bold;
+            width: 80%;
+            transition: 0.3s;
+        }
 
-        .collection-card a:hover {
-            background: transparent;
-            color: var(--accent-blue);
-            border: 2px solid var(--accent-blue);
-            box-shadow: 0 0 15px rgba(0,240,255,0.5);
-        }
+        .collection-card a:hover {
+            background: transparent;
+            color: var(--accent-blue);
+            border: 2px solid var(--accent-blue);
+            box-shadow: 0 0 15px rgba(0,240,255,0.5);
+        }
 
-        #contact a { color: var(--accent-blue); text-decoration: none; text-shadow: 0 0 5px rgba(0,240,255,0.5); }
-        footer { background: var(--primary-bg); color: var(--primary-text); text-align: center; padding: 40px 20px; border-top: 1px solid var(--border-color);}
-        footer p { font-size: 0.9rem; opacity: 0.7;}
-    </style>
+        #contact a { color: var(--accent-blue); text-decoration: none; text-shadow: 0 0 5px rgba(0,240,255,0.5); }
+        footer { background: var(--primary-bg); color: var(--primary-text); text-align: center; padding: 40px 20px; border-top: 1px solid var(--border-color);}
+        footer p { font-size: 0.9rem; opacity: 0.7;}
+    </style>
 </head>
 <body>
 
-    <header>
-        <h1>NewGenWeb</h1>
-        <p>Building the Future</p>
-    </header>
+    <header>
+        <h1>NewGenWeb</h1>
+        <p>Building the Future</p>
+    </header>
 
-    <section id="about" class="fade-in">
-        <h2>About Me</h2>
-        <p>Hi, I’m <b>NewGen</b> — a passionate web designer focused on creating clean, modern, and affordable websites for small businesses, creators and entrepreneurs. I love combining technology and creativity to help people stand out online.</p>
-        <br>
-        <p>Besides web design, I also run my digital brand <b>CODEPRINT</b>, where I create professional resume templates and digital tools for students, freelancers and job seekers.</p>
-    </section>
+    <section id="about" class="fade-in">
+        <h2>About Me</h2>
+        <p>Hi, I’m <b>NewGen</b> — a passionate web designer focused on creating clean, modern, and affordable websites for small businesses, creators and entrepreneurs. I love combining technology and creativity to help people stand out online.</p>
+        <br>
+        <p>Besides web design, I also run my digital brand <b>CODEPRINT</b>, where I create professional resume templates and digital tools for students, freelancers and job seekers.</p>
+    </section>
 
-    <section id="templates" class="fade-in">
-        <h2>Resume Templates by CODEPRINT</h2>
-        <p>Explore my modern, easy-to-edit resume templates designed to help you make a strong first impression 👇</p>
+    <section id="templates" class="fade-in">
+        <h2>Resume Templates by CODEPRINT</h2>
+        <p>Explore my modern, easy-to-edit resume templates designed to help you make a strong first impression 👇</p>
 
-        <div class="collection-grid">
-            <div class="collection-card">
-                <h3>Tech Minimal Pack</h3>
-                <p>Neon futuristic layouts for developers & designers</p>
-                <a href="tech-minimal/tech-blue.html" target="_blank">Blue Neon</a>
-                <a href="tech-minimal/tech-violet.html" target="_blank">Violet Edition</a>
-                <a href="tech-minimal/tech-cyber.html" target="_blank">Cyber Green</a>
-            </div>
+        <div class="collection-grid">
+            <div class="collection-card">
+                <h3>Tech Minimal Pack</h3>
+                <p>Neon futuristic layouts for developers & designers</p>
+                                <a href="./tech-minimal/tech-blue.html" target="_blank">Blue Neon</a>
+                <a href="./tech-minimal/tech-violet.html" target="_blank">Violet Edition</a>
+                <a href="./tech-minimal/tech-cyber.html" target="_blank">Cyber Green</a>
+            </div>
 
-            <div class="collection-card">
-                <h3>Business Professional Pack</h3>
-                <p>Clean, formal & corporate-friendly templates</p>
-                <a href="business/business-clean.html" target="_blank">Clean White</a>
-                <a href="business/business-gray.html" target="_blank">Elegant Gray</a>
-                <a href="business/business-modern.html" target="_blank">Modern Accent</a>
-            </div>
+            <div class="collection-card">
+                <h3>Business Professional Pack</h3>
+                <p>Clean, formal & corporate-friendly templates</p>
+                                <a href="./business/business-clean.html" target="_blank">Clean White</a>
+                <a href="./business/business-gray.html" target="_blank">Elegant Gray</a>
+                <a href="./business/business-modern.html" target="_blank">Modern Accent</a>
+            </div>
 
-            <div class="collection-card">
-                <h3>Creative Hybrid Pack</h3>
-                <p>Colorful, stylish resumes for creators & artists</p>
-                <a href="creative/creative-bright.html" target="_blank">Bright Flow</a>
-                <a href="creative/creative-soft.html" target="_blank">Soft Pastel</a>
-                <a href="creative/creative-gradient.html" target="_blank">Gradient Glow</a>
-            </div>
-        </div>
+            <div class="collection-card">
+                <h3>Creative Hybrid Pack</h3>
+                <p>Colorful, stylish resumes for creators & artists</p>
+                <a href="./creative/creative-bright.html" target="_blank">Bright Flow</a>
+                <a href="./creative/creative-soft.html" target="_blank">Soft Pastel</a>
+                <a href="./creative/creative-gradient.html" target="_blank">Gradient Glow</a>
+            </div>
+        </div>
 
-        <div style="margin-top:60px;">
-            <a href="https://realcode.gumroad.com/l/resume-pack" target="_blank" class="buy-button">Get Full Bundle</a>
-        </div>
-    </section>
+        <div style="margin-top:60px;">
+            <a href="https://realcode.gumroad.com/l/resume-pack" target="_blank" class="buy-button">Get Full Bundle</a>
+        </div>
+    </section>
 
-    <section id="contact" class="fade-in">
-        <h2>Contact</h2>
-        <p>Email: <a href="mailto:ghostvlasek@gmail.com">ghostvlasek@gmail.com</a></p>
-        <p>Phone: <a href="tel:+420797808290">+420 797 808 290</a></p>
-    </section>
+    <section id="contact" class="fade-in">
+        <h2>Contact</h2>
+        <p>Email: <a href="mailto:ghostvlasek@gmail.com">ghostvlasek@gmail.com</a></p>
+        <p>Phone: <a href="tel:+420797808290">+420 797 808 290</a></p>
+    </section>
 
-    <footer>
-        <p>© 2025 NewGenWeb — Built with passion 💻</p>
-    </footer>
+    <footer>
+        <p>© 2025 NewGenWeb — Built with passion 💻</p>
+    </footer>
 
-    <script>
-        const fadeEls = document.querySelectorAll('.fade-in');
-        const observer = new IntersectionObserver(entries => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, { rootMargin: '0px 0px -100px 0px' });
-        fadeEls.forEach(el => observer.observe(el));
-    </script>
+    <script>
+        const fadeEls = document.querySelectorAll('.fade-in');
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { rootMargin: '0px 0px -100px 0px' });
+        fadeEls.forEach(el => observer.observe(el));
+    </script>
 </body>
 </html>
-
-
-
