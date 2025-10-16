@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tech Minimal Resume - Cyber Green</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg-dark:#000a00;
+  --text-dark:#e6ffe6;
+  --accent:#00ff88;
+  --subaccent:#00ffcc;
+}
+body{font-family:'Poppins',sans-serif;background:var(--bg-dark);color:var(--text-dark);margin:0;}
+header{text-align:center;padding:60px 20px 40px;}
+header h1{font-size:3rem;text-transform:uppercase;color:var(--accent);text-shadow:0 0 10px rgba(0,255,136,0.5);}
+header h2{font-weight:400;color:var(--subaccent);}
+.contact{text-align:center;margin:25px 0;font-size:0.95rem;}
+.contact a{color:var(--subaccent);margin:0 10px;text-decoration:none;}
+section{max-width:800px;margin:60px auto;padding:0 20px;border-left:2px solid rgba(0,255,136,0.3);}
+section h3{color:var(--accent);border-bottom:1px solid rgba(255,255,255,0.1);padding-bottom:8px;margin-bottom:25px;}
+ul{list-style:none;padding:0;}ul li{padding-left:1em;position:relative;margin-bottom:6px;}ul li::before{content:">";color:var(--subaccent);position:absolute;left:0;}
+.skills{display:flex;flex-wrap:wrap;gap:10px;}
+.skill{background:rgba(0,255,136,0.1);border:1px solid rgba(0,255,136,0.3);color:var(--accent);padding:8px 14px;border-radius:20px;font-size:0.9rem;}
+footer{text-align:center;padding:40px 20px;opacity:0.8;border-top:1px solid rgba(255,255,255,0.1);}
+</style>
+</head>
+<body>
+<header>
+  <h1>Marcus Reed</h1>
+  <h2>Cybersecurity Engineer</h2>
+</header>
+
+<div class="contact">
+  <a href="mailto:marcus.reed@email.com">marcus.reed@email.com</a> |
+  <a href="#">marcusreed.dev</a> |
+  <a href="tel:+123456789">+1 234 567 890</a>
+</div>
+
+<section>
+  <h3>About Me</h3>
+  <p>Cybersecurity professional with a passion for safeguarding digital infrastructures and identifying vulnerabilities before attackers do. Analytical thinker and continuous learner.</p>
+</section>
+
+<section>
+  <h3>Experience</h3>
+  <div class="exp-item">
+    <h4>Security Engineer — HexaTech</h4>
+    <span>2021 – Present</span>
+    <ul>
+      <li>Implemented real-time monitoring tools to detect threats.</li>
+      <li>Performed penetration tests and risk assessments.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <h3>Skills</h3>
+  <div class="skills">
+    <span class="skill">Network Security</span><span class="skill">Python</span><span class="skill">Linux</span><span class="skill">PenTesting</span><span class="skill">SIEM</span>
+  </div>
+</section>
+
+<footer>© 2025 CODEPRINT — Tech Minimal (Cyber Edition)</footer>
+</body>
+</html>
