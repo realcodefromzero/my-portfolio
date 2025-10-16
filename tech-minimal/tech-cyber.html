@@ -1,67 +1,182 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="cs">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>Tech Minimal Resume - Cyber Green</title>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 <style>
-:root {
-  --bg-dark:#000a00;
-  --text-dark:#e6ffe6;
-  --accent:#00ff88;
-  --subaccent:#00ffcc;
+:root{
+  --bg-1: #030807;
+  --bg-2: #02110a;
+  --panel: rgba(10,15,12,0.6);
+  --accent: #00ff88;
+  --accent-2: #00ffd8;
+  --muted: #98ffbf;
+  --glass: rgba(255,255,255,0.03);
+  --radius: 14px;
+  --maxw: 960px;
 }
-body{font-family:'Poppins',sans-serif;background:var(--bg-dark);color:var(--text-dark);margin:0;}
-header{text-align:center;padding:60px 20px 40px;}
-header h1{font-size:3rem;text-transform:uppercase;color:var(--accent);text-shadow:0 0 10px rgba(0,255,136,0.5);}
-header h2{font-weight:400;color:var(--subaccent);}
-.contact{text-align:center;margin:25px 0;font-size:0.95rem;}
-.contact a{color:var(--subaccent);margin:0 10px;text-decoration:none;}
-section{max-width:800px;margin:60px auto;padding:0 20px;border-left:2px solid rgba(0,255,136,0.3);}
-section h3{color:var(--accent);border-bottom:1px solid rgba(255,255,255,0.1);padding-bottom:8px;margin-bottom:25px;}
-ul{list-style:none;padding:0;}ul li{padding-left:1em;position:relative;margin-bottom:6px;}ul li::before{content:">";color:var(--subaccent);position:absolute;left:0;}
-.skills{display:flex;flex-wrap:wrap;gap:10px;}
-.skill{background:rgba(0,255,136,0.1);border:1px solid rgba(0,255,136,0.3);color:var(--accent);padding:8px 14px;border-radius:20px;font-size:0.9rem;}
-footer{text-align:center;padding:40px 20px;opacity:0.8;border-top:1px solid rgba(255,255,255,0.1);}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;font-family:"Poppins",sans-serif;background:
+  radial-gradient(1200px 600px at 10% 10%, rgba(0,255,136,0.03), transparent),
+  linear-gradient(180deg,var(--bg-1),var(--bg-2));
+  color:var(--muted);-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;
+}
+
+/* layout */
+.container{max-width:var(--maxw);margin:36px auto;padding:28px;display:grid;grid-template-columns: 1fr 320px;gap:28px;}
+@media (max-width:900px){.container{grid-template-columns:1fr;padding:18px} .sidebar{order:2} .main{order:1}}
+
+/* main card */
+.card{
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border: 1px solid rgba(0,255,136,0.08);
+  border-radius: var(--radius);
+  padding:22px;
+  box-shadow: 0 8px 40px rgba(0,255,136,0.03);
+}
+
+/* header */
+.header{
+  display:flex;align-items:center;gap:18px;margin-bottom:14px;
+}
+.avatar{
+  width:84px;height:84px;border-radius:50%;overflow:hidden;border:3px solid rgba(0,255,136,0.18);
+  background:linear-gradient(135deg, rgba(0,255,136,0.06), rgba(0,255,216,0.03));flex-shrink:0;
+  display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--accent);
+}
+.name{
+  line-height:1;
+}
+.name h1{font-size:1.5rem;margin:0;background:linear-gradient(90deg,var(--accent),var(--accent-2));-webkit-background-clip:text;color:transparent;letter-spacing:1px}
+.name .role{color:rgba(255,255,255,0.75);font-size:0.95rem;margin-top:6px}
+
+/* contact */
+.contact{margin:8px 0 18px;font-size:0.95rem;color:rgba(255,255,255,0.75)}
+.contact a{color:var(--accent-2);text-decoration:none;margin-right:10px}
+
+/* sections */
+.section{margin-bottom:18px}
+.section h3{display:flex;align-items:center;gap:10px;margin:0 0 12px 0;color:var(--accent);font-size:1.02rem;border-left:4px solid rgba(0,255,136,0.12);padding-left:12px}
+.section p{color:rgba(255,255,255,0.82);line-height:1.6;margin:0}
+
+/* experience */
+.exp-item{margin-bottom:12px;padding:12px;border-radius:10px;background:linear-gradient(180deg, rgba(0,0,0,0.02), rgba(255,255,255,0.01));border:1px solid rgba(255,255,255,0.02)}
+.exp-item h4{margin:0;color:var(--muted);font-size:1rem}
+.exp-item .meta{font-size:0.85rem;color:rgba(255,255,255,0.6);margin-top:6px}
+.exp-item ul{margin:8px 0 0 0;padding-left:18px;color:rgba(255,255,255,0.85)}
+.exp-item li{margin-bottom:6px}
+
+/* skills badges */
+.skills{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.badge{padding:6px 12px;border-radius:999px;background:linear-gradient(90deg, rgba(0,255,136,0.06), rgba(0,255,216,0.03));color:var(--accent);border:1px solid rgba(0,255,136,0.08);font-weight:600;font-size:0.9rem}
+
+/* sidebar */
+.sidebar{display:flex;flex-direction:column;gap:16px}
+.panel{background:var(--panel);padding:16px;border-radius:12px;border:1px solid rgba(255,255,255,0.02)}
+.side-title{font-weight:700;color:var(--accent);margin-bottom:8px}
+.info-row{display:flex;align-items:center;gap:10px;font-size:0.95rem;color:rgba(255,255,255,0.9);margin-bottom:8px}
+.info-row span{color:rgba(255,255,255,0.75)}
+.resume-download{display:inline-block;margin-top:10px;padding:10px 14px;border-radius:999px;background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#001; font-weight:700;text-decoration:none;}
+
+/* subtle neon line decoration */
+.neon-line{height:3px;border-radius:3px;background:linear-gradient(90deg, rgba(0,255,136,0.0), rgba(0,255,136,0.25), rgba(0,255,216,0.0));margin:18px 0}
+
+/* small print / footer */
+footer{margin-top:18px;text-align:center;color:rgba(255,255,255,0.5);font-size:0.85rem}
+
+/* print */
+@media print{
+  body{background:#fff;color:#000}
+  .container{box-shadow:none}
+  .avatar{border-color:#000}
+  .resume-download{display:none}
+}
 </style>
 </head>
 <body>
-<header>
-  <h1>Marcus Reed</h1>
-  <h2>Cybersecurity Engineer</h2>
-</header>
+<div class="container">
+  <main class="main">
+    <div class="card">
+      <div class="header">
+        <div class="avatar">MR</div>
+        <div class="name">
+          <h1>Marcus Reed</h1>
+          <div class="role">Cybersecurity Engineer</div>
+        </div>
+      </div>
 
-<div class="contact">
-  <a href="mailto:marcus.reed@email.com">marcus.reed@email.com</a> |
-  <a href="#">marcusreed.dev</a> |
-  <a href="tel:+123456789">+1 234 567 890</a>
+      <div class="contact">
+        <a href="mailto:marcus.reed@email.com">✉️ marcus.reed@email.com</a>
+        <a href="#" target="_blank">🌐 marcusreed.dev</a>
+        <a href="tel:+123456789">📞 +1 234 567 890</a>
+      </div>
+
+      <div class="neon-line"></div>
+
+      <section class="section">
+        <h3>About</h3>
+        <p>Cybersecurity professional with a passion for safeguarding digital infrastructures, rapid incident response and continuous improvement. Focus on pragmatic solutions and secure-by-design principles.</p>
+      </section>
+
+      <section class="section">
+        <h3>Experience</h3>
+        <div class="exp-item">
+          <h4>Security Engineer — HexaTech</h4>
+          <div class="meta">2021 – Present</div>
+          <ul>
+            <li>Implemented real-time monitoring and alerting to reduce MTTR.</li>
+            <li>Performed penetration tests and remediated critical vulnerabilities.</li>
+          </ul>
+        </div>
+
+        <div class="exp-item">
+          <h4>Junior Analyst — Sentra Labs</h4>
+          <div class="meta">2019 – 2021</div>
+          <ul>
+            <li>Operated SIEM, tuned detection rules and investigated incidents.</li>
+            <li>Automated routine tasks with Python scripts.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="section">
+        <h3>Education</h3>
+        <p>B.Sc. Cybersecurity (in progress) • Relevant courses: Network Security, OSINT, Crypto fundamentals.</p>
+      </section>
+    </div>
+
+    <footer>© 2025 CODEPRINT — Tech Minimal (Cyber Edition)</footer>
+  </main>
+
+  <aside class="sidebar">
+    <div class="panel">
+      <div class="side-title">Skills</div>
+      <div class="skills">
+        <div class="badge">Network Security</div>
+        <div class="badge">Python</div>
+        <div class="badge">Linux</div>
+        <div class="badge">PenTesting</div>
+        <div class="badge">SIEM</div>
+      </div>
+      <a class="resume-download" href="#" download>Download PDF</a>
+    </div>
+
+    <div class="panel">
+      <div class="side-title">Contact</div>
+      <div class="info-row">📧 <span>marcus.reed@email.com</span></div>
+      <div class="info-row">🔗 <span><a href="#" style="color:var(--accent-2);text-decoration:none">marcusreed.dev</a></span></div>
+      <div class="info-row">📞 <span>+1 234 567 890</span></div>
+    </div>
+
+    <div class="panel">
+      <div class="side-title">Tools</div>
+      <div class="info-row"><span>VS Code</span></div>
+      <div class="info-row"><span>Burp Suite</span></div>
+      <div class="info-row"><span>Wireshark</span></div>
+    </div>
+  </aside>
 </div>
-
-<section>
-  <h3>About Me</h3>
-  <p>Cybersecurity professional with a passion for safeguarding digital infrastructures and identifying vulnerabilities before attackers do. Analytical thinker and continuous learner.</p>
-</section>
-
-<section>
-  <h3>Experience</h3>
-  <div class="exp-item">
-    <h4>Security Engineer — HexaTech</h4>
-    <span>2021 – Present</span>
-    <ul>
-      <li>Implemented real-time monitoring tools to detect threats.</li>
-      <li>Performed penetration tests and risk assessments.</li>
-    </ul>
-  </div>
-</section>
-
-<section>
-  <h3>Skills</h3>
-  <div class="skills">
-    <span class="skill">Network Security</span><span class="skill">Python</span><span class="skill">Linux</span><span class="skill">PenTesting</span><span class="skill">SIEM</span>
-  </div>
-</section>
-
-<footer>© 2025 CODEPRINT — Tech Minimal (Cyber Edition)</footer>
 </body>
 </html>
