@@ -1,0 +1,11 @@
+.brand img {
+  height: 70px;
+  width: auto;
+  filter: drop-shadow(0 0 10px rgba(138, 43, 226, 0.6)) drop-shadow(0 0 15px rgba(0, 240, 255, 0.4));
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.brand img:hover {
+  transform: scale(1.05);
+  filter: drop-shadow(0 0 15px rgba(138, 43, 226, 0.8)) drop-shadow(0 0 25px rgba(0, 240, 255, 0.6));
+}
