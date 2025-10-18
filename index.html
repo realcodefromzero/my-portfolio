@@ -1,13 +1,18 @@
-<!-- ...existing code... -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>NewGenWeb - Building the Future</title>
-<link rel="icon" type="image/png" href="assets/favicon.png">
+<title>CODEPRINT — Modern Resume Templates</title>
+
+<!-- ✅ Minimalistická favicon -->
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+
+<!-- ✅ Styl loga (pokud budeš mít externí soubor) -->
 <link rel="stylesheet" href="assets/logo.css">
+
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+
 <style>
     :root {
         --primary-bg: #000000;
@@ -41,7 +46,6 @@
         gap: 12px;
     }
 
-    /* logo + title row */
     .brand {
       display:flex;
       align-items:center;
@@ -49,6 +53,7 @@
       justify-content:center;
     }
     .brand img{height:56px;display:block}
+
     header h1 {
         font-size: 4.25rem;
         letter-spacing: 5px;
@@ -118,62 +123,6 @@
     .fade-in { opacity: 0; transform: translateY(50px); transition: all 1s cubic-bezier(0.25,0.46,0.45,0.94);}
     .fade-in.visible { opacity: 1; transform: translateY(0); }
 
-    .services {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        margin-top: 40px;
-        gap: 30px;
-    }
-
-    .card {
-        background: var(--card-bg);
-        border: 2px solid var(--border-color);
-        border-radius: 12px;
-        padding: 30px 20px;
-        width: 300px;
-        text-align: center;
-        box-shadow: 0 0 10px rgba(0, 240, 255, 0.1);
-        transition: all 0.4s ease;
-        position: relative;
-        overflow: hidden;
-    }
-
-    .card b { color: var(--accent-blue); text-shadow: 0 0 5px rgba(0,240,255,0.5); font-size: 1.2em; }
-    .card:hover { box-shadow: 0 0 35px rgba(0,240,255,0.8); transform: translateY(-8px) scale(1.02); border-color: var(--accent-blue); }
-
-    #templates { text-align: center; padding: 100px 20px; background: var(--primary-bg); border-top: 1px solid var(--border-color); }
-    .templates-links { display: flex; gap: 30px; justify-content: center; margin-top: 50px; flex-wrap: wrap; }
-
-    .templates-links a {
-        background: var(--accent-blue);
-        color: var(--primary-bg);
-        padding: 16px 36px;
-        border-radius: 50px;
-        font-weight: bold;
-        text-decoration: none;
-        transition: all 0.3s ease;
-        border: 2px solid transparent;
-    }
-    .templates-links a.buy-button {
-        background: var(--secondary-accent);
-        color: var(--primary-text);
-        border: 2px solid var(--secondary-accent);
-    }
-    .templates-links a.buy-button:hover {
-        background: transparent;
-        color: var(--secondary-accent);
-        border: 2px solid var(--secondary-accent);
-        box-shadow: 0 0 25px rgba(138,43,226,0.7);
-    }
-    .templates-links a:not(.buy-button):hover {
-        background: transparent;
-        color: var(--accent-blue);
-        border: 2px solid var(--accent-blue);
-        box-shadow: 0 0 25px rgba(0,240,255,0.7);
-    }
-
-    /* Nový grid pro kolekce */
     .collection-grid {
         display: flex;
         flex-wrap: wrap;
@@ -230,77 +179,35 @@
         box-shadow: 0 0 15px rgba(0,240,255,0.5);
     }
 
-    /* preview popup */
-    #preview-popup {
-      position: fixed;
-      pointer-events: none;
-      display: none;
-      z-index: 9999;
-      width: 360px;
-      max-width: 42vw;
-      border-radius: 10px;
-      overflow: hidden;
-      border: 2px solid rgba(0,240,255,0.12);
-      box-shadow: 0 12px 40px rgba(0,240,255,0.12);
-      background: linear-gradient(180deg, rgba(0,0,0,0.7), rgba(0,0,0,0.45));
-    }
-    #preview-popup img{width:100%;height:auto;display:block}
-    #preview-popup.show{display:block;pointer-events:none;transform:translateY(-6px);transition:transform .12s ease}
-
-    a.preview-link { position:relative; transition: color 0.18s; }
-    a.preview-link:hover { color: var(--accent-blue); text-decoration:none; }
-
     #contact a { color: var(--accent-blue); text-decoration: none; text-shadow: 0 0 5px rgba(0,240,255,0.5); }
     footer { background: var(--primary-bg); color: var(--primary-text); text-align: center; padding: 40px 20px; border-top: 1px solid var(--border-color);}
     footer p { font-size: 0.9rem; opacity: 0.7;}
 </style>
 </head>
+
 <body>
 
     <header>
       <div class="brand">
         <img src="assets/logo.svg" alt="CODEPRINT logo">
         <div>
-          <h1>NewGenWeb</h1>
-          <p>Building the Future</p>
+          <h1>CODEPRINT</h1>
+          <p>Modern Resume Templates</p>
         </div>
       </div>
     </header>
 
-    <section id="about" class="fade-in">
-        <h2>About Me</h2>
-        <p>Hi, I’m <b>NewGen</b> — a passionate web designer focused on creating clean, modern, and affordable websites for small businesses, creators and entrepreneurs. I love combining technology and creativity to help people stand out online.</p>
-        <br>
-        <p>Besides web design, I also run my digital brand <b>CODEPRINT</b>, where I create professional resume templates and digital tools for students, freelancers and job seekers.</p>
-    </section>
-
     <section id="templates" class="fade-in">
-        <h2>Resume Templates by CODEPRINT</h2>
-        <p>Explore my modern, easy-to-edit resume templates designed to help you make a strong first impression 👇</p>
+        <h2>Resume Templates</h2>
+        <p>Explore our modern, easy-to-edit resume templates — built for developers, designers, and creators.</p>
 
         <div class="collection-grid">
             <div class="collection-card">
                 <h3>Tech Minimal Pack</h3>
                 <p>Neon futuristic layouts for developers & designers</p>
-                <a class="preview-link" href="tech-minimal/tech-blue.html" target="_blank" data-preview="preview/tech-blue.png">Blue Neon</a>
-                <a class="preview-link" href="tech-minimal/tech-violet.html" target="_blank" data-preview="preview/tech-violet.png">Violet Edition</a>
-                <a class="preview-link" href="tech-minimal/tech-cyber.html" target="_blank" data-preview="preview/tech-cyber.png">Cyber Green</a>
-            </div>
-
-            <div class="collection-card">
-                <h3>Business Professional Pack</h3>
-                <p>Clean, formal & corporate-friendly templates</p>
-                <a href="business/business-clean.html" target="_blank">Clean White</a>
-                <a href="business/business-gray.html" target="_blank">Elegant Gray</a>
-                <a href="business/business-modern.html" target="_blank">Modern Accent</a>
-            </div>
-
-            <div class="collection-card">
-                <h3>Creative Hybrid Pack</h3>
-                <p>Colorful, stylish resumes for creators & artists</p>
-                <a href="creative/creative-bright.html" target="_blank">Bright Flow</a>
-                <a href="creative/creative-soft.html" target="_blank">Soft Pastel</a>
-                <a href="creative/creative-gradient.html" target="_blank">Gradient Glow</a>
+                <a href="tech-minimal/tech-blue.html" target="_blank">Blue Neon</a>
+                <a href="tech-minimal/tech-violet.html" target="_blank">Violet Edition</a>
+                <a href="tech-minimal/tech-cyber.html" target="_blank">Cyber Green</a>
             </div>
         </div>
 
@@ -309,18 +216,9 @@
         </div>
     </section>
 
-    <section id="contact" class="fade-in">
-        <h2>Contact</h2>
-        <p>Email: <a href="mailto:ghostvlasek@gmail.com">ghostvlasek@gmail.com</a></p>
-        <p>Phone: <a href="tel:+420797808290">+420 797 808 290</a></p>
-    </section>
-
     <footer>
-        <p>© 2025 NewGenWeb — Built with passion 💻</p>
+        <p>© 2025 CODEPRINT — Built with passion 💻</p>
     </footer>
-
-    <!-- preview popup -->
-    <div id="preview-popup"><img id="preview-img" src="" alt="preview"></div>
 
     <script>
         const fadeEls = document.querySelectorAll('.fade-in');
@@ -333,49 +231,7 @@
             });
         }, { rootMargin: '0px 0px -100px 0px' });
         fadeEls.forEach(el => observer.observe(el));
-
-        // preview popup logic
-        (function(){
-          const popup = document.getElementById('preview-popup');
-          const img = document.getElementById('preview-img');
-          const links = document.querySelectorAll('a.preview-link');
-
-          function show(el, e){
-            const src = el.dataset.preview;
-            if(!src) return;
-            img.src = src;
-            popup.classList.add('show');
-            popup.style.display = 'block';
-            move(e);
-          }
-          function hide(){ popup.classList.remove('show'); popup.style.display = 'none'; img.src=''; }
-          function move(e){
-            const pad = 18;
-            const w = popup.offsetWidth || 360;
-            const h = popup.offsetHeight || 200;
-            let x = e.clientX + pad;
-            let y = e.clientY + pad;
-            if(x + w > window.innerWidth) x = e.clientX - w - pad;
-            if(y + h > window.innerHeight) y = e.clientY - h - pad;
-            popup.style.left = x + 'px';
-            popup.style.top = y + 'px';
-          }
-
-          links.forEach(link=>{
-            link.addEventListener('mouseenter', (ev)=> show(link, ev));
-            link.addEventListener('mousemove', move);
-            link.addEventListener('mouseleave', hide);
-            // mobile / touch: tap to toggle
-            link.addEventListener('click', (ev)=>{
-              if(window.matchMedia('(hover: none)').matches){
-                ev.preventDefault();
-                if(popup.style.display === 'block') hide(); else show(link, ev);
-              }
-            });
-          });
-        })();
     </script>
+
 </body>
 </html>
-<!-- ...existing code... -->
-
