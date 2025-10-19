@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Soft Pastel — Creative Resume Template</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --gradient: linear-gradient(120deg, #f9c5d1, #a1c4fd);
+      --text-dark: #333;
+      --text-muted: #666;
+      --accent: #a1c4fd;
+      --bg: #ffffff;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background: var(--bg);
+      font-family: "Poppins", sans-serif;
+      color: var(--text-dark);
+      padding: 60px 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .resume {
+      background: #fff;
+      width: 900px;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    header {
+      background: var(--gradient);
+      padding: 60px 30px;
+      color: #fff;
+    }
+
+    header img {
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      border: 5px solid rgba(255,255,255,0.6);
+      object-fit: cover;
+      margin-bottom: 20px;
+    }
+
+    header h1 {
+      font-size: 2rem;
+      letter-spacing: 1px;
+    }
+
+    header p {
+      font-size: 1rem;
+      opacity: 0.9;
+    }
+
+    .content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      padding: 50px;
+      gap: 40px;
+      text-align: left;
+    }
+
+    section h2 {
+      color: var(--accent);
+      font-size: 1.2rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 10px;
+    }
+
+    section p {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    .skills ul, .contact ul {
+      list-style: none;
+      margin-top: 10px;
+    }
+
+    .skills li, .contact li {
+      font-size: 0.95rem;
+      color: var(--text-dark);
+      margin-bottom: 6px;
+    }
+
+    .experience .item, .education .item {
+      margin-top: 15px;
+    }
+
+    .item h3 {
+      font-size: 1rem;
+      margin-bottom: 3px;
+    }
+
+    .item span {
+      color: var(--accent);
+      font-size: 0.85rem;
+    }
+
+    footer {
+      padding: 25px;
+      background: var(--gradient);
+      color: #fff;
+      font-size: 0.9rem;
+      letter-spacing: 0.5px;
+    }
+  </style>
+</head>
+<body>
+  <div class="resume">
+    <header>
+      <img src="https://via.placeholder.com/130" alt="Profile">
+      <h1>Anna Lewis</h1>
+      <p>Visual Designer & Illustrator</p>
+    </header>
+
+    <div class="content">
+      <section class="about">
+        <h2>About Me</h2>
+        <p>Creative professional with a passion for blending visual storytelling and digital design. Focused on crafting elegant and emotionally engaging experiences that communicate ideas beautifully.</p>
+      </section>
+
+      <section class="skills">
+        <h2>Skills</h2>
+        <ul>
+          <li>Illustration & Character Art</li>
+          <li>Adobe Photoshop / Illustrator</li>
+          <li>Brand Visuals & Campaign Design</li>
+          <li>Canva & Figma Creative Layouts</li>
+        </ul>
+      </section>
+
+      <section class="experience">
+        <h2>Experience</h2>
+        <div class="item">
+          <h3>Senior Visual Designer — Luna Agency</h3>
+          <span>2022 – Present</span>
+        </div>
+        <div class="item">
+          <h3>Freelance Artist</h3>
+          <span>2018 – 2022</span>
+        </div>
+      </section>
+
+      <section class="education">
+        <h2>Education</h2>
+        <div class="item">
+          <h3>Master of Fine Arts</h3>
+          <span>Academy of Arts — 2018</span>
+        </div>
+      </section>
+
+      <section class="contact">
+        <h2>Contact</h2>
+        <ul>
+          <li>📧 anna.lewis@email.com</li>
+          <li>🌐 annalewisdesign.com</li>
+          <li>📍 London, UK</li>
+        </ul>
+      </section>
+    </div>
+
+    <footer>© 2025 CODEPRINT — Soft Pastel Template</footer>
+  </div>
+</body>
+</html>

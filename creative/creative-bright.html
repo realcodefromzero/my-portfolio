@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bright Flow — Creative Resume Template</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f8f9fb;
+      --primary: #222;
+      --accent: #00b4d8;
+      --secondary: #f1f1f1;
+      --text-muted: #555;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: "Poppins", sans-serif;
+      background: var(--bg);
+      color: var(--primary);
+      line-height: 1.6;
+      padding: 40px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .resume {
+      width: 900px;
+      background: #fff;
+      border-radius: 20px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+      display: grid;
+      grid-template-columns: 35% 65%;
+      overflow: hidden;
+    }
+
+    .left {
+      background: linear-gradient(180deg, var(--accent), #48cae4);
+      color: #fff;
+      padding: 40px 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .profile {
+      text-align: center;
+    }
+    .profile img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid rgba(255,255,255,0.7);
+      margin-bottom: 15px;
+    }
+    .profile h1 {
+      font-size: 1.5rem;
+      margin-bottom: 5px;
+    }
+    .profile p {
+      font-size: 0.95rem;
+      opacity: 0.9;
+    }
+
+    .contact, .skills {
+      margin-top: 30px;
+    }
+    .contact h2, .skills h2 {
+      font-size: 1.1rem;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .contact ul, .skills ul {
+      list-style: none;
+    }
+    .contact li, .skills li {
+      margin-bottom: 8px;
+      font-size: 0.9rem;
+    }
+    .skills li span {
+      display: block;
+      background: rgba(255,255,255,0.2);
+      border-radius: 20px;
+      height: 8px;
+      margin-top: 5px;
+      overflow: hidden;
+    }
+    .skills li span::after {
+      content: "";
+      display: block;
+      height: 100%;
+      background: #fff;
+      width: var(--width, 70%);
+    }
+
+    .right {
+      padding: 40px;
+    }
+
+    .section {
+      margin-bottom: 30px;
+    }
+    .section h2 {
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 10px;
+      font-size: 1.2rem;
+    }
+    .section p {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+    }
+
+    .experience .item, .education .item {
+      margin-bottom: 20px;
+    }
+    .item h3 {
+      font-size: 1rem;
+      color: var(--primary);
+    }
+    .item span {
+      display: block;
+      font-size: 0.85rem;
+      color: var(--accent);
+      margin-bottom: 5px;
+    }
+
+    .footer {
+      text-align: center;
+      font-size: 0.85rem;
+      color: #999;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+  <div class="resume">
+    <div class="left">
+      <div>
+        <div class="profile">
+          <img src="https://via.placeholder.com/120" alt="Profile">
+          <h1>Jane Doe</h1>
+          <p>Graphic Designer</p>
+        </div>
+
+        <div class="contact">
+          <h2>Contact</h2>
+          <ul>
+            <li>📍 Prague, Czech Republic</li>
+            <li>📧 jane.doe@email.com</li>
+            <li>🌐 janedesign.com</li>
+          </ul>
+        </div>
+
+        <div class="skills">
+          <h2>Skills</h2>
+          <ul>
+            <li>Adobe Illustrator <span style="--width:85%"></span></li>
+            <li>Photoshop <span style="--width:75%"></span></li>
+            <li>Canva Design <span style="--width:95%"></span></li>
+            <li>Figma UI/UX <span style="--width:80%"></span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="right">
+      <div class="section about">
+        <h2>About Me</h2>
+        <p>Creative and detail-oriented designer with a passion for creating beautiful and functional designs. Experienced in digital branding, marketing visuals, and social media content creation.</p>
+      </div>
+
+      <div class="section experience">
+        <h2>Experience</h2>
+        <div class="item">
+          <h3>Senior Graphic Designer — Vision Studio</h3>
+          <span>2021 - Present</span>
+          <p>Leading creative projects for brand identity and marketing materials. Mentoring junior designers and ensuring cohesive brand aesthetics.</p>
+        </div>
+        <div class="item">
+          <h3>Freelance Designer</h3>
+          <span>2018 - 2021</span>
+          <p>Worked with over 50 clients worldwide delivering logo, poster, and social media designs with a consistent 5-star satisfaction rate.</p>
+        </div>
+      </div>
+
+      <div class="section education">
+        <h2>Education</h2>
+        <div class="item">
+          <h3>BA in Graphic Design</h3>
+          <span>Prague University of Arts — 2018</span>
+        </div>
+      </div>
+
+      <div class="footer">© 2025 CODEPRINT — Bright Flow Template</div>
+    </div>
+  </div>
+</body>
+</html>

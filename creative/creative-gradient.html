@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gradient Glow — Creative Resume Template</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-gradient: linear-gradient(135deg, #d7a1f9, #a1c4fd, #ffb3c6);
+      --text-dark: #222;
+      --text-muted: #555;
+      --accent: #7a5cff;
+      --card-bg: rgba(255, 255, 255, 0.85);
+      --shadow: rgba(122, 92, 255, 0.3);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: "Poppins", sans-serif;
+      background: var(--bg-gradient);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 60px 20px;
+    }
+
+    .resume {
+      background: var(--card-bg);
+      width: 960px;
+      border-radius: 20px;
+      box-shadow: 0 10px 50px var(--shadow);
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      backdrop-filter: blur(12px);
+    }
+
+    /* Left column */
+    .sidebar {
+      background: rgba(255,255,255,0.25);
+      padding: 40px 30px;
+      text-align: center;
+      border-right: 1px solid rgba(255,255,255,0.3);
+    }
+
+    .sidebar img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      border: 4px solid rgba(255,255,255,0.7);
+      object-fit: cover;
+      margin-bottom: 15px;
+    }
+
+    .sidebar h1 {
+      font-size: 1.6rem;
+      color: var(--text-dark);
+      margin-bottom: 4px;
+    }
+
+    .sidebar p {
+      color: var(--accent);
+      font-size: 0.95rem;
+      margin-bottom: 25px;
+    }
+
+    .sidebar section {
+      margin-bottom: 25px;
+      text-align: left;
+    }
+
+    .sidebar h2 {
+      font-size: 1rem;
+      color: var(--accent);
+      margin-bottom: 10px;
+      border-bottom: 2px solid var(--accent);
+      display: inline-block;
+    }
+
+    .sidebar ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .sidebar li {
+      font-size: 0.9rem;
+      color: var(--text-dark);
+      margin-bottom: 6px;
+    }
+
+    /* Main content */
+    .main {
+      padding: 50px;
+      color: var(--text-dark);
+    }
+
+    .main section {
+      margin-bottom: 40px;
+    }
+
+    .main h2 {
+      color: var(--accent);
+      font-size: 1.2rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 12px;
+    }
+
+    .main p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    .experience .item, .education .item {
+      margin-top: 15px;
+    }
+
+    .item h3 {
+      font-size: 1.05rem;
+      color: var(--text-dark);
+    }
+
+    .item span {
+      font-size: 0.85rem;
+      color: var(--accent);
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      color: var(--text-dark);
+      font-size: 0.85rem;
+      background: rgba(255,255,255,0.3);
+      backdrop-filter: blur(10px);
+    }
+  </style>
+</head>
+<body>
+  <div class="resume">
+    <div class="sidebar">
+      <img src="https://via.placeholder.com/120" alt="Profile">
+      <h1>Lucas Moore</h1>
+      <p>Creative Director</p>
+
+      <section class="contact">
+        <h2>Contact</h2>
+        <ul>
+          <li>📧 lucas.moore@email.com</li>
+          <li>🌐 lucasmoorestudio.com</li>
+          <li>📍 Berlin, Germany</li>
+        </ul>
+      </section>
+
+      <section class="skills">
+        <h2>Skills</h2>
+        <ul>
+          <li>Creative Direction</li>
+          <li>Brand Identity</li>
+          <li>Adobe Suite Mastery</li>
+          <li>Digital Illustration</li>
+        </ul>
+      </section>
+    </div>
+
+    <div class="main">
+      <section class="about">
+        <h2>About Me</h2>
+        <p>I’m a multidisciplinary designer passionate about merging storytelling and visual design. My approach is grounded in clarity, emotion, and modern aesthetic balance.</p>
+      </section>
+
+      <section class="experience">
+        <h2>Experience</h2>
+        <div class="item">
+          <h3>Creative Director — Nova Studio</h3>
+          <span>2022 – Present</span>
+        </div>
+        <div class="item">
+          <h3>Lead Designer — Orbit Media</h3>
+          <span>2019 – 2022</span>
+        </div>
+      </section>
+
+      <section class="education">
+        <h2>Education</h2>
+        <div class="item">
+          <h3>Bachelor of Arts — Visual Communication</h3>
+          <span>Berlin Design Academy, 2019</span>
+        </div>
+      </section>
+
+      <section class="portfolio">
+        <h2>Portfolio Highlights</h2>
+        <p>Visit <b>lucasmoorestudio.com</b> to explore my projects in motion design, campaign art, and creative brand direction.</p>
+      </section>
+    </div>
+  </div>
+
+  <footer>© 2025 CODEPRINT — Gradient Glow Template</footer>
+</body>
+</html>
