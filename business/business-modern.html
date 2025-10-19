@@ -3,69 +3,127 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Business Modern - Resume Template</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+<title>Business Modern Resume - CODEPRINT</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 <style>
-  body {
-    margin: 0;
-    font-family: "Inter", sans-serif;
-    background: #f0f2f5;
-    color: #222;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 40px;
-  }
-  .resume {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    background: white;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 0 30px rgba(0,0,0,0.1);
-    max-width: 900px;
-  }
-  .sidebar {
-    background: #0a0a0a;
-    color: white;
-    padding: 40px 20px;
-  }
-  .main {
-    padding: 40px;
-  }
-  h1 {
-    font-size: 2rem;
-    margin-bottom: 10px;
-  }
-  h2 {
-    color: #333;
-    border-bottom: 2px solid #eee;
-    margin-top: 25px;
-  }
-  p { line-height: 1.6; }
+body {
+  margin: 0;
+  background: #fafafa;
+  font-family: 'Poppins', sans-serif;
+  color: #222;
+  line-height: 1.7;
+}
+
+.container {
+  max-width: 900px;
+  margin: 50px auto;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.08);
+  padding: 50px 70px;
+}
+
+header {
+  text-align: center;
+  border-bottom: 3px solid #007BFF;
+  padding-bottom: 20px;
+  margin-bottom: 40px;
+}
+
+header h1 {
+  font-size: 2.4rem;
+  margin: 0;
+}
+
+header p {
+  font-size: 1.1rem;
+  color: #007BFF;
+  opacity: 0.85;
+}
+
+section {
+  margin-bottom: 35px;
+}
+
+h2 {
+  color: #007BFF;
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.job {
+  margin-bottom: 20px;
+}
+
+.job h3 {
+  margin: 0;
+  color: #222;
+  font-weight: 600;
+}
+
+.job span {
+  font-size: 0.9rem;
+  color: #777;
+}
+
+.skills, .contact {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 20px;
+  font-size: 0.95rem;
+}
+.skill, .info { background: #f1f7ff; padding: 8px 14px; border-radius: 8px; }
 </style>
 </head>
 <body>
-  <div class="resume">
-    <div class="sidebar">
-      <h1>Michael Doe</h1>
-      <p><b>Project Manager</b></p>
-      <p>michael@email.com<br>+420 789 654 123</p>
-      <h2>Skills</h2>
-      <p>Leadership<br>Planning<br>Budgeting</p>
+<div class="container">
+  <header>
+    <h1>John Doe</h1>
+    <p>Marketing Strategist</p>
+  </header>
+
+  <section>
+    <h2>Profile</h2>
+    <p>Creative marketing strategist with experience building data-driven campaigns, improving engagement, and leading brand awareness projects for digital agencies.</p>
+  </section>
+
+  <section>
+    <h2>Experience</h2>
+    <div class="job">
+      <h3>Marketing Lead – Vision Media</h3>
+      <span>2020–Present</span>
+      <p>Developed and implemented multi-channel campaigns that increased conversion rates by 30%.</p>
     </div>
-    <div class="main">
-      <h2>Profile</h2>
-      <p>Results-oriented project manager with 6+ years of experience leading teams and delivering high-impact corporate projects.</p>
-      <h2>Experience</h2>
-      <p><b>GlobalCorp</b> — Senior Project Manager (2019–Present)</p>
-      <ul>
-        <li>Implemented agile workflows improving delivery time by 20%.</li>
-        <li>Managed multi-department collaboration initiatives.</li>
-      </ul>
-      <h2>Education</h2>
-      <p>Bachelor’s in Management, University of Brno</p>
+    <div class="job">
+      <h3>Content Strategist – Bright Agency</h3>
+      <span>2017–2020</span>
+      <p>Produced over 150 creative campaigns for clients, driving consistent growth in social engagement.</p>
     </div>
-  </div>
+  </section>
+
+  <section>
+    <h2>Skills</h2>
+    <div class="skills">
+      <div class="skill">SEO / SEM</div>
+      <div class="skill">Analytics</div>
+      <div class="skill">Team Leadership</div>
+      <div class="skill">Copywriting</div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Contact</h2>
+    <div class="contact">
+      <div class="info">📧 john.doe@email.com</div>
+      <div class="info">📍 Prague, CZ</div>
+      <div class="info">📞 +420 123 456 789</div>
+    </div>
+  </section>
+</div>
 </body>
 </html>
