@@ -1,114 +1,196 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Royal Navy Resume | CODEPRINT</title>
-<style>
-  :root {
-    --bg: #0A0F1A;
-    --text: #FFFFFF;
-    --accent: #2E8BFF;
-    --highlight: #BFA76F;
-    --muted: #B0B8C2;
-  }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Business Royal Navy – CODEPRINT</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0E1625;
+      --text: #ffffff;
+      --accent: #D4AF37;
+      --muted: #9ba4b5;
+    }
 
-  body {
-    background: var(--bg);
-    color: var(--text);
-    font-family: 'Poppins', sans-serif;
-    padding: 50px;
-    max-width: 900px;
-    margin: auto;
-    display: flex;
-    gap: 50px;
-  }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
-  .sidebar {
-    width: 30%;
-    background: rgba(46,139,255,0.1);
-    padding: 30px;
-    border-radius: 15px;
-  }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      padding: 60px 20px;
+      max-width: 900px;
+      margin: auto;
+    }
 
-  .sidebar h2 {
-    color: var(--highlight);
-    font-size: 1.4rem;
-    margin-bottom: 15px;
-  }
+    header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
 
-  .sidebar p, .sidebar li {
-    font-size: 0.9rem;
-    color: var(--muted);
-  }
+    h1 {
+      font-family: 'Merriweather', serif;
+      color: var(--accent);
+      font-size: 2.8rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      border-bottom: 2px solid var(--accent);
+      display: inline-block;
+      padding-bottom: 10px;
+    }
 
-  .main {
-    width: 70%;
-  }
+    h2 {
+      color: var(--accent);
+      margin-top: 40px;
+      font-size: 1.4rem;
+      letter-spacing: 0.5px;
+      border-left: 3px solid var(--accent);
+      padding-left: 10px;
+      font-family: 'Merriweather', serif;
+    }
 
-  h1 {
-    font-size: 2.2rem;
-    margin-bottom: 5px;
-  }
+    p {
+      margin-top: 8px;
+      color: var(--muted);
+    }
 
-  h3 {
-    color: var(--accent);
-    margin-top: 25px;
-    margin-bottom: 10px;
-    font-size: 1.2rem;
-  }
+    .container {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 40px;
+    }
 
-  ul {
-    list-style: none;
-    padding: 0;
-  }
+    .sidebar {
+      background: rgba(255,255,255,0.03);
+      padding: 30px;
+      border-radius: 10px;
+      border: 1px solid rgba(255,255,255,0.06);
+      box-shadow: 0 0 25px rgba(212,175,55,0.05);
+    }
 
-  li::before {
-    content: "• ";
-    color: var(--accent);
-  }
+    .sidebar h2 {
+      border: none;
+      padding-left: 0;
+      margin-top: 0;
+      color: var(--accent);
+      font-size: 1.3rem;
+    }
 
-  .contact a {
-    color: var(--highlight);
-    text-decoration: none;
-  }
-</style>
+    .sidebar ul {
+      list-style: none;
+      margin-top: 10px;
+    }
+
+    .sidebar li {
+      margin: 8px 0;
+      color: var(--text);
+      font-weight: 300;
+    }
+
+    .main {
+      background: rgba(255,255,255,0.02);
+      padding: 30px;
+      border-radius: 10px;
+      border: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .name {
+      font-size: 2rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      color: var(--accent);
+    }
+
+    .role {
+      color: var(--muted);
+      font-size: 1.1rem;
+      margin-bottom: 20px;
+    }
+
+    hr {
+      border: none;
+      height: 1px;
+      background: linear-gradient(to right, transparent, var(--accent), transparent);
+      margin: 30px 0;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 50px;
+      font-size: 0.85rem;
+      color: var(--muted);
+      opacity: 0.8;
+    }
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    @media (max-width: 768px) {
+      .container {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
 <body>
-  <div class="sidebar">
-    <h2>Contact</h2>
-    <p>Email: <a href="#">john.doe@email.com</a></p>
-    <p>Phone: +1 234 567 890</p>
 
-    <h2>Skills</h2>
-    <ul>
-      <li>Leadership</li>
-      <li>Financial Analysis</li>
-      <li>Client Negotiation</li>
-      <li>Microsoft Suite</li>
-    </ul>
+  <header>
+    <h1>Business Royal Navy</h1>
+  </header>
 
-    <h2>Education</h2>
-    <p>Bachelor of Business Management<br>Oxford University (2016–2020)</p>
+  <div class="container">
+    <div class="sidebar">
+      <h2>Contact</h2>
+      <ul>
+        <li>Email: john.doe@email.com</li>
+        <li>Phone: +420 777 123 456</li>
+        <li>Website: www.yourportfolio.com</li>
+        <li>LinkedIn: linkedin.com/in/johndoe</li>
+      </ul>
+
+      <h2>Skills</h2>
+      <ul>
+        <li>Strategic Planning</li>
+        <li>Project Management</li>
+        <li>Client Relations</li>
+        <li>Marketing & Sales</li>
+      </ul>
+
+      <h2>Languages</h2>
+      <ul>
+        <li>English – C1</li>
+        <li>German – B2</li>
+      </ul>
+    </div>
+
+    <div class="main">
+      <div class="name">John Doe</div>
+      <div class="role">Senior Business Consultant</div>
+
+      <p>Experienced consultant with 8+ years in corporate strategy, team leadership, and client solutions. Dedicated to driving growth through clear planning and data-driven execution.</p>
+
+      <hr>
+
+      <h2>Experience</h2>
+      <p><b>Business Consultant</b> — VisionCorp (2018–Present)</p>
+      <p>Leading business development projects, optimizing internal processes, and supporting multinational clients in strategic expansion.</p>
+
+      <p><b>Project Manager</b> — NovaTech (2015–2018)</p>
+      <p>Managed a 10-member cross-functional team delivering high-value corporate solutions in digital marketing and IT implementation.</p>
+
+      <hr>
+
+      <h2>Education</h2>
+      <p><b>Master’s in Business Administration (MBA)</b></p>
+      <p>Charles University, Prague — 2015</p>
+    </div>
   </div>
 
-  <div class="main">
-    <h1>John Doe</h1>
-    <p>Senior Business Consultant</p>
+  <footer>
+    © 2025 CODEPRINT — Business Templates Collection
+  </footer>
 
-    <h3>Experience</h3>
-    <p><b>Business Analyst</b> – Deloitte (2021–Present)</p>
-    <ul>
-      <li>Led data-driven strategies for enterprise clients</li>
-      <li>Reduced operational costs by 18%</li>
-      <li>Developed cross-department performance frameworks</li>
-    </ul>
-
-    <p><b>Intern – Finance Department</b> – HSBC (2019–2020)</p>
-    <ul>
-      <li>Supported financial forecasting for high-value clients</li>
-      <li>Created analytical reports for senior executives</li>
-    </ul>
-  </div>
 </body>
 </html>
