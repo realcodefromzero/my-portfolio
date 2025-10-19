@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Royal Navy Resume | CODEPRINT</title>
+<style>
+  :root {
+    --bg: #0A0F1A;
+    --text: #FFFFFF;
+    --accent: #2E8BFF;
+    --highlight: #BFA76F;
+    --muted: #B0B8C2;
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Poppins', sans-serif;
+    padding: 50px;
+    max-width: 900px;
+    margin: auto;
+    display: flex;
+    gap: 50px;
+  }
+
+  .sidebar {
+    width: 30%;
+    background: rgba(46,139,255,0.1);
+    padding: 30px;
+    border-radius: 15px;
+  }
+
+  .sidebar h2 {
+    color: var(--highlight);
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+  }
+
+  .sidebar p, .sidebar li {
+    font-size: 0.9rem;
+    color: var(--muted);
+  }
+
+  .main {
+    width: 70%;
+  }
+
+  h1 {
+    font-size: 2.2rem;
+    margin-bottom: 5px;
+  }
+
+  h3 {
+    color: var(--accent);
+    margin-top: 25px;
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  li::before {
+    content: "• ";
+    color: var(--accent);
+  }
+
+  .contact a {
+    color: var(--highlight);
+    text-decoration: none;
+  }
+</style>
+</head>
+<body>
+  <div class="sidebar">
+    <h2>Contact</h2>
+    <p>Email: <a href="#">john.doe@email.com</a></p>
+    <p>Phone: +1 234 567 890</p>
+
+    <h2>Skills</h2>
+    <ul>
+      <li>Leadership</li>
+      <li>Financial Analysis</li>
+      <li>Client Negotiation</li>
+      <li>Microsoft Suite</li>
+    </ul>
+
+    <h2>Education</h2>
+    <p>Bachelor of Business Management<br>Oxford University (2016–2020)</p>
+  </div>
+
+  <div class="main">
+    <h1>John Doe</h1>
+    <p>Senior Business Consultant</p>
+
+    <h3>Experience</h3>
+    <p><b>Business Analyst</b> – Deloitte (2021–Present)</p>
+    <ul>
+      <li>Led data-driven strategies for enterprise clients</li>
+      <li>Reduced operational costs by 18%</li>
+      <li>Developed cross-department performance frameworks</li>
+    </ul>
+
+    <p><b>Intern – Finance Department</b> – HSBC (2019–2020)</p>
+    <ul>
+      <li>Supported financial forecasting for high-value clients</li>
+      <li>Created analytical reports for senior executives</li>
+    </ul>
+  </div>
+</body>
+</html>
