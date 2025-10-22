@@ -3,188 +3,405 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Business Ivory Classic – CODEPRINT</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <title>Alexandra Reed - Brand Strategist</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   <style>
     :root {
-      --ivory: #f9f7f2;
-      --text-dark: #2b2b2b;
-      --gold: #c5a453;
-      --gray: #888;
+      --bg: #0a0a0a;
+      --surface: #141414;
+      --accent: #00ff88;
+      --text: #e8e8e8;
+      --text-dim: #888888;
+      --border: rgba(255,255,255,0.08);
     }
 
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    * { 
+      margin: 0; 
+      padding: 0; 
+      box-sizing: border-box; 
+    }
 
     body {
-      background: var(--ivory);
-      color: var(--text-dark);
-      font-family: 'Inter', sans-serif;
-      line-height: 1.8;
-      padding: 60px 30px;
-      max-width: 900px;
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', -apple-system, sans-serif;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    .page {
+      max-width: 850px;
       margin: 0 auto;
-      box-shadow: 0 0 80px rgba(0,0,0,0.08);
+      background: var(--surface);
+      min-height: 100vh;
+      position: relative;
+    }
+
+    /* Accent border effect */
+    .page::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 100%;
+      background: linear-gradient(180deg, var(--accent), #00aa66);
+      box-shadow: 0 0 20px var(--accent);
     }
 
     header {
-      text-align: center;
-      border-bottom: 2px solid var(--gold);
-      margin-bottom: 60px;
-      padding-bottom: 20px;
+      padding: 60px 70px 40px;
+      border-bottom: 1px solid var(--border);
+      position: relative;
     }
 
-    h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: 2.8rem;
-      color: var(--text-dark);
-      letter-spacing: 1px;
-    }
-
-    h2 {
-      color: var(--gold);
-      font-family: 'Playfair Display', serif;
-      font-size: 1.4rem;
-      letter-spacing: 0.5px;
-      margin-top: 40px;
-      border-bottom: 1px solid rgba(197,164,83,0.3);
-      padding-bottom: 6px;
+    .name {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 3.2rem;
+      font-weight: 700;
+      letter-spacing: -2px;
+      margin-bottom: 8px;
+      background: linear-gradient(135deg, var(--text) 0%, var(--accent) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
     }
 
     .role {
-      font-size: 1.2rem;
-      color: var(--gray);
+      font-size: 1.1rem;
+      color: var(--text-dim);
       font-weight: 400;
-      margin-top: 6px;
+      letter-spacing: 0.5px;
     }
 
-    .container {
+    .contact-bar {
+      display: flex;
+      gap: 24px;
+      margin-top: 24px;
+      flex-wrap: wrap;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--text-dim);
+      font-size: 0.9rem;
+      transition: color 0.2s;
+    }
+
+    .contact-item:hover {
+      color: var(--accent);
+    }
+
+    .contact-item::before {
+      content: '→';
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    .grid {
       display: grid;
-      grid-template-columns: 1.1fr 2fr;
-      gap: 40px;
+      grid-template-columns: 280px 1fr;
+      gap: 0;
+      padding: 50px 70px;
     }
 
     .sidebar {
-      border-right: 1px solid rgba(0,0,0,0.1);
-      padding-right: 25px;
+      padding-right: 40px;
+      border-right: 1px solid var(--border);
     }
 
-    .sidebar h2 {
-      border: none;
-      font-size: 1.1rem;
-      margin-bottom: 8px;
-      color: var(--text-dark);
-      letter-spacing: 0.6px;
+    .main {
+      padding-left: 50px;
     }
 
-    .sidebar ul {
+    .section {
+      margin-bottom: 50px;
+    }
+
+    .section-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--accent);
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .section-title::before {
+      content: '';
+      width: 3px;
+      height: 16px;
+      background: var(--accent);
+      box-shadow: 0 0 8px var(--accent);
+    }
+
+    .skill-item {
+      background: rgba(0,255,136,0.05);
+      border: 1px solid rgba(0,255,136,0.2);
+      padding: 10px 16px;
+      margin-bottom: 10px;
+      border-radius: 6px;
+      font-size: 0.9rem;
+      color: var(--text);
+      transition: all 0.3s;
+      cursor: default;
+    }
+
+    .skill-item:hover {
+      background: rgba(0,255,136,0.1);
+      border-color: var(--accent);
+      transform: translateX(4px);
+    }
+
+    .info-list {
       list-style: none;
+    }
+
+    .info-list li {
+      color: var(--text-dim);
+      margin-bottom: 10px;
+      font-size: 0.9rem;
+      padding-left: 20px;
+      position: relative;
+    }
+
+    .info-list li::before {
+      content: '▪';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-size: 1.2rem;
+    }
+
+    .job {
+      margin-bottom: 35px;
+      padding-bottom: 35px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .job:last-child {
+      border-bottom: none;
+    }
+
+    .job-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 6px;
+    }
+
+    .job-meta {
+      display: flex;
+      gap: 16px;
+      font-size: 0.85rem;
+      color: var(--text-dim);
+      margin-bottom: 12px;
+    }
+
+    .job-meta span {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .job-meta span::before {
+      content: '◆';
+      color: var(--accent);
+      font-size: 0.6rem;
+    }
+
+    .job-desc {
+      color: var(--text-dim);
+      line-height: 1.7;
+      font-size: 0.95rem;
+    }
+
+    .profile-text {
+      color: var(--text);
+      line-height: 1.8;
+      font-size: 0.95rem;
+      padding: 20px;
+      background: rgba(0,255,136,0.03);
+      border-left: 3px solid var(--accent);
+      border-radius: 4px;
+    }
+
+    .edu-item {
       margin-bottom: 20px;
     }
 
-    .sidebar li {
-      color: var(--gray);
-      margin: 4px 0;
-      font-size: 0.95rem;
+    .edu-degree {
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 4px;
     }
 
-    .main h3 {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.1rem;
-      color: var(--text-dark);
-      margin-top: 15px;
-    }
-
-    .main p {
-      color: var(--gray);
-      margin-top: 5px;
-      font-size: 0.95rem;
-    }
-
-    hr {
-      border: none;
-      height: 1px;
-      background: linear-gradient(to right, transparent, rgba(0,0,0,0.1), transparent);
-      margin: 35px 0;
+    .edu-school {
+      color: var(--text-dim);
+      font-size: 0.9rem;
     }
 
     footer {
       text-align: center;
-      font-size: 0.85rem;
-      color: var(--gray);
-      opacity: 0.8;
-      margin-top: 50px;
+      padding: 30px;
+      color: var(--text-dim);
+      font-size: 0.8rem;
+      border-top: 1px solid var(--border);
+      opacity: 0.5;
+    }
+
+    /* Print optimization */
+    @media print {
+      .page::before { display: none; }
+      body { background: white; }
+      .page { background: white; box-shadow: none; }
+      * { color: black !important; }
+      .section-title { color: #333 !important; }
     }
 
     @media (max-width: 768px) {
-      .container {
+      .grid {
         grid-template-columns: 1fr;
-        gap: 20px;
+        padding: 30px 25px;
       }
       .sidebar {
         border-right: none;
+        border-bottom: 1px solid var(--border);
         padding-right: 0;
-        border-bottom: 1px solid rgba(0,0,0,0.1);
-        padding-bottom: 20px;
+        padding-bottom: 30px;
+        margin-bottom: 30px;
+      }
+      .main {
+        padding-left: 0;
+      }
+      header {
+        padding: 40px 25px 30px;
+      }
+      .name {
+        font-size: 2.2rem;
       }
     }
   </style>
 </head>
 <body>
 
+<div class="page">
   <header>
-    <h1>Alexandra Reed</h1>
+    <h1 class="name">Alexandra Reed</h1>
     <div class="role">Executive Brand Strategist</div>
+    
+    <div class="contact-bar">
+      <span class="contact-item">alex.reed@email.com</span>
+      <span class="contact-item">+420 777 321 654</span>
+      <span class="contact-item">alexreed.com</span>
+      <span class="contact-item">in/alexreed</span>
+    </div>
   </header>
 
-  <div class="container">
-    <div class="sidebar">
-      <h2>Contact</h2>
-      <ul>
-        <li>Email: alex.reed@email.com</li>
-        <li>Phone: +420 777 321 654</li>
-        <li>Website: www.alexreed.com</li>
-        <li>LinkedIn: linkedin.com/in/alexreed</li>
-      </ul>
+  <div class="grid">
+    <aside class="sidebar">
+      <div class="section">
+        <h2 class="section-title">Skills</h2>
+        <div class="skill-item">Brand Development</div>
+        <div class="skill-item">Corporate Strategy</div>
+        <div class="skill-item">Team Leadership</div>
+        <div class="skill-item">Digital Marketing</div>
+        <div class="skill-item">Data Analytics</div>
+      </div>
 
-      <h2>Skills</h2>
-      <ul>
-        <li>Brand Development</li>
-        <li>Corporate Strategy</li>
-        <li>Team Leadership</li>
-        <li>Digital Marketing</li>
-      </ul>
+      <div class="section">
+        <h2 class="section-title">Languages</h2>
+        <ul class="info-list">
+          <li>English — Native</li>
+          <li>French — Intermediate</li>
+          <li>Czech — Basic</li>
+        </ul>
+      </div>
 
-      <h2>Languages</h2>
-      <ul>
-        <li>English – Native</li>
-        <li>French – Intermediate</li>
-      </ul>
-    </div>
+      <div class="section">
+        <h2 class="section-title">Tools</h2>
+        <ul class="info-list">
+          <li>Figma, Adobe Suite</li>
+          <li>Google Analytics</li>
+          <li>HubSpot, Salesforce</li>
+        </ul>
+      </div>
+    </aside>
 
-    <div class="main">
-      <h2>Profile</h2>
-      <p>Driven strategist with 10+ years in brand growth and client experience. Proven record in scaling brands across multiple industries through creative storytelling and marketing vision.</p>
+    <main class="main">
+      <div class="section">
+        <h2 class="section-title">Profile</h2>
+        <p class="profile-text">
+          Strategic brand architect with 10+ years driving growth for Fortune 500 companies and startups. Specialized in transforming brand narratives into measurable business outcomes through data-driven storytelling and cross-functional leadership.
+        </p>
+      </div>
 
-      <hr>
+      <div class="section">
+        <h2 class="section-title">Experience</h2>
+        
+        <div class="job">
+          <h3 class="job-title">Senior Brand Strategist</h3>
+          <div class="job-meta">
+            <span>Lumière Agency</span>
+            <span>2019 – Present</span>
+            <span>Prague, CZ</span>
+          </div>
+          <p class="job-desc">
+            Led global rebranding initiatives for 15+ enterprise clients, achieving 40% average ROI improvement. Directed cross-functional teams of 12+ designers and marketers. Pioneered data-driven brand positioning framework now used company-wide.
+          </p>
+        </div>
 
-      <h2>Experience</h2>
-      <h3>Senior Brand Strategist — Lumière Agency</h3>
-      <p>2019 – Present | Managed global client portfolio, executed rebranding campaigns and improved ROI by 40% through cross-channel alignment.</p>
+        <div class="job">
+          <h3 class="job-title">Marketing Director</h3>
+          <div class="job-meta">
+            <span>Studio Nova</span>
+            <span>2014 – 2019</span>
+            <span>Berlin, DE</span>
+          </div>
+          <p class="job-desc">
+            Built and scaled marketing department from 3 to 20 people. Established B2B partnerships across 8 European markets. Increased brand awareness by 200% through integrated campaigns and thought leadership.
+          </p>
+        </div>
 
-      <h3>Marketing Director — Studio Nova</h3>
-      <p>2014 – 2019 | Built high-performing marketing team, developed creative direction and led key B2B partnerships across Europe.</p>
+        <div class="job">
+          <h3 class="job-title">Brand Consultant</h3>
+          <div class="job-meta">
+            <span>Freelance</span>
+            <span>2012 – 2014</span>
+            <span>Remote</span>
+          </div>
+          <p class="job-desc">
+            Advised 25+ startups and SMEs on brand positioning, messaging, and go-to-market strategy. Specialized in tech and lifestyle sectors.
+          </p>
+        </div>
+      </div>
 
-      <hr>
-
-      <h2>Education</h2>
-      <h3>Master’s in Marketing Management</h3>
-      <p>Prague University of Economics, 2014</p>
-    </div>
+      <div class="section">
+        <h2 class="section-title">Education</h2>
+        <div class="edu-item">
+          <div class="edu-degree">Master's in Marketing Management</div>
+          <div class="edu-school">Prague University of Economics, 2014</div>
+        </div>
+        <div class="edu-item">
+          <div class="edu-degree">Bachelor's in Business Administration</div>
+          <div class="edu-school">Charles University, 2012</div>
+        </div>
+      </div>
+    </main>
   </div>
 
   <footer>
-    © 2025 CODEPRINT — Business Templates Collection
+    Template by CODEPRINT — 2025 Professional Collection
   </footer>
+</div>
 
 </body>
 </html>
