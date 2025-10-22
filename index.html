@@ -1,382 +1,565 @@
-<!-- ...existing code... -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>NewGenWeb - Building the Future</title>
-<link rel="icon" type="image/png" href="assets/favicon.png">
-<link rel="stylesheet" href="assets/logo.css">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+<title>NewGenWeb - Web Developer & Digital Creator</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
 <style>
-    :root {
-        --primary-bg: #000000;
-        --primary-text: #FFFFFF;
-        --accent-blue: #00F0FF;
-        --secondary-accent: #8A2BE2;
-        --card-bg: #0A0A0A;
-        --border-color: #1A1A1A;
-    }
+:root {
+  --bg: #000000;
+  --surface: #0a0a0a;
+  --surface-2: #141414;
+  --accent: #00ff88;
+  --accent-2: #00d4ff;
+  --text: #ffffff;
+  --text-dim: #888888;
+  --border: rgba(255,255,255,0.06);
+}
 
-    * {margin: 0; padding: 0; box-sizing: border-box;}
-    html, body {
-        height: 100%;
-        scroll-behavior: smooth;
-        background-color: var(--primary-bg);
-        color: var(--primary-text);
-        font-family: "Poppins", sans-serif;
-        overflow-x: hidden;
-        text-shadow: 0 0 1px rgba(255, 255, 255, 0.1);
-    }
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
-    header {
-        height: 100vh;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        position: relative;
-        overflow: hidden;
-        gap: 12px;
-    }
+html { scroll-behavior: smooth; }
 
-    /* logo + title row */
-    .brand {
-      display:flex;
-      align-items:center;
-      gap:16px;
-      justify-content:center;
-    }
-    .brand img{height:56px;display:block}
-    header h1 {
-        font-size: 4.25rem;
-        letter-spacing: 5px;
-        text-transform: uppercase;
-        position: relative;
-        animation: neonGlow 2.5s ease-in-out infinite alternate;
-        color: var(--primary-text);
-        margin:0;
-    }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Space Grotesk', sans-serif;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
 
-    header p {
-        font-size: 1.25rem;
-        margin-top: 6px;
-        opacity: 0.9;
-        color: var(--accent-blue);
-        text-shadow: 0 0 5px rgba(0, 240, 255, 0.5);
-    }
+/* Animated grid background */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    linear-gradient(rgba(0,255,136,0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,255,136,0.02) 1px, transparent 1px);
+  background-size: 60px 60px;
+  pointer-events: none;
+  z-index: 0;
+  animation: gridMove 20s linear infinite;
+}
 
-    @keyframes neonGlow {
-        from { text-shadow: 0 0 5px var(--primary-text), 0 0 15px var(--accent-blue), 0 0 30px var(--accent-blue); }
-        to { text-shadow: 0 0 10px var(--primary-text), 0 0 30px var(--accent-blue), 0 0 60px var(--accent-blue); }
-    }
+@keyframes gridMove {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(60px, 60px); }
+}
 
-    header::before {
-        content: "";
-        position: absolute;
-        width: 200%;
-        height: 200%;
-        background: radial-gradient(circle, rgba(0, 240, 255, 0.08) 0%, transparent 70%);
-        animation: moveLight 15s linear infinite;
-        z-index: -1;
-    }
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 30px;
+  position: relative;
+  z-index: 1;
+}
 
-    @keyframes moveLight {
-        0% { transform: translate(-40%, -40%) rotate(0deg); }
-        50% { transform: translate(40%, 40%) rotate(180deg); }
-        100% { transform: translate(-40%, -40%) rotate(360deg); }
-    }
+/* Navigation */
+nav {
+  padding: 25px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  background: rgba(0,0,0,0.8);
+  backdrop-filter: blur(10px);
+  z-index: 100;
+}
 
-    section {
-        min-height: 80vh;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        padding: 100px 20px;
-        text-align: center;
-    }
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 1.4rem;
+  font-weight: 700;
+}
 
-    h2 {
-        font-size: 3rem;
-        margin-bottom: 30px;
-        letter-spacing: 3px;
-        text-transform: uppercase;
-        color: var(--accent-blue);
-        border-bottom: 2px solid var(--secondary-accent);
-        padding-bottom: 10px;
-    }
+.logo-icon {
+  width: 36px;
+  height: 36px;
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  color: var(--bg);
+  box-shadow: 0 0 20px rgba(0,255,136,0.3);
+}
 
-    p {
-        max-width: 800px;
-        line-height: 1.8;
-        font-size: 1.1rem;
-        opacity: 0.9;
-    }
+.nav-links {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+}
 
-    .fade-in { opacity: 0; transform: translateY(50px); transition: all 1s cubic-bezier(0.25,0.46,0.45,0.94);}
-    .fade-in.visible { opacity: 1; transform: translateY(0); }
+.nav-links a {
+  color: var(--text-dim);
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: all 0.3s;
+  position: relative;
+  font-weight: 500;
+}
 
-    .services {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        margin-top: 40px;
-        gap: 30px;
-    }
+.nav-links a:hover {
+  color: var(--accent);
+}
 
-    .card {
-        background: var(--card-bg);
-        border: 2px solid var(--border-color);
-        border-radius: 12px;
-        padding: 30px 20px;
-        width: 300px;
-        text-align: center;
-        box-shadow: 0 0 10px rgba(0, 240, 255, 0.1);
-        transition: all 0.4s ease;
-        position: relative;
-        overflow: hidden;
-    }
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--accent);
+  transition: width 0.3s;
+}
 
-    .card b { color: var(--accent-blue); text-shadow: 0 0 5px rgba(0,240,255,0.5); font-size: 1.2em; }
-    .card:hover { box-shadow: 0 0 35px rgba(0,240,255,0.8); transform: translateY(-8px) scale(1.02); border-color: var(--accent-blue); }
+.nav-links a:hover::after {
+  width: 100%;
+}
 
-    #templates { text-align: center; padding: 100px 20px; background: var(--primary-bg); border-top: 1px solid var(--border-color); }
-    .templates-links { display: flex; gap: 30px; justify-content: center; margin-top: 50px; flex-wrap: wrap; }
+/* Hero Section */
+.hero {
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
 
-    .templates-links a {
-        background: var(--accent-blue);
-        color: var(--primary-bg);
-        padding: 16px 36px;
-        border-radius: 50px;
-        font-weight: bold;
-        text-decoration: none;
-        transition: all 0.3s ease;
-        border: 2px solid transparent;
-    }
-    .templates-links a.buy-button {
-        background: var(--secondary-accent);
-        color: var(--primary-text);
-        border: 2px solid var(--secondary-accent);
-    }
-    .templates-links a.buy-button:hover {
-        background: transparent;
-        color: var(--secondary-accent);
-        border: 2px solid var(--secondary-accent);
-        box-shadow: 0 0 25px rgba(138,43,226,0.7);
-    }
-    .templates-links a:not(.buy-button):hover {
-        background: transparent;
-        color: var(--accent-blue);
-        border: 2px solid var(--accent-blue);
-        box-shadow: 0 0 25px rgba(0,240,255,0.7);
-    }
+.hero-content {
+  max-width: 700px;
+}
 
-    /* Nový grid pro kolekce */
-    .collection-grid {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 30px;
-        justify-content: center;
-        margin-top: 60px;
-    }
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.85rem;
+  color: var(--accent);
+  background: rgba(0,255,136,0.1);
+  padding: 8px 20px;
+  border-radius: 30px;
+  border: 1px solid rgba(0,255,136,0.3);
+  margin-bottom: 30px;
+  animation: pulse 3s ease-in-out infinite;
+}
 
-    .collection-card {
-        background: var(--card-bg);
-        border: 2px solid var(--border-color);
-        border-radius: 12px;
-        width: 320px;
-        padding: 30px 20px;
-        text-align: center;
-        transition: 0.4s;
-    }
+@keyframes pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(0,255,136,0.4); }
+  50% { box-shadow: 0 0 0 10px rgba(0,255,136,0); }
+}
 
-    .collection-card:hover {
-        transform: translateY(-6px);
-        box-shadow: 0 0 25px rgba(0,240,255,0.4);
-        border-color: var(--accent-blue);
-    }
+.hero-badge::before {
+  content: '●';
+  color: var(--accent);
+  font-size: 1.2rem;
+  animation: blink 2s ease-in-out infinite;
+}
 
-    .collection-card h3 {
-        color: var(--accent-blue);
-        font-size: 1.4rem;
-        margin-bottom: 10px;
-    }
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
 
-    .collection-card p {
-        font-size: 0.95rem;
-        opacity: 0.85;
-        margin-bottom: 20px;
-    }
+.hero h1 {
+  font-size: 4.5rem;
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: 25px;
+  letter-spacing: -2px;
+}
 
-    .collection-card a {
-        display: block;
-        background: var(--accent-blue);
-        color: var(--primary-bg);
-        margin: 6px auto;
-        padding: 10px 20px;
-        border-radius: 20px;
-        text-decoration: none;
-        font-weight: bold;
-        width: 80%;
-        transition: 0.3s;
-    }
+.gradient-text {
+  background: linear-gradient(135deg, var(--text) 0%, var(--accent) 50%, var(--accent-2) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradientShift 5s ease infinite;
+  background-size: 200% 200%;
+}
 
-    .collection-card a:hover {
-        background: transparent;
-        color: var(--accent-blue);
-        border: 2px solid var(--accent-blue);
-        box-shadow: 0 0 15px rgba(0,240,255,0.5);
-    }
+@keyframes gradientShift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
 
-    /* preview popup */
-    #preview-popup {
-      position: fixed;
-      pointer-events: none;
-      display: none;
-      z-index: 9999;
-      width: 360px;
-      max-width: 42vw;
-      border-radius: 10px;
-      overflow: hidden;
-      border: 2px solid rgba(0,240,255,0.12);
-      box-shadow: 0 12px 40px rgba(0,240,255,0.12);
-      background: linear-gradient(180deg, rgba(0,0,0,0.7), rgba(0,0,0,0.45));
-    }
-    #preview-popup img{width:100%;height:auto;display:block}
-    #preview-popup.show{display:block;pointer-events:none;transform:translateY(-6px);transition:transform .12s ease}
+.hero-desc {
+  font-size: 1.2rem;
+  color: var(--text-dim);
+  margin-bottom: 40px;
+  line-height: 1.8;
+}
 
-    a.preview-link { position:relative; transition: color 0.18s; }
-    a.preview-link:hover { color: var(--accent-blue); text-decoration:none; }
+.cta-buttons {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
 
-    #contact a { color: var(--accent-blue); text-decoration: none; text-shadow: 0 0 5px rgba(0,240,255,0.5); }
-    footer { background: var(--primary-bg); color: var(--primary-text); text-align: center; padding: 40px 20px; border-top: 1px solid var(--border-color);}
-    footer p { font-size: 0.9rem; opacity: 0.7;}
+.btn {
+  padding: 16px 36px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: all 0.3s;
+  cursor: pointer;
+  border: none;
+  font-family: 'Space Grotesk', sans-serif;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: var(--bg);
+  box-shadow: 0 0 30px rgba(0,255,136,0.4);
+}
+
+.btn-primary:hover {
+  box-shadow: 0 0 50px rgba(0,255,136,0.6);
+  transform: translateY(-3px);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--text);
+  border: 2px solid var(--border);
+}
+
+.btn-secondary:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  box-shadow: 0 0 20px rgba(0,255,136,0.2);
+}
+
+/* Floating elements background */
+.hero::after {
+  content: '';
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(0,255,136,0.1) 0%, transparent 70%);
+  top: -200px;
+  right: -200px;
+  border-radius: 50%;
+  animation: float 20s ease-in-out infinite;
+  z-index: -1;
+}
+
+@keyframes float {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  33% { transform: translate(50px, -50px) rotate(120deg); }
+  66% { transform: translate(-50px, 50px) rotate(240deg); }
+}
+
+/* Section Styles */
+.section {
+  padding: 100px 0;
+  position: relative;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 70px;
+}
+
+.section-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.85rem;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-bottom: 15px;
+  display: inline-block;
+}
+
+.section-title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  letter-spacing: -1px;
+}
+
+.section-desc {
+  color: var(--text-dim);
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* About Section */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.about-text p {
+  color: var(--text-dim);
+  margin-bottom: 20px;
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+.about-text strong {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.about-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+
+.stat-card {
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  padding: 30px;
+  border-radius: 12px;
+  text-align: center;
+  transition: all 0.3s;
+}
+
+.stat-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0,255,136,0.15);
+}
+
+.stat-number {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--accent);
+  margin-bottom: 8px;
+}
+
+.stat-label {
+  color: var(--text-dim);
+  font-size: 0.9rem;
+}
+
+/* Templates Section */
+.templates {
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.collection-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+  margin-bottom: 60px;
+}
+
+.collection-card {
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 35px 30px;
+  transition: all 0.4s;
+  position: relative;
+  overflow: hidden;
+}
+
+.collection-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.collection-card:hover::before {
+  opacity: 1;
+}
+
+.collection-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--accent);
+  box-shadow: 0 20px 40px rgba(0,255,136,0.2);
+}
+
+.collection-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 12px;
+  color: var(--text);
+}
+
+.collection-card p {
+  color: var(--text-dim);
+  margin-bottom: 25px;
+  line-height: 1.7;
+}
+
+.template-link {
+  display: block;
+  padding: 12px 20px;
+  margin-bottom: 10px;
+  background: rgba(0,255,136,0.05);
+  border: 1px solid rgba(0,255,136,0.2);
+  border-radius: 8px;
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s;
+  text-align: center;
+}
+
+.template-link:hover {
+  background: rgba(0,255,136,0.1);
+  border-color: var(--accent);
+  transform: translateX(5px);
+  color: var(--accent);
+}
+
+.cta-center {
+  text-align: center;
+}
+
+.btn-large {
+  padding: 20px 50px;
+  font-size: 1.1rem;
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  color: var(--bg);
+  font-weight: 700;
+  box-shadow: 0 10px 40px rgba(0,255,136,0.3);
+}
+
+.btn-large:hover {
+  box-shadow: 0 15px 60px rgba(0,255,136,0.5);
+  transform: translateY(-3px) scale(1.02);
+}
+
+/* Contact Section */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.contact-item {
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  padding: 30px;
+  border-radius: 12px;
+  text-align: center;
+  transition: all 0.3s;
+}
+
+.contact-item:hover {
+  border-color: var(--accent);
+  transform: translateY(-5px);
+}
+
+.contact-icon {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+}
+
+.contact-label {
+  color: var(--text-dim);
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+}
+
+.contact-value {
+  color: var(--accent);
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+.contact-value:hover {
+  text-shadow: 0 0 20px var(--accent);
+}
+
+/* Footer */
+footer {
+  padding: 50px 0;
+  text-align: center;
+  border-top: 1px solid var(--border);
+  color: var(--text-dim);
+}
+
+footer p {
+  font-size: 0.95rem;
+}
+
+/* Responsive */
+@media (max-width: 968px) {
+  .hero h1 { font-size: 3rem; }
+  .section-title { font-size: 2.2rem; }
+  .about-grid { grid-template-columns: 1fr; }
+  .contact-grid { grid-template-columns: 1fr; }
+  .nav-links { display: none; }
+  .collection-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 640px) {
+  .hero h1 { font-size: 2.2rem; }
+  .hero-desc { font-size: 1rem; }
+  .cta-buttons { flex-direction: column; }
+  .btn { width: 100%; justify-content: center; }
+}
+
+/* Scroll animations */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
 </style>
 </head>
 <body>
 
-    <header>
-      <div class="brand">
-        <img src="assets/logo.svg" alt="CODEPRINT logo">
-        <div>
-          <h1>NewGenWeb</h1>
-          <p>Building the Future</p>
-        </div>
+<nav>
+  <div class="container" style="display: flex; justify-content: space-between; align-items: center; padding: 0;">
+    <div class="logo">
+      <div class="logo-icon">N</div>
+      <span>NewGenWeb</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#templates">Templates</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-badge">
+        Available for projects
       </div>
-    </header>
-
-    <section id="about" class="fade-in">
-        <h2>About Me</h2>
-        <p>Hi, I’m <b>NewGen</b> — a passionate web designer focused on creating clean, modern, and affordable websites for small businesses, creators and entrepreneurs. I love combining technology and creativity to help people stand out online.</p>
-        <br>
-        <p>Besides web design, I also run my digital brand <b>CODEPRINT</b>, where I create professional resume templates and digital tools for students, freelancers and job seekers.</p>
-    </section>
-
-    <section id="templates" class="fade-in">
-        <h2>Resume Templates by CODEPRINT</h2>
-        <p>Explore my modern, easy-to-edit resume templates designed to help you make a strong first impression 👇</p>
-
-        <div class="collection-grid">
-    <div class="collection-card">
-        <h3>Tech Minimal Pack</h3>
-        <p>Neon futuristic layouts for developers & designers</p>
-        <a class="preview-link" href="tech-minimal/tech-blue.html" target="_blank" data-preview="preview/tech-blue.png">Blue Neon</a>
-        <a class="preview-link" href="tech-minimal/tech-violet.html" target="_blank" data-preview="preview/tech-violet.png">Violet Edition</a>
-        <a class="preview-link" href="tech-minimal/tech-cyber.html" target="_blank" data-preview="preview/tech-cyber.png">Cyber Green</a>
-    </div>
-
-    <div class="collection-card">
-  <h3>Business Professional Pack</h3>
-  <p>Clean, elegant & executive-level resume templates</p>
-  <a href="business/business-gold.html" target="_blank">Business Gold</a>
-  <a href="business/business-navy.html" target="_blank">Royal Navy</a>
-  <a href="business/business-ivory.html" target="_blank">Ivory Classic</a>
-</div>
-
-    <div class="collection-card">
-        <h3>Creative Hybrid Pack</h3>
-        <p>Colorful, stylish resumes for creators & artists</p>
-        <a class="preview-link" href="creative/creative-bright.html" target="_blank" data-preview="preview/creative-bright.png">Bright Flow</a>
-        <a class="preview-link" href="creative/creative-soft.html" target="_blank" data-preview="preview/creative-soft.png">Soft Pastel</a>
-        <a class="preview-link" href="creative/creative-gradient.html" target="_blank" data-preview="preview/creative-gradient.png">Gradient Glow</a>
-    </div>
-</div>
-
-        <div style="margin-top:60px;">
-            <a href="https://realcode.gumroad.com/l/resume-pack" target="_blank" class="buy-button">Get Full Bundle</a>
-        </div>
-    </section>
-
-    <section id="contact" class="fade-in">
-        <h2>Contact</h2>
-        <p>Email: <a href="mailto:ghostvlasek@gmail.com">ghostvlasek@gmail.com</a></p>
-        <p>Phone: <a href="tel:+420797808290">+420 797 808 290</a></p>
-    </section>
-
-    <footer>
-        <p>© 2025 NewGenWeb — Built with passion 💻</p>
-    </footer>
-
-    <!-- preview popup -->
-    <div id="preview-popup"><img id="preview-img" src="" alt="preview"></div>
-
-    <script>
-        const fadeEls = document.querySelectorAll('.fade-in');
-        const observer = new IntersectionObserver(entries => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, { rootMargin: '0px 0px -100px 0px' });
-        fadeEls.forEach(el => observer.observe(el));
-
-        // preview popup logic
-        (function(){
-          const popup = document.getElementById('preview-popup');
-          const img = document.getElementById('preview-img');
-          const links = document.querySelectorAll('a.preview-link');
-
-          function show(el, e){
-            const src = el.dataset.preview;
-            if(!src) return;
-            img.src = src;
-            popup.classList.add('show');
-            popup.style.display = 'block';
-            move(e);
-          }
-          function hide(){ popup.classList.remove('show'); popup.style.display = 'none'; img.src=''; }
-          function move(e){
-            const pad = 18;
-            const w = popup.offsetWidth || 360;
-            const h = popup.offsetHeight || 200;
-            let x = e.clientX + pad;
-            let y = e.clientY + pad;
-            if(x + w > window.innerWidth) x = e.clientX - w - pad;
-            if(y + h > window.innerHeight) y = e.clientY - h - pad;
-            popup.style.left = x + 'px';
-            popup.style.top = y + 'px';
-          }
-
-          links.forEach(link=>{
-            link.addEventListener('mouseenter', (ev)=> show(link, ev));
-            link.addEventListener('mousemove', move);
-            link.addEventListener('mouseleave', hide);
-            // mobile / touch: tap to toggle
-            link.addEventListener('click', (ev)=>{
-              if(window.matchMedia('(hover: none)').matches){
-                ev.preventDefault();
-                if(popup.style.display === 'block') hide(); else show(link, ev);
-              }
-            });
-          });
-        })();
-    </script>
-</body>
-</html>
-<!-- ...existing code... -->
-
-
+      <h1>
+        Building <span class="gradient-text">digital experiences</span> for the next generation
