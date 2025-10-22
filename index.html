@@ -18,7 +18,6 @@
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
-
 html { scroll-behavior: smooth; }
 
 body {
@@ -29,7 +28,6 @@ body {
   overflow-x: hidden;
 }
 
-/* Animated grid background */
 body::before {
   content: '';
   position: fixed;
@@ -59,7 +57,6 @@ body::before {
   z-index: 1;
 }
 
-/* Navigation */
 nav {
   padding: 25px 0;
   display: flex;
@@ -128,7 +125,6 @@ nav {
   width: 100%;
 }
 
-/* Hero Section */
 .hero {
   min-height: 90vh;
   display: flex;
@@ -246,7 +242,6 @@ nav {
   box-shadow: 0 0 20px rgba(0,255,136,0.2);
 }
 
-/* Floating elements background */
 .hero::after {
   content: '';
   position: absolute;
@@ -266,7 +261,6 @@ nav {
   66% { transform: translate(-50px, 50px) rotate(240deg); }
 }
 
-/* Section Styles */
 .section {
   padding: 100px 0;
   position: relative;
@@ -299,9 +293,9 @@ nav {
   font-size: 1.1rem;
   max-width: 600px;
   margin: 0 auto;
+  line-height: 1.8;
 }
 
-/* About Section */
 .about-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -354,7 +348,6 @@ nav {
   font-size: 0.9rem;
 }
 
-/* Templates Section */
 .templates {
   background: var(--surface);
   border-top: 1px solid var(--border);
@@ -451,7 +444,6 @@ nav {
   transform: translateY(-3px) scale(1.02);
 }
 
-/* Contact Section */
 .contact-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -491,13 +483,13 @@ nav {
   font-weight: 600;
   text-decoration: none;
   transition: all 0.3s;
+  display: inline-block;
 }
 
 .contact-value:hover {
   text-shadow: 0 0 20px var(--accent);
 }
 
-/* Footer */
 footer {
   padding: 50px 0;
   text-align: center;
@@ -505,11 +497,6 @@ footer {
   color: var(--text-dim);
 }
 
-footer p {
-  font-size: 0.95rem;
-}
-
-/* Responsive */
 @media (max-width: 968px) {
   .hero h1 { font-size: 3rem; }
   .section-title { font-size: 2.2rem; }
@@ -526,7 +513,6 @@ footer p {
   .btn { width: 100%; justify-content: center; }
 }
 
-/* Scroll animations */
 .fade-in {
   opacity: 0;
   transform: translateY(30px);
@@ -558,8 +544,149 @@ footer p {
 <section class="hero">
   <div class="container">
     <div class="hero-content">
-      <div class="hero-badge">
-        Available for projects
+      <div class="hero-badge">Available for projects</div>
+      <h1>Building <span class="gradient-text">digital experiences</span> for the next generation</h1>
+      <p class="hero-desc">
+        Web developer & digital creator specializing in modern websites and professional templates. 
+        I help businesses and individuals stand out online.
+      </p>
+      <div class="cta-buttons">
+        <a href="#templates" class="btn btn-primary">View Templates →</a>
+        <a href="#contact" class="btn btn-secondary">Get in Touch</a>
       </div>
-      <h1>
-        Building <span class="gradient-text">digital experiences</span> for the next generation
+    </div>
+  </div>
+</section>
+
+<section id="about" class="section fade-in">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label">Who I Am</div>
+      <h2 class="section-title">About Me</h2>
+    </div>
+    <div class="about-grid">
+      <div class="about-text">
+        <p>
+          Hey! I'm <strong>NewGen</strong> — a passionate web developer focused on creating clean, 
+          modern, and affordable websites for small businesses, creators, and entrepreneurs.
+        </p>
+        <p>
+          I love combining technology and creativity to help people stand out online. Whether it's 
+          building a custom website or crafting professional resume templates, I'm all about quality and simplicity.
+        </p>
+        <p>
+          Besides web design, I also run my digital brand <strong>CODEPRINT</strong>, where I create 
+          professional templates and digital tools for students, freelancers, and job seekers.
+        </p>
+      </div>
+      <div class="about-stats">
+        <div class="stat-card">
+          <div class="stat-number">50+</div>
+          <div class="stat-label">Projects Completed</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">30+</div>
+          <div class="stat-label">Happy Clients</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">3+</div>
+          <div class="stat-label">Years Experience</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">100%</div>
+          <div class="stat-label">Satisfaction</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="templates" class="section templates fade-in">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label">CODEPRINT Collection</div>
+      <h2 class="section-title">Resume Templates</h2>
+      <p class="section-desc">
+        Modern, easy-to-edit resume templates designed to help you make a strong first impression
+      </p>
+    </div>
+    
+    <div class="collection-grid">
+      <div class="collection-card">
+        <h3>Tech Minimal Pack</h3>
+        <p>Neon futuristic layouts for developers & designers</p>
+        <a href="tech-minimal/tech-blue.html" target="_blank" class="template-link">Blue Neon</a>
+        <a href="tech-minimal/tech-violet.html" target="_blank" class="template-link">Violet Edition</a>
+        <a href="tech-minimal/tech-cyber.html" target="_blank" class="template-link">Cyber Green</a>
+      </div>
+
+      <div class="collection-card">
+        <h3>Business Professional Pack</h3>
+        <p>Clean, elegant & executive-level resume templates</p>
+        <a href="business/business-gold.html" target="_blank" class="template-link">Business Gold</a>
+        <a href="business/business-navy.html" target="_blank" class="template-link">Royal Navy</a>
+        <a href="business/business-ivory.html" target="_blank" class="template-link">Ivory Classic</a>
+      </div>
+
+      <div class="collection-card">
+        <h3>Creative Hybrid Pack</h3>
+        <p>Colorful, stylish resumes for creators & artists</p>
+        <a href="creative/creative-bright.html" target="_blank" class="template-link">Bright Flow</a>
+        <a href="creative/creative-soft.html" target="_blank" class="template-link">Soft Pastel</a>
+        <a href="creative/creative-gradient.html" target="_blank" class="template-link">Gradient Glow</a>
+      </div>
+    </div>
+
+    <div class="cta-center">
+      <a href="https://realcode.gumroad.com/l/resume-pack" target="_blank" class="btn btn-large">
+        Get Full Bundle 🚀
+      </a>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="section fade-in">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label">Let's Connect</div>
+      <h2 class="section-title">Get in Touch</h2>
+      <p class="section-desc">
+        Have a project in mind? Let's work together to bring your ideas to life
+      </p>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-item">
+        <div class="contact-icon">✉️</div>
+        <div class="contact-label">Email</div>
+        <a href="mailto:ghostvlasek@gmail.com" class="contact-value">ghostvlasek@gmail.com</a>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">📱</div>
+        <div class="contact-label">Phone</div>
+        <a href="tel:+420797808290" class="contact-value">+420 797 808 290</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <p>© 2025 NewGenWeb — Built with passion 💻</p>
+  </div>
+</footer>
+
+<script>
+const fadeEls = document.querySelectorAll('.fade-in');
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { rootMargin: '0px 0px -100px 0px' });
+
+fadeEls.forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
