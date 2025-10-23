@@ -1,180 +1,211 @@
 <!DOCTYPE html>
-<html lang="cs">
+<html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Tech Minimal Resume - Violet Theme</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tech Minimal Resume - Violet Neon Edition</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
   <style>
-    :root{
-      --bg-dark: #0b0012;
-      --bg-dark-2: #07000a;
-      --text: #f5f5f5;
-      --muted: rgba(255,255,255,0.8);
-      --accent: #b54bff;      /* hlavní fialová */
-      --subaccent: #00f0ff;   /* doplňková azurová */
-      --panel: rgba(255,255,255,0.03);
-      --radius: 12px;
-      --maxw: 1100px;
+    :root {
+      --bg-dark: #0a0614;
+      --text-dark: #f7f3ff;
+      --accent: #c77dff;
+      --subaccent: #8a2be2;
+      --bg-light: #f7f3ff;
+      --text-light: #1a1025;
     }
-    html,body{height:100%;margin:0;font-family:'Poppins',sans-serif;background:
-      radial-gradient(800px 400px at 10% 10%, rgba(181,75,255,0.04), transparent),
-      linear-gradient(180deg,var(--bg-dark),var(--bg-dark-2));
-      color:var(--text);-webkit-font-smoothing:antialiased}
 
-    /* layout */
-    .wrap{max-width:var(--maxw);margin:28px auto;padding:22px;display:grid;grid-template-columns:1fr 320px;gap:22px}
-    @media (max-width:900px){.wrap{grid-template-columns:1fr;padding:14px}.sidebar{order:2}}
-
-    /* card */
-    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-radius:var(--radius);
-      padding:22px;border:1px solid rgba(181,75,255,0.06);box-shadow:0 12px 40px rgba(181,75,255,0.03)}
-
-    /* header */
-    .head{display:flex;gap:18px;align-items:center}
-    .avatar{width:88px;height:88px;border-radius:50%;background:linear-gradient(135deg, rgba(181,75,255,0.12), rgba(0,240,255,0.06));
-      display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--accent);border:2px solid rgba(181,75,255,0.12)}
-    .name h1{margin:0;font-size:1.6rem;letter-spacing:1px;background:linear-gradient(90deg,var(--accent),#ff79f7);-webkit-background-clip:text;color:transparent}
-    .name .role{margin-top:6px;color:var(--muted);font-weight:500}
-
-    /* contact */
-    .contact{margin:12px 0;color:var(--muted);font-size:0.95rem}
-    .contact a{color:var(--subaccent);text-decoration:none;margin-right:8px}
-    .neon{height:3px;border-radius:3px;background:linear-gradient(90deg, transparent, rgba(181,75,255,0.25), rgba(0,240,255,0.15));margin:14px 0}
-
-    /* sections */
-    .section{margin-bottom:16px}
-    .section h3{margin:0 0 10px 0;color:var(--accent);font-size:1rem;padding-left:8px;border-left:4px solid rgba(181,75,255,0.08)}
-    .section p{margin:0;color:var(--muted);line-height:1.6}
-    .exp{background:var(--panel);padding:12px;border-radius:10px;border:1px solid rgba(181,75,255,0.03);margin-bottom:10px}
-    .exp h4{margin:0;color:var(--text);font-size:1rem}
-    .meta{font-size:0.85rem;color:rgba(255,255,255,0.65);margin-top:6px}
-    ul{margin:8px 0 0 18px;padding:0;color:var(--muted)}
-    ul li{margin-bottom:6px}
-
-    /* skills */
-    .skills{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
-    .badge{padding:6px 12px;border-radius:999px;background:linear-gradient(90deg, rgba(181,75,255,0.06), rgba(0,240,255,0.03));
-      border:1px solid rgba(181,75,255,0.08);color:var(--accent);font-weight:600;font-size:0.95rem}
-
-    /* sidebar */
-    .sidebar{display:flex;flex-direction:column;gap:12px}
-    .panel{background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.0));padding:14px;border-radius:10px;border:1px solid rgba(255,255,255,0.02)}
-    .side-title{color:var(--accent);font-weight:700;margin-bottom:8px}
-    .info{font-size:0.95rem;color:var(--muted);margin-bottom:8px}
-    .download{display:inline-block;padding:10px 14px;border-radius:999px;background:linear-gradient(90deg,var(--accent),#ff79f7);color:#001;font-weight:700;text-decoration:none}
-
-    /* theme toggle */
-    .theme-toggle{position:fixed;right:18px;top:18px;padding:8px 14px;border-radius:999px;border:1px solid rgba(255,255,255,0.06);
-      background:transparent;color:var(--subaccent);cursor:pointer;backdrop-filter:blur(4px)}
-    .theme-toggle:hover{background:rgba(255,255,255,0.02)}
-
-    /* light mode */
-    body.light{
-      --bg-dark: #f6f7fb;
-      --bg-dark-2:#ffffff;
-      --text:#111827;
-      --muted:rgba(17,24,39,0.85);
-      --panel: rgba(0,0,0,0.03);
-      background:linear-gradient(180deg,#f6f7fb,#ffffff);
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: radial-gradient(circle at top, #100829 0%, #060312 100%);
+      color: var(--text-dark);
+      margin: 0;
+      transition: background 0.4s ease, color 0.4s ease;
     }
-    body.light .card{border:1px solid rgba(181,75,255,0.08);box-shadow:none}
 
-    footer{grid-column:1/-1;text-align:center;color:rgba(255,255,255,0.5);margin-top:12px;font-size:0.9rem}
-    body.light footer{color:rgba(17,24,39,0.6)}
+    header {
+      text-align: center;
+      padding: 70px 20px 40px;
+    }
 
-    /* print */
-    @media print{.theme-toggle,.download{display:none};body{background:#fff;color:#000}}
+    header h1 {
+      font-size: 3.4rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+      color: var(--accent);
+      text-shadow: 0 0 25px rgba(199,125,255,0.6), 0 0 50px rgba(138,43,226,0.4);
+      animation: glowPulse 3s infinite ease-in-out;
+    }
+
+    @keyframes glowPulse {
+      0%, 100% { text-shadow: 0 0 15px rgba(199,125,255,0.5), 0 0 30px rgba(138,43,226,0.3); }
+      50% { text-shadow: 0 0 40px rgba(199,125,255,0.8), 0 0 70px rgba(138,43,226,0.6); }
+    }
+
+    header h2 {
+      font-weight: 400;
+      font-size: 1.1rem;
+      color: var(--subaccent);
+      letter-spacing: 1px;
+      text-shadow: 0 0 8px rgba(138,43,226,0.4);
+    }
+
+    .contact {
+      text-align: center;
+      margin: 25px 0;
+      font-size: 0.95rem;
+    }
+
+    .contact a {
+      color: var(--accent);
+      text-decoration: none;
+      margin: 0 12px;
+      transition: 0.3s;
+    }
+
+    .contact a:hover {
+      text-shadow: 0 0 10px var(--accent);
+    }
+
+    section {
+      max-width: 850px;
+      margin: 70px auto;
+      padding: 0 25px;
+      border-left: 2px solid rgba(199,125,255,0.25);
+      backdrop-filter: blur(6px);
+    }
+
+    section h3 {
+      color: var(--accent);
+      font-size: 1.4rem;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      padding-bottom: 8px;
+      margin-bottom: 25px;
+      letter-spacing: 1px;
+    }
+
+    p {
+      color: rgba(245,240,255,0.9);
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 10px 0 0;
+    }
+
+    ul li {
+      padding-left: 1em;
+      position: relative;
+      margin-bottom: 6px;
+      opacity: 0.9;
+    }
+
+    ul li::before {
+      content: "•";
+      color: var(--accent);
+      position: absolute;
+      left: 0;
+      text-shadow: 0 0 6px var(--accent);
+    }
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .skill {
+      background: rgba(199,125,255,0.08);
+      border: 1px solid rgba(199,125,255,0.4);
+      color: var(--accent);
+      padding: 9px 16px;
+      border-radius: 25px;
+      font-size: 0.9rem;
+      text-shadow: 0 0 5px rgba(199,125,255,0.5);
+      transition: 0.3s;
+    }
+
+    .skill:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 10px rgba(199,125,255,0.4);
+    }
+
+    footer {
+      text-align: center;
+      padding: 50px 20px;
+      opacity: 0.7;
+      font-size: 0.9rem;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      color: rgba(240,230,255,0.8);
+      letter-spacing: 0.5px;
+    }
+
+    .theme-toggle {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: transparent;
+      border: 1px solid var(--accent);
+      border-radius: 30px;
+      padding: 8px 18px;
+      color: var(--accent);
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+      text-shadow: 0 0 6px var(--accent);
+      backdrop-filter: blur(6px);
+    }
+
+    .theme-toggle:hover {
+      background: var(--accent);
+      color: #000;
+      box-shadow: 0 0 15px var(--accent);
+    }
   </style>
 </head>
 <body>
-  <button class="theme-toggle" aria-label="Toggle theme" onclick="toggleTheme()">🌙 / ☀️</button>
 
-  <div class="wrap">
-    <main class="card">
-      <div class="head">
-        <div class="avatar" aria-hidden="true">AC</div>
-        <div class="name">
-          <h1>Ava Collins</h1>
-          <div class="role">UI / UX Designer</div>
-        </div>
-      </div>
+  <button class="theme-toggle" onclick="document.body.classList.toggle('light')">🌙 / ☀️</button>
 
-      <div class="contact">
-        <a href="mailto:ava.collins@email.com">✉️ ava.collins@email.com</a>
-        <a href="#" target="_blank">🔗 avacollins.design</a>
-        <a href="tel:+123456789">📞 +1 234 567 890</a>
-      </div>
+  <header>
+    <h1>Jane Violet</h1>
+    <h2>UI/UX Designer</h2>
+  </header>
 
-      <div class="neon"></div>
-
-      <section class="section">
-        <h3>About</h3>
-        <p>Creative designer blending aesthetic appeal with usability. I create interfaces that not only look beautiful but enhance user flow and accessibility.</p>
-      </section>
-
-      <section class="section">
-        <h3>Experience</h3>
-        <div class="exp">
-          <h4>Lead UI Designer — Luminex Studio</h4>
-          <div class="meta">2021 – Present • Remote</div>
-          <ul>
-            <li>Redesigned SaaS dashboard for 10k+ active users.</li>
-            <li>Built a scalable design system with Figma + Tailwind.</li>
-          </ul>
-        </div>
-      </section>
-
-      <section class="section">
-        <h3>Education</h3>
-        <p>B.A. Interaction Design — Relevant courses: Usability, Visual Design, Prototyping.</p>
-      </section>
-
-    </main>
-
-    <aside class="sidebar">
-      <div class="panel">
-        <div class="side-title">Skills</div>
-        <div class="skills">
-          <div class="badge">Figma</div>
-          <div class="badge">Adobe XD</div>
-          <div class="badge">HTML/CSS</div>
-          <div class="badge">Prototyping</div>
-          <div class="badge">UX Research</div>
-        </div>
-        <a class="download" href="#" download>Download CV</a>
-      </div>
-
-      <div class="panel">
-        <div class="side-title">Contact</div>
-        <div class="info">📧 <a href="mailto:ava.collins@email.com" style="color:var(--subaccent);text-decoration:none">ava.collins@email.com</a></div>
-        <div class="info">🔗 <a href="#" style="color:var(--subaccent);text-decoration:none">avacollins.design</a></div>
-        <div class="info">📞 +1 234 567 890</div>
-      </div>
-
-      <div class="panel">
-        <div class="side-title">Tools</div>
-        <div class="info">Figma · Sketch · VS Code</div>
-        <div class="info">Principle · Framer</div>
-      </div>
-    </aside>
-
-    <footer>© 2025 CODEPRINT — Tech Minimal (Violet Edition)</footer>
+  <div class="contact">
+    <a href="#">janeviolet@email.com</a> |
+    <a href="#">janeviolet.com</a> |
+    <a href="#">@violet.design</a>
   </div>
 
-  <script>
-    // jednoduchý toggle theme (uloží volbu do localStorage)
-    (function(){
-      const body = document.body;
-      const saved = localStorage.getItem('theme');
-      if(saved === 'light') body.classList.add('light');
-    })();
+  <section>
+    <h3>About Me</h3>
+    <p>Creative designer passionate about blending minimal aesthetics with glowing futuristic accents. Focused on clean typography, fluid motion, and accessible interfaces.</p>
+  </section>
 
-    function toggleTheme(){
-      document.body.classList.toggle('light');
-      const active = document.body.classList.contains('light') ? 'light' : 'dark';
-      localStorage.setItem('theme', active);
-    }
-  </script>
+  <section>
+    <h3>Experience</h3>
+    <ul>
+      <li>Senior UI Designer at LumaTech (2021–Present)</li>
+      <li>Visual Designer at Aurora Studio (2018–2021)</li>
+    </ul>
+  </section>
+
+  <section>
+    <h3>Skills</h3>
+    <div class="skills">
+      <span class="skill">Figma</span>
+      <span class="skill">Adobe XD</span>
+      <span class="skill">CSS Animations</span>
+      <span class="skill">Prototyping</span>
+      <span class="skill">Brand Systems</span>
+    </div>
+  </section>
+
+  <footer>
+    © 2025 CODEPRINT — Tech Minimal Violet Neon Pack
+  </footer>
 </body>
 </html>
