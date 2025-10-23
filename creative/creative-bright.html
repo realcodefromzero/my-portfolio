@@ -3,211 +3,290 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Creative Bright — 2025 Edition</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <title>Bright Flow — Creative Resume (2025 Hybrid)</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --bg: #fdfdfd;
-      --panel: rgba(255,255,255,0.7);
-      --text: #1a1a1a;
-      --muted: rgba(0,0,0,0.6);
-      --accent: #ff7ac7;
-      --gradient: linear-gradient(120deg, #ffe6f7 0%, #e7f3ff 100%);
-      --shadow: 0 8px 30px rgba(0,0,0,0.05);
-      --radius: 14px;
+    :root{
+      /* Palette */
+      --bg: #f6f8fb;
+      --ink: #1b1f23;
+      --muted: rgba(0,0,0,0.65);
+      --brand-1: #ff93c9;   /* pastel pink */
+      --brand-2: #8ec5ff;   /* sky blue */
+      --brand-3: #48cae4;   /* cyan accent */
+      --panel: #ffffff;
+
+      /* Effects */
+      --glass: rgba(255,255,255,0.28);
+      --glass-border: rgba(255,255,255,0.55);
+      --shadow: 0 12px 40px rgba(16,24,40,0.08);
+      --radius-lg: 22px;
+      --radius-md: 14px;
+
+      /* Grid */
+      --w: 980px;
+      --left: 35%;
+      --right: 65%;
     }
 
-    body {
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body{
       margin: 0;
-      font-family: 'Poppins', sans-serif;
-      background: var(--gradient);
-      color: var(--text);
+      font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, 'Poppins', sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(900px 500px at -10% -10%, rgba(255,147,201,0.25), transparent 60%),
+        radial-gradient(900px 500px at 110% -10%, rgba(142,197,255,0.25), transparent 60%),
+        linear-gradient(180deg,#ffffff, #f6f8fb 70%);
       -webkit-font-smoothing: antialiased;
-      line-height: 1.6;
-      overflow-x: hidden;
     }
 
-    header {
-      text-align: center;
-      padding: 80px 20px 60px;
+    .resume{
+      width: min(100%, var(--w));
+      margin: 48px auto;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: var(--left) var(--right);
+      background: var(--panel);
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(17, 24, 39, 0.05);
+    }
+
+    /* LEFT (BRIGHT FLOW PANEL) */
+    .left{
       position: relative;
-    }
-
-    header::after {
-      content: "";
-      position: absolute;
-      bottom: 0;
-      left: 50%;
-      width: 120px;
-      height: 2px;
-      background: linear-gradient(90deg, transparent, var(--accent), transparent);
-      transform: translateX(-50%);
-      opacity: 0.5;
-    }
-
-    h1 {
-      font-size: 3rem;
-      margin: 0;
-      background: linear-gradient(90deg, #ff93c9, #8cbaff);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      letter-spacing: 1px;
-      font-weight: 700;
-      text-shadow: 0 0 10px rgba(255,150,200,0.3);
-      animation: glowPulse 4s ease-in-out infinite;
-    }
-
-    @keyframes glowPulse {
-      0%, 100% { text-shadow: 0 0 6px rgba(255,150,200,0.3); }
-      50% { text-shadow: 0 0 16px rgba(255,150,200,0.5); }
-    }
-
-    h2 {
-      font-size: 1.2rem;
-      color: var(--muted);
-      margin-top: 8px;
-      font-weight: 400;
-    }
-
-    .content {
-      max-width: 900px;
-      margin: 60px auto;
-      padding: 0 25px;
+      color: #0a2540;
+      padding: 42px 28px;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.25), rgba(255,255,255,0.12)),
+        linear-gradient(180deg, var(--brand-1), var(--brand-2));
       display: flex;
       flex-direction: column;
-      gap: 40px;
+      gap: 28px;
+      justify-content: flex-start;
+      isolation: isolate;
     }
-
-    section {
-      background: var(--panel);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      padding: 30px 40px;
+    .left::before{
+      content:"";
+      position:absolute; inset:0;
+      background:
+        radial-gradient(600px 240px at 20% 10%, rgba(255,255,255,0.55), transparent 60%),
+        radial-gradient(500px 260px at 80% 30%, rgba(255,255,255,0.35), transparent 60%);
+      mix-blend-mode: screen;
+      opacity: .7;
+      pointer-events:none;
+    }
+    .glass{
+      background: var(--glass);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius-md);
       backdrop-filter: blur(8px);
-      animation: fadeUp 0.8s ease forwards;
-      opacity: 0;
-      transform: translateY(30px);
+      -webkit-backdrop-filter: blur(8px);
+      box-shadow: 0 8px 30px rgba(255,255,255,0.25) inset, 0 6px 18px rgba(10,37,64,0.08);
+      padding: 18px;
     }
 
-    section.visible {
-      opacity: 1;
-      transform: translateY(0);
+    .profile{
+      text-align:center;
+      padding: 10px 0 4px;
     }
-
-    @keyframes fadeUp {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+    .avatar{
+      width: 128px; height: 128px; border-radius: 50%;
+      object-fit: cover;
+      border: 5px solid rgba(255,255,255,0.75);
+      box-shadow: 0 10px 26px rgba(255,255,255,0.35);
+      display:block; margin: 0 auto 14px;
+      background: linear-gradient(135deg, rgba(255,255,255,0.35), rgba(255,255,255,0.15));
     }
-
-    h3 {
-      font-size: 1.3rem;
-      color: var(--accent);
-      margin-bottom: 12px;
-      letter-spacing: 0.5px;
-    }
-
-    p {
-      color: var(--muted);
+    .name{
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      letter-spacing: 0.3px;
+      font-size: 1.6rem;
       margin: 0;
+      background: linear-gradient(90deg, #ff9cd1, #7fb7ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 0 0 10px rgba(255,147,201,0.25);
+      animation: namePulse 5s ease-in-out infinite;
+    }
+    @keyframes namePulse{
+      0%,100%{ text-shadow: 0 0 8px rgba(255,147,201,0.2); }
+      50%{ text-shadow: 0 0 16px rgba(142,197,255,0.35); }
+    }
+    .role{
+      margin-top: 4px;
+      color: rgba(10,37,64,0.8);
+      font-weight: 600;
     }
 
-    ul {
-      margin: 10px 0 0 18px;
-      padding: 0;
-      color: var(--muted);
+    .block-title{
+      font-family: 'Poppins', sans-serif; 
+      font-size: .95rem; 
+      text-transform: uppercase; 
+      letter-spacing: 1.6px;
+      margin-bottom: 10px;
+      color: #0a2540;
+      display:flex; align-items:center; gap:8px;
+    }
+    .block-title::before{
+      content:"";
+      width: 16px; height: 3px; border-radius: 2px;
+      background: linear-gradient(90deg,#0a2540, rgba(10,37,64,0.2));
+      opacity:.6;
     }
 
-    li {
-      margin-bottom: 6px;
+    .contact ul, .skills ul{ list-style: none; padding: 0; margin: 0; }
+    .contact li{ margin-bottom: 8px; font-size: .95rem; color: rgba(10,37,64,0.9); }
+    .contact a{ color:#0a2540; text-decoration: none; border-bottom: 1px dotted rgba(10,37,64,0.35); }
+    .contact a:hover{ opacity:.85 }
+
+    .skills li{ margin-bottom: 12px; }
+    .skillline{
+      display:block; height: 9px; border-radius: 999px;
+      background: rgba(255,255,255,0.35);
+      overflow: hidden; margin-top: 6px;
+      border: 1px solid rgba(255,255,255,0.6);
+    }
+    .skillline > i{
+      display:block; height: 100%;
+      width: var(--w,70%);
+      background: linear-gradient(90deg, #fff, #d6ecff);
+      box-shadow: 0 0 12px rgba(255,255,255,0.6);
+      transform-origin: left center;
+      transform: scaleX(0.2);
+      animation: fill 1.2s ease forwards;
+    }
+    @keyframes fill{ to{ transform: scaleX(1); } }
+
+    /* RIGHT (CONTENT) */
+    .right{ padding: 42px; background: var(--panel); }
+    .section{ margin-bottom: 28px; opacity: 0; transform: translateY(20px); transition: .6s ease; }
+    .section.visible{ opacity:1; transform: translateY(0); }
+
+    .section h2{
+      font-size: 1.15rem; margin: 0 0 10px;
+      font-family: 'Poppins', sans-serif; letter-spacing: 1px; text-transform: uppercase;
+      background: linear-gradient(90deg, var(--brand-1), var(--brand-2));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    }
+    .section p{ color: var(--muted); margin: 0; }
+
+    .item{ margin-bottom: 18px; }
+    .item h3{ margin:0; font-size:1.02rem; font-weight: 700; color: var(--ink); }
+    .item span{ display:block; font-size: .9rem; color: var(--brand-3); margin: 4px 0 6px; }
+
+    .footer{
+      text-align:center; color: rgba(0,0,0,0.5); font-size:.9rem; margin-top: 24px;
+      padding-top: 16px; border-top: 1px solid rgba(0,0,0,0.06);
     }
 
-    .skills {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
+    /* RESPONSIVE */
+    @media (max-width: 900px){
+      .resume{ grid-template-columns: 1fr; }
+      .left{ border-bottom-left-radius: 0; border-bottom-right-radius: 0; }
+    }
+    @media (max-width: 640px){
+      .right{ padding: 28px; }
     }
 
-    .skill {
-      background: rgba(255,255,255,0.6);
-      color: var(--accent);
-      padding: 8px 14px;
-      border-radius: 20px;
-      font-size: 0.9rem;
-      font-weight: 500;
-      box-shadow: 0 0 10px rgba(255,150,200,0.15);
-      transition: 0.3s;
-    }
-
-    .skill:hover {
-      background: rgba(255,255,255,0.9);
-      box-shadow: 0 0 14px rgba(255,150,200,0.3);
-      transform: translateY(-2px);
-    }
-
-    footer {
-      text-align: center;
-      padding: 40px 20px;
-      color: var(--muted);
-      font-size: 0.9rem;
-      border-top: 1px solid rgba(0,0,0,0.05);
-      margin-top: 40px;
-    }
-
-    @media (max-width: 768px) {
-      h1 { font-size: 2.2rem; }
-      section { padding: 24px 20px; }
+    /* PRINT */
+    @media print{
+      body{ background:#fff; }
+      .resume{ box-shadow:none; border:1px solid #eee; }
+      .left::before{ display:none; }
+      .name{ animation:none; text-shadow:none; -webkit-text-fill-color: #111 !important; background:none; color:#111; }
+      .section h2{ -webkit-text-fill-color:#111; background:none; color:#111; }
+      .footer{ color:#333; }
     }
   </style>
 </head>
 <body>
-
-  <header>
-    <h1>Amelia Bright</h1>
-    <h2>Creative Designer & Illustrator</h2>
-  </header>
-
-  <main class="content">
-    <section>
-      <h3>About</h3>
-      <p>Passionate visual designer focusing on bright, playful, and modern interfaces. I bring ideas to life through balanced color harmony and storytelling.</p>
-    </section>
-
-    <section>
-      <h3>Experience</h3>
-      <ul>
-        <li>Lead Designer — Bloom Agency (2021–Present)</li>
-        <li>Junior Illustrator — SoftShapes Studio (2018–2021)</li>
-      </ul>
-    </section>
-
-    <section>
-      <h3>Skills</h3>
-      <div class="skills">
-        <span class="skill">Figma</span>
-        <span class="skill">Illustrator</span>
-        <span class="skill">Procreate</span>
-        <span class="skill">Typography</span>
+  <main class="resume">
+    <!-- LEFT -->
+    <aside class="left">
+      <div class="glass profile">
+        <img class="avatar" src="https://via.placeholder.com/240x240.png?text=Your+Photo" alt="Profile photo">
+        <h1 class="name">Jane Doe</h1>
+        <div class="role">Graphic Designer</div>
       </div>
+
+      <div class="glass contact">
+        <div class="block-title">Contact</div>
+        <ul>
+          <li>📍 Prague, Czech Republic</li>
+          <li>📧 <a href="mailto:jane.doe@email.com">
+            jane.doe@email.com
+          </a></li>
+          <li>🌐 <a href="#" target="_blank" rel="noopener">janedesign.com</a></li>
+        </ul>
+      </div>
+
+      <div class="glass skills">
+        <div class="block-title">Skills</div>
+        <ul>
+          <li>Adobe Illustrator
+            <span class="skillline"><i style="--w:85%"></i></span>
+          </li>
+          <li>Photoshop
+            <span class="skillline"><i style="--w:75%"></i></span>
+          </li>
+          <li>Canva Design
+            <span class="skillline"><i style="--w:95%"></i></span>
+          </li>
+          <li>Figma UI/UX
+            <span class="skillline"><i style="--w:80%"></i></span>
+          </li>
+        </ul>
+      </div>
+    </aside>
+
+    <!-- RIGHT -->
+    <section class="right">
+      <div class="section">
+        <h2>About Me</h2>
+        <p>Creative and detail-oriented designer with a passion for beautiful & functional visuals. Experienced in digital branding, marketing visuals, and social media content creation.</p>
+      </div>
+
+      <div class="section">
+        <h2>Experience</h2>
+        <div class="item">
+          <h3>Senior Graphic Designer — Vision Studio</h3>
+          <span>2021 — Present</span>
+          <p class="muted">Leading creative projects for brand identity and marketing materials. Mentoring junior designers and ensuring cohesive brand aesthetics.</p>
+        </div>
+        <div class="item">
+          <h3>Freelance Designer</h3>
+          <span>2018 — 2021</span>
+          <p class="muted">Worked with 50+ clients worldwide delivering logo, poster, and social media designs with a consistent 5-star satisfaction rate.</p>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>Education</h2>
+        <div class="item">
+          <h3>BA in Graphic Design</h3>
+          <span>Prague University of Arts — 2018</span>
+        </div>
+      </div>
+
+      <div class="footer">© 2025 CODEPRINT — Bright Flow 2025 Hybrid</div>
     </section>
   </main>
 
-  <footer>
-    © 2025 CODEPRINT — Creative Bright Edition
-  </footer>
-
   <script>
-    // Scroll reveal effect
-    const sections = document.querySelectorAll("section");
-    const reveal = () => {
-      sections.forEach(sec => {
-        const top = sec.getBoundingClientRect().top;
-        if (top < window.innerHeight - 100) sec.classList.add("visible");
+    // Reveal on scroll
+    const secs = document.querySelectorAll('.section');
+    const onScroll = () => {
+      secs.forEach(s => {
+        const r = s.getBoundingClientRect();
+        if (r.top < innerHeight - 120) s.classList.add('visible');
       });
     };
-    window.addEventListener("scroll", reveal);
-    reveal();
+    addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
   </script>
 </body>
 </html>
