@@ -2,202 +2,212 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Bright Flow — Creative Resume Template</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Creative Bright — 2025 Edition</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #f8f9fb;
-      --primary: #222;
-      --accent: #00b4d8;
-      --secondary: #f1f1f1;
-      --text-muted: #555;
+      --bg: #fdfdfd;
+      --panel: rgba(255,255,255,0.7);
+      --text: #1a1a1a;
+      --muted: rgba(0,0,0,0.6);
+      --accent: #ff7ac7;
+      --gradient: linear-gradient(120deg, #ffe6f7 0%, #e7f3ff 100%);
+      --shadow: 0 8px 30px rgba(0,0,0,0.05);
+      --radius: 14px;
     }
 
-    * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
-      font-family: "Poppins", sans-serif;
-      background: var(--bg);
-      color: var(--primary);
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: var(--gradient);
+      color: var(--text);
+      -webkit-font-smoothing: antialiased;
       line-height: 1.6;
-      padding: 40px;
-      display: flex;
-      justify-content: center;
+      overflow-x: hidden;
     }
 
-    .resume {
-      width: 900px;
-      background: #fff;
-      border-radius: 20px;
-      box-shadow: 0 10px 40px rgba(0,0,0,0.08);
-      display: grid;
-      grid-template-columns: 35% 65%;
-      overflow: hidden;
+    header {
+      text-align: center;
+      padding: 80px 20px 60px;
+      position: relative;
     }
 
-    .left {
-      background: linear-gradient(180deg, var(--accent), #48cae4);
-      color: #fff;
-      padding: 40px 30px;
+    header::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 120px;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--accent), transparent);
+      transform: translateX(-50%);
+      opacity: 0.5;
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin: 0;
+      background: linear-gradient(90deg, #ff93c9, #8cbaff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      letter-spacing: 1px;
+      font-weight: 700;
+      text-shadow: 0 0 10px rgba(255,150,200,0.3);
+      animation: glowPulse 4s ease-in-out infinite;
+    }
+
+    @keyframes glowPulse {
+      0%, 100% { text-shadow: 0 0 6px rgba(255,150,200,0.3); }
+      50% { text-shadow: 0 0 16px rgba(255,150,200,0.5); }
+    }
+
+    h2 {
+      font-size: 1.2rem;
+      color: var(--muted);
+      margin-top: 8px;
+      font-weight: 400;
+    }
+
+    .content {
+      max-width: 900px;
+      margin: 60px auto;
+      padding: 0 25px;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
+      gap: 40px;
     }
 
-    .profile {
-      text-align: center;
-    }
-    .profile img {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 4px solid rgba(255,255,255,0.7);
-      margin-bottom: 15px;
-    }
-    .profile h1 {
-      font-size: 1.5rem;
-      margin-bottom: 5px;
-    }
-    .profile p {
-      font-size: 0.95rem;
-      opacity: 0.9;
+    section {
+      background: var(--panel);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 30px 40px;
+      backdrop-filter: blur(8px);
+      animation: fadeUp 0.8s ease forwards;
+      opacity: 0;
+      transform: translateY(30px);
     }
 
-    .contact, .skills {
-      margin-top: 30px;
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
     }
-    .contact h2, .skills h2 {
-      font-size: 1.1rem;
-      margin-bottom: 10px;
-      text-transform: uppercase;
-      letter-spacing: 1px;
+
+    @keyframes fadeUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
-    .contact ul, .skills ul {
-      list-style: none;
+
+    h3 {
+      font-size: 1.3rem;
+      color: var(--accent);
+      margin-bottom: 12px;
+      letter-spacing: 0.5px;
     }
-    .contact li, .skills li {
-      margin-bottom: 8px;
-      font-size: 0.9rem;
+
+    p {
+      color: var(--muted);
+      margin: 0;
     }
-    .skills li span {
-      display: block;
-      background: rgba(255,255,255,0.2);
+
+    ul {
+      margin: 10px 0 0 18px;
+      padding: 0;
+      color: var(--muted);
+    }
+
+    li {
+      margin-bottom: 6px;
+    }
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .skill {
+      background: rgba(255,255,255,0.6);
+      color: var(--accent);
+      padding: 8px 14px;
       border-radius: 20px;
-      height: 8px;
-      margin-top: 5px;
-      overflow: hidden;
-    }
-    .skills li span::after {
-      content: "";
-      display: block;
-      height: 100%;
-      background: #fff;
-      width: var(--width, 70%);
+      font-size: 0.9rem;
+      font-weight: 500;
+      box-shadow: 0 0 10px rgba(255,150,200,0.15);
+      transition: 0.3s;
     }
 
-    .right {
-      padding: 40px;
+    .skill:hover {
+      background: rgba(255,255,255,0.9);
+      box-shadow: 0 0 14px rgba(255,150,200,0.3);
+      transform: translateY(-2px);
     }
 
-    .section {
-      margin-bottom: 30px;
-    }
-    .section h2 {
-      color: var(--accent);
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      margin-bottom: 10px;
-      font-size: 1.2rem;
-    }
-    .section p {
-      font-size: 0.95rem;
-      color: var(--text-muted);
-    }
-
-    .experience .item, .education .item {
-      margin-bottom: 20px;
-    }
-    .item h3 {
-      font-size: 1rem;
-      color: var(--primary);
-    }
-    .item span {
-      display: block;
-      font-size: 0.85rem;
-      color: var(--accent);
-      margin-bottom: 5px;
-    }
-
-    .footer {
+    footer {
       text-align: center;
-      font-size: 0.85rem;
-      color: #999;
+      padding: 40px 20px;
+      color: var(--muted);
+      font-size: 0.9rem;
+      border-top: 1px solid rgba(0,0,0,0.05);
       margin-top: 40px;
+    }
+
+    @media (max-width: 768px) {
+      h1 { font-size: 2.2rem; }
+      section { padding: 24px 20px; }
     }
   </style>
 </head>
 <body>
-  <div class="resume">
-    <div class="left">
-      <div>
-        <div class="profile">
-          <img src="https://via.placeholder.com/120" alt="Profile">
-          <h1>Jane Doe</h1>
-          <p>Graphic Designer</p>
-        </div>
 
-        <div class="contact">
-          <h2>Contact</h2>
-          <ul>
-            <li>📍 Prague, Czech Republic</li>
-            <li>📧 jane.doe@email.com</li>
-            <li>🌐 janedesign.com</li>
-          </ul>
-        </div>
+  <header>
+    <h1>Amelia Bright</h1>
+    <h2>Creative Designer & Illustrator</h2>
+  </header>
 
-        <div class="skills">
-          <h2>Skills</h2>
-          <ul>
-            <li>Adobe Illustrator <span style="--width:85%"></span></li>
-            <li>Photoshop <span style="--width:75%"></span></li>
-            <li>Canva Design <span style="--width:95%"></span></li>
-            <li>Figma UI/UX <span style="--width:80%"></span></li>
-          </ul>
-        </div>
+  <main class="content">
+    <section>
+      <h3>About</h3>
+      <p>Passionate visual designer focusing on bright, playful, and modern interfaces. I bring ideas to life through balanced color harmony and storytelling.</p>
+    </section>
+
+    <section>
+      <h3>Experience</h3>
+      <ul>
+        <li>Lead Designer — Bloom Agency (2021–Present)</li>
+        <li>Junior Illustrator — SoftShapes Studio (2018–2021)</li>
+      </ul>
+    </section>
+
+    <section>
+      <h3>Skills</h3>
+      <div class="skills">
+        <span class="skill">Figma</span>
+        <span class="skill">Illustrator</span>
+        <span class="skill">Procreate</span>
+        <span class="skill">Typography</span>
       </div>
-    </div>
+    </section>
+  </main>
 
-    <div class="right">
-      <div class="section about">
-        <h2>About Me</h2>
-        <p>Creative and detail-oriented designer with a passion for creating beautiful and functional designs. Experienced in digital branding, marketing visuals, and social media content creation.</p>
-      </div>
+  <footer>
+    © 2025 CODEPRINT — Creative Bright Edition
+  </footer>
 
-      <div class="section experience">
-        <h2>Experience</h2>
-        <div class="item">
-          <h3>Senior Graphic Designer — Vision Studio</h3>
-          <span>2021 - Present</span>
-          <p>Leading creative projects for brand identity and marketing materials. Mentoring junior designers and ensuring cohesive brand aesthetics.</p>
-        </div>
-        <div class="item">
-          <h3>Freelance Designer</h3>
-          <span>2018 - 2021</span>
-          <p>Worked with over 50 clients worldwide delivering logo, poster, and social media designs with a consistent 5-star satisfaction rate.</p>
-        </div>
-      </div>
-
-      <div class="section education">
-        <h2>Education</h2>
-        <div class="item">
-          <h3>BA in Graphic Design</h3>
-          <span>Prague University of Arts — 2018</span>
-        </div>
-      </div>
-
-      <div class="footer">© 2025 CODEPRINT — Bright Flow Template</div>
-    </div>
-  </div>
+  <script>
+    // Scroll reveal effect
+    const sections = document.querySelectorAll("section");
+    const reveal = () => {
+      sections.forEach(sec => {
+        const top = sec.getBoundingClientRect().top;
+        if (top < window.innerHeight - 100) sec.classList.add("visible");
+      });
+    };
+    window.addEventListener("scroll", reveal);
+    reveal();
+  </script>
 </body>
 </html>
