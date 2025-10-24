@@ -1,6 +1,188 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Business Gold 2025 — CODEPRINT</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --gold: #d4af37;
+      --gold-soft: #f1dd86;
+      --dark: #0e0e0e;
+      --light: #ffffff;
+      --muted: #777;
+      --border: rgba(255,255,255,0.08);
+    }
+
+    *{margin:0;padding:0;box-sizing:border-box;}
+    body{
+      display:flex;min-height:100vh;
+      font-family:'Poppins',sans-serif;
+      background:linear-gradient(135deg,#0a0a0a,#1b1b1b);
+      color:var(--light);
+    }
+
+    /* sidebar */
+    aside{
+      width:30%;
+      background:linear-gradient(180deg,#111111 0%,#1c1c1c 100%);
+      border-right:1px solid var(--border);
+      padding:50px 30px;
+      display:flex;flex-direction:column;align-items:center;
+    }
+    .photo{
+      width:120px;height:120px;border-radius:50%;
+      border:3px solid var(--gold);
+      overflow:hidden;margin-bottom:20px;
+      box-shadow:0 0 20px rgba(212,175,55,0.2);
+    }
+    .photo img{width:100%;height:100%;object-fit:cover;}
+    aside h2{
+      color:var(--gold);
+      font-size:1.2rem;margin:20px 0 10px;
+      text-transform:uppercase;letter-spacing:1px;
+    }
+    aside p,aside li{
+      font-size:0.95rem;color:var(--light);opacity:0.9;
+      margin-bottom:6px;text-align:center;
+    }
+    aside ul{list-style:none;padding:0;margin:0;}
+    aside ul li::before{content:"• ";color:var(--gold);}
+
+    /* main */
+    main{
+      flex:1;
+      background:linear-gradient(180deg,#ffffff,#f7f7f7);
+      color:#222;
+      padding:60px 70px;
+    }
+    main h1{
+      font-family:'Merriweather',serif;
+      font-size:2.8rem;
+      background:linear-gradient(90deg,var(--gold),var(--gold-soft));
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+      margin-bottom:5px;
+    }
+    main .subtitle{
+      color:var(--muted);
+      font-size:1.1rem;
+      margin-bottom:40px;
+      letter-spacing:0.5px;
+    }
+
+    section{
+      margin-bottom:40px;
+      border-left:4px solid var(--gold);
+      padding-left:20px;
+    }
+    section h3{
+      color:var(--gold);
+      font-size:1.3rem;
+      text-transform:uppercase;
+      margin-bottom:10px;
+      letter-spacing:1px;
+    }
+    section p,li{
+      color:#444;line-height:1.7;
+    }
+    .job{margin-bottom:20px;}
+    .job h4{font-weight:600;margin-bottom:4px;}
+    .job span{color:var(--muted);font-size:0.9rem;}
+    .job p{margin-top:5px;color:#333;}
+
+    ul{margin-left:18px;}
+    ul li{margin-bottom:8px;position:relative;}
+    ul li::before{content:"– ";color:var(--gold);}
+
+    footer{
+      text-align:center;
+      font-size:0.85rem;
+      color:#999;
+      border-top:1px solid #e3e3e3;
+      padding-top:30px;
+      margin-top:50px;
+    }
+
+    /* hover micro effect */
+    a,li:hover,section h3:hover{
+      transition:all .3s ease;
+    }
+    li:hover{color:var(--gold);}
+    section h3:hover{letter-spacing:1.5px;}
+
+    @media(max-width:900px){
+      body{flex-direction:column;}
+      aside{width:100%;flex-direction:row;justify-content:center;flex-wrap:wrap;}
+      main{padding:30px;}
+    }
+  </style>
+</head>
+<body>
+  <aside>
+    <div class="photo"><img src="https://via.placeholder.com/120" alt="Profile"></div>
+    <h2>Contact</h2>
+    <p>john.doe@email.com</p>
+    <p>+420 123 456 789</p>
+    <p>Prague, Czechia</p>
+
+    <h2>Skills</h2>
+    <ul>
+      <li>Leadership</li>
+      <li>Strategy & Growth</li>
+      <li>Financial Planning</li>
+      <li>Client Relations</li>
+    </ul>
+
+    <h2>Languages</h2>
+    <p>English – C1</p>
+    <p>Czech – Native</p>
+  </aside>
+
+  <main>
+    <h1>John Doe</h1>
+    <p class="subtitle">Senior Business Consultant & Strategist</p>
+
+    <section>
+      <h3>Profile</h3>
+      <p>Strategic business leader with 10+ years’ experience guiding corporate transformation, managing cross-border projects, and optimizing profitability through data-driven decision-making.</p>
+    </section>
+
+    <section>
+      <h3>Experience</h3>
+      <div class="job">
+        <h4>Senior Consultant — Global Advisors</h4>
+        <span>2021 – Present</span>
+        <p>Leading international consulting projects focused on sustainable growth and digital transformation. Delivered measurable 30% revenue growth across key accounts.</p>
+      </div>
+      <div class="job">
+        <h4>Business Analyst — EnterpriseX</h4>
+        <span>2017 – 2021</span>
+        <p>Streamlined business operations through data analysis and forecasting, achieving cost savings of 15%. Collaborated with C-level executives to reshape corporate KPIs.</p>
+      </div>
+    </section>
+
+    <section>
+      <h3>Education</h3>
+      <p>Master of Business Administration (MBA) — University of Prague, 2017</p>
+    </section>
+
+    <section>
+      <h3>Achievements</h3>
+      <ul>
+        <li>Top 1% performance award at consulting firm (2023)</li>
+        <li>Keynote speaker at Global Business Summit 2024</li>
+      </ul>
+    </section>
+
+    <footer>© 2025 CODEPRINT — Business Gold Edition</footer>
+  </main>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Business Gold — CODEPRINT</title>
@@ -169,3 +351,4 @@
 
 </body>
 </html>
+
